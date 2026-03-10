@@ -1,19 +1,21 @@
 version: '0.2'
 sources:
-- alias: sandbox
+- name: sandbox
   target: sandbox
   type: local
   writeable: true
-  filters: null
-- alias: poo
-  target: https://github.com/qxcodepoo/arcade.git
+  quests: null
+  tasks: null
+- name: ed
+  target: https://github.com/qxcodeed/arcade.git
   type: git
   writeable: false
-  cache_timestamp: '2026-03-03 19:56:47'
-  filters: null
+  cache_timestamp: '2026-03-10 18:46:10'
+  quests: null
+  tasks: null
 expanded:
-- poo@configuracao-e-aquecimento
-- poo@campanha-principal
+- ed@análise
+- ed@main-quest
 tasks: {}
 flags:
   painel: 0
@@ -22,5 +24,5 @@ flags:
   tasks: 0
   task_graph_mode: 0
   show_time: 0
-lang: py
-selected: poo@bloco_a-primeiras-classes
+lang: go
+selected: ed@princesa
