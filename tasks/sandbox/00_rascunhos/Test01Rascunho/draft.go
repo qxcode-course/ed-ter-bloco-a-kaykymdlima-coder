@@ -1,5 +1,11 @@
 package main
+
 import "fmt"
+
 func main() {
-    fmt.Println("qxcode")
+
+	for cacetinhos := 0; cacetinhos < 3; cacetinhos++ {
+		fmt.Print("cacetinhos:")
+		fmt.Println(cacetinhos)
+	}
 }

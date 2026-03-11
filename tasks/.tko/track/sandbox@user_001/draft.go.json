@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-11_10-52-25",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -37,272 +37,32 @@\n ) %7B%0A\n-%0A%09i := 1%0A%09for i %3C= 3 %7B%0A%09%09fmt.Println(i)%0A%09%09i = i + 1%0A%09%7D%0A%0A%09for j := 0; j %3C 3; j++ %7B%0A%09%09fmt.Println(j)%0A%09%7D%0A%0A%09for i := range 3 %7B%0A%09%09fmt.Println(%22range%22, i)%0A%09%7D%0A%0A%09for %7B%0A%09%09fmt.Println(%22loop%22)%0A%09%09break%0A%09%7D%0A%0A%09for n := range 6 %7B%0A%09%09if n%252 == 0 %7B%0A%09%09%09continue%0A%09%09%7D%0A%09%09fmt.Println(n)%0A%09%7D\n+    fmt.Println(%22qxcode%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-03-11_11-02-32",
+            "content": "@@ -41,111 +41,267 @@\n %7B%0A%0A%09\n-for cacetinhos := 0; cacetinhos %3C 3; cacetinhos++ %7B%0A%09%09fmt.Print(%22cacetinhos:%22)%0A%09%09fmt.Println(cacetinhos\n+i := 1%0A%09for i %3C= 3 %7B%0A%09%09fmt.Println(i)%0A%09%09i = i + 1%0A%09%7D%0A%0A%09for j := 0; j %3C 3; j++ %7B%0A%09%09fmt.Println(j)%0A%09%7D%0A%0A%09for i := range 3 %7B%0A%09%09fmt.Println(%22range%22, i)%0A%09%7D%0A%0A%09for %7B%0A%09%09fmt.Println(%22loop%22)%0A%09%09break%0A%09%7D%0A%0A%09for n := range 6 %7B%0A%09%09if n%252 == 0 %7B%0A%09%09%09continue%0A%09%09%7D%0A%09%09fmt.Println(n\n )%0A%09%7D\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-11_11-13-50",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\n\tfor cacetinhos := 0; cacetinhos < 3; cacetinhos++ {\n\t\tfmt.Print(\"cacetinhos:\")\n\t\tfmt.Println(cacetinhos)\n\t}\n}\n",
+            "lines": "11"
+        }
+    ]
+}
