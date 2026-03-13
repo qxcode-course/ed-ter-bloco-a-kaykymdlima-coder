@@ -5,3 +5,15 @@
 2026-03-13 12:18:36, MOVE, v:1, k:ed@pintando, mode:BACK
 2026-03-13 12:21:01, SELF, v:1, k:ed@pintando, self:1, rate:100, study:25, friend:Samia
 2026-03-13 16:38:24, SELF, v:1, k:ed@pintando, self:1, rate:100, study:25, friend:Samia
+2026-03-13 17:32:01, MOVE, v:1, k:ed@mumia, mode:DOWN
+2026-03-13 17:32:03, MOVE, v:1, k:ed@mumia, mode:PICK
+2026-03-13 17:32:08, MOVE, v:1, k:ed@mumia, mode:BACK
+2026-03-13 19:15:29, MOVE, v:1, k:ed@mumia, mode:PICK
+2026-03-13 19:51:49, EXEC, v:1, k:ed@mumia, mode:FULL, rate:0, size:20
+2026-03-13 19:52:19, EXEC, v:1, k:ed@mumia, mode:FULL, rate:0, size:20
+2026-03-13 19:53:01, EXEC, v:1, k:ed@mumia, mode:FULL, rate:0
+2026-03-13 19:53:57, EXEC, v:1, k:ed@mumia, mode:FULL, rate:22, size:20
+2026-03-13 19:57:51, EXEC, v:1, k:ed@mumia, mode:FULL, rate:100, size:20
+2026-03-13 19:58:02, EXEC, v:1, k:ed@mumia, mode:FULL, rate:100
+2026-03-13 19:58:05, MOVE, v:1, k:ed@mumia, mode:BACK
+2026-03-13 19:59:08, SELF, v:1, k:ed@mumia, self:1, rate:100, study:50
