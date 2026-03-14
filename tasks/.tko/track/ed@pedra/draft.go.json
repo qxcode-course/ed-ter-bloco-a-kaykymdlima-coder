@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-14_12-14-25",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc abs(n int) int {\n\tif n < 0 {\n\t\tn = n * -1\n\t}\n\treturn n\n}\nfunc main() {\n\tvar N int\n\tfmt.Scan(&N)\n\tP := make([]int, N)\n\tP1 := make([]int, N)\n\tP2 := make([]int, N)\n\tfor i := 1; i <= N; i++ {\n\t\tfmt.Scan(&P1[i])\n\t\tfmt.Scan(&P2[i])\n\t}\n\tfor j := 1; j <= N; j++ {\n\t\tif P1[j] < 10 || P2[j] < 10 {\n\t\t\tP[j] = 99\n\t\t\tcontinue\n\t\t}\n\t\tP[j] = abs(P1[j] - P2[j])\n\t}\n\tvar ven int\n\tvar iven int\n\tfor i := 1; i < N; i++ {\n\t\tif P[i] == 1 {\n\t\t\tven = P[i]\n\t\t\tcontinue\n\t\t}\n\t\tif P[i] == ven {\n\t\t\tcontinue\n\t\t} else if P[i] < ven {\n\t\t\tven = P[i]\n\t\t\tiven = i\n\t\t}\n\t}\n\tif P[iven] == 99 {\n\t\tfmt.Print(\"sem ganhador\")\n\t} else {\n\t\tfmt.Printf(\"%d\", iven)\n\t}\n}\n",
+            "lines": "47"
+        }
+    ]
+}

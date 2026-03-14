@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-14_10-30-38",
+            "content": "@@ -185,18 +185,16 @@\n mt.Print\n-ln\n (%22N%22)%0A%09%09\n@@ -230,10 +230,8 @@\n rint\n-ln\n (%22S%22\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-03-14_10-32-22",
+            "content": "@@ -189,13 +189,13 @@\n rint\n+ln\n (%22N\n-%5Cn\n %22)%0A%09\n@@ -232,13 +232,13 @@\n rint\n+ln\n (%22S\n-%5Cn\n %22)%0A%09\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-03-14_10-33-25",
+            "content": "@@ -158,200 +158,14 @@\n %09%09%09%7D\n-%0A%09%09%09if F == P %7B%0A%09%09%09%09fmt.Print(%22N%5Cn%22)%0A%09%09%09%09break%0A%09%09%09%7D else if F == H %7B%0A%09%09%09%09fmt.Print(%22S%5Cn%22)%0A%09%09%09%09break%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D else if D == 1 %7B%0A%09%09for F %3C 16 %7B%0A%09%09%09F = F - 1%0A%09%09%09if F == -1 %7B%0A%09%09%09%09F = 15%0A%09%09%09%7D%0A%09%09%09\n+ else \n if F\n@@ -189,34 +189,24 @@\n rint(%22N%5Cn%22)%0A\n-%09%09%09%09break%0A\n %09%09%09%7D else if\n@@ -240,18 +240,8 @@\n n%22)%0A\n-%09%09%09%09break%0A\n %09%09%09%7D\n@@ -248,10 +248,11 @@\n %0A%09%09%7D%0A%09%7D%0A\n+%0A\n %7D%0A\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-03-14_10-39-29",
+            "content": "@@ -90,16 +90,17 @@\n if D == \n+-\n 1 %7B%0A%09%09fo\n@@ -271,33 +271,32 @@\n %09%7D else if D == \n--\n 1 %7B%0A%09%09for F %3C 16\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-03-14_10-43-40",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar H, P, F, D int\n\tfmt.Scan(&H, &P, &F, &D)\n\tif D == 1 {\n\t\tfor F <= 16 {\n\t\t\tF = F + 1\n\t\t\tif F == 16 {\n\t\t\t\tF = 0\n\t\t\t}\n\t\t\tif F == P {\n\t\t\t\tfmt.Print(\"N\\n\")\n\t\t\t\tbreak\n\t\t\t} else if F == H {\n\t\t\t\tfmt.Print(\"S\\n\")\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\t} else if D == -1 {\n\t\tfor F < 16 {\n\t\t\tF = F - 1\n\t\t\tif F == -1 {\n\t\t\t\tF = 15\n\t\t\t}\n\t\t\tif F == P {\n\t\t\t\tfmt.Print(\"N\\n\")\n\t\t\t\tbreak\n\t\t\t} else if F == H {\n\t\t\t\tfmt.Print(\"S\\n\")\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\t}\n}\n",
+            "lines": "37"
+        }
+    ]
+}
