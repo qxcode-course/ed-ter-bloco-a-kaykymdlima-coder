@@ -14,21 +14,20 @@ func main() {
 	P := make([]int, N)
 	P1 := make([]int, N)
 	P2 := make([]int, N)
-	for i := 1; i <= N; i++ {
+	for i := 0; i < N; i++ {
 		fmt.Scan(&P1[i])
 		fmt.Scan(&P2[i])
-	}
-	for j := 1; j <= N; j++ {
-		if P1[j] < 10 || P2[j] < 10 {
-			P[j] = 99
+
+		if P1[i] < 10 || P2[i] < 10 {
+			P[i] = 99
 			continue
 		}
-		P[j] = abs(P1[j] - P2[j])
+		P[i] = abs(P1[i] - P2[i])
 	}
-	var ven int
+	ven := 99
 	var iven int
-	for i := 1; i < N; i++ {
-		if P[i] == 1 {
+	for i := 0; i < N; i++ {
+		if i == 0 {
 			ven = P[i]
 			continue
 		}
@@ -40,8 +39,8 @@ func main() {
 		}
 	}
 	if P[iven] == 99 {
-		fmt.Print("sem ganhador")
+		fmt.Print("sem ganhador\n")
 	} else {
-		fmt.Printf("%d", iven)
+		fmt.Printf("%d\n", iven)
 	}
 }

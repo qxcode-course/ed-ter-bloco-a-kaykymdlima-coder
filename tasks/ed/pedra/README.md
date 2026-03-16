@@ -29,7 +29,7 @@ Você deve escrever um programa que identifique o competidor vencedor.
 ### Restrições
 
 - Cada competidor arremessa duas pedras, cujas distâncias estão entre **1** e **100 metros**.
-- Todos os competidores que lançarem **qualquer** pedra a **menos de 10 metros** são automaticamente **desclassificados**.
+- Todos os competidores que lançarem **qualquer** pedra a **menos de 10 metros** são automaticamente **desclassificados**.'
 
 ### Testes
 

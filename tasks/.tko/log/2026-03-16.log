@@ -1,0 +1,14 @@
+2026-03-16 17:18:23, MOVE, v:1, k:ed@pedra, mode:PICK
+2026-03-16 17:18:59, EXEC, v:1, k:ed@pedra, mode:FULL, rate:0
+2026-03-16 17:58:41, EXEC, v:1, k:ed@pedra, mode:FULL, rate:75, size:46
+2026-03-16 17:59:05, MOVE, v:1, k:ed@pedra, mode:PICK
+2026-03-16 17:59:15, EXEC, v:1, k:ed@pedra, mode:FULL, rate:75
+2026-03-16 17:59:39, EXEC, v:1, k:ed@pedra, mode:FULL, rate:100, size:46
+2026-03-16 18:09:54, MOVE, v:1, k:ed@pedra, mode:BACK
+2026-03-16 18:11:30, SELF, v:1, k:ed@pedra, self:1, rate:100, study:93, concept:1, code:1
+2026-03-16 18:11:41, SELF, v:1, k:ed@pedra, self:1, rate:100, study:93, concept:1, code:1
+2026-03-16 18:11:41, MOVE, v:1, k:ed@pedra, mode:PICK
+2026-03-16 18:11:46, EXEC, v:1, k:ed@pedra, mode:FULL, rate:100
+2026-03-16 18:11:51, MOVE, v:1, k:ed@pedra, mode:BACK
+2026-03-16 18:12:03, SELF, v:1, k:ed@pedra, self:1, rate:100, study:93, concept:1, code:1
+2026-03-16 18:12:16, SELF, v:1, k:ed@fuga, self:1, rate:100, study:39, debug:1
