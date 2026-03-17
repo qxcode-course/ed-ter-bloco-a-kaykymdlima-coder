@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-17_10-47-15",
+            "content": "@@ -116,19 +116,19 @@\n ar cont \n-= 0\n+int\n %0A%09for i \n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-17_10-47-58",
+            "content": "@@ -220,21 +220,14 @@\n  == \n-(\n animal\n- * -1)\n  %7B%0A%09\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-17_10-52-52",
+            "content": "@@ -282,27 +282,21 @@\n %09%09%09%09\n-break%0A%09%09%09%7D%0A%09%09%09break\n+continue%0A%09%09%09%7D\n %0A%09%09%7D\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-17_11-02-35",
+            "content": "@@ -289,16 +289,25 @@\n ak%0A%09%09%09%7D%0A\n+%09%09%09break%0A\n %09%09%7D%0A%09%09de\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-03-17_11-02-44",
+            "content": "@@ -124,19 +124,8 @@\n = 0%0A\n-%09var v int%0A\n %09for\n@@ -278,18 +278,8 @@\n + 1%0A\n-%09%09%09%09v = 1%0A\n %09%09%09%09\n@@ -297,55 +297,8 @@\n %09%09%7D%0A\n-%09%09if v == 1 %7B%0A%09%09%09v = 0%0A%09%09%09continue%0A%09%09%7D else %7B%0A%09\n %09%09de\n@@ -322,21 +322,8 @@\n mal%0A\n-%09%09%09v = 0%0A%09%09%7D%0A\n %09%7D%0A%09\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-17_11-06-42",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar N int\n\tfmt.Scan(&N)\n\tdescasados := make([]int, N)\n\tvar animal int\n\tvar cont = 0\n\tvar v int\n\tfor i := 0; i < N; i++ {\n\t\tfmt.Scan(&animal)\n\t\tfor j := 0; j < N; j++ {\n\t\t\tif descasados[j] == (animal * -1) {\n\t\t\t\tdescasados[j] = 0\n\t\t\t\tcont = cont + 1\n\t\t\t\tv = 1\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\t\tif v == 1 {\n\t\t\tv = 0\n\t\t\tcontinue\n\t\t} else {\n\t\t\tdescasados[i] = animal\n\t\t\tv = 0\n\t\t}\n\t}\n\tfmt.Printf(\"%d\\n\", cont)\n}\n",
+            "lines": "31"
+        }
+    ]
+}

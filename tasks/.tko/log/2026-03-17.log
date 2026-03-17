@@ -1,0 +1,20 @@
+2026-03-17 10:11:16, MOVE, v:1, k:ed@casais, mode:DOWN
+2026-03-17 10:11:18, MOVE, v:1, k:ed@casais, mode:PICK
+2026-03-17 10:45:06, MOVE, v:1, k:ed@casais, mode:BACK
+2026-03-17 10:45:42, MOVE, v:1, k:ed@casais, mode:PICK
+2026-03-17 10:47:15, EXEC, v:1, k:ed@casais, mode:FULL, rate:75, size:23
+2026-03-17 10:47:58, EXEC, v:1, k:ed@casais, mode:FULL, rate:75, size:23
+2026-03-17 10:52:52, EXEC, v:1, k:ed@casais, mode:FULL, rate:50, size:23
+2026-03-17 10:54:29, EXEC, v:1, k:ed@casais, mode:FULL, rate:50
+2026-03-17 11:01:37, EXEC, v:1, k:ed@casais, mode:FULL, rate:50
+2026-03-17 11:02:21, EXEC, v:1, k:ed@casais, mode:FULL, rate:50
+2026-03-17 11:02:35, EXEC, v:1, k:ed@casais, mode:FULL, rate:25, size:24
+2026-03-17 11:02:44, EXEC, v:1, k:ed@casais, mode:FULL, rate:75, size:23
+2026-03-17 11:06:42, EXEC, v:1, k:ed@casais, mode:FULL, rate:100, size:31
+2026-03-17 11:06:59, MOVE, v:1, k:ed@casais, mode:BACK
+2026-03-17 11:07:17, MOVE, v:1, k:ed@casais, mode:PICK
+2026-03-17 11:07:19, MOVE, v:1, k:ed@casais, mode:BACK
+2026-03-17 11:07:54, SELF, v:1, k:ed@casais, self:1, rate:100, study:57, concept:1
+2026-03-17 11:09:52, MOVE, v:1, k:ed@gomos, mode:DOWN
+2026-03-17 11:09:54, MOVE, v:1, k:ed@gomos, mode:PICK
+2026-03-17 11:09:58, EXEC, v:1, k:ed@gomos, mode:FULL, rate:0, size:5
