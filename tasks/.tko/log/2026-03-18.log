@@ -1,0 +1,17 @@
+2026-03-18 19:40:04, MOVE, v:1, k:ed@gomos, mode:PICK
+2026-03-18 19:46:19, MOVE, v:1, k:ed@gomos, mode:BACK
+2026-03-18 19:47:10, MOVE, v:1, k:ed@gomos, mode:PICK
+2026-03-18 19:47:25, EXEC, v:1, k:ed@gomos, mode:FULL, rate:33
+2026-03-18 19:49:43, EXEC, v:1, k:ed@gomos, mode:FULL, rate:33
+2026-03-18 19:49:52, EXEC, v:1, k:ed@gomos, mode:FULL, rate:0, size:35
+2026-03-18 19:50:28, EXEC, v:1, k:ed@gomos, mode:FULL, rate:0, size:35
+2026-03-18 19:53:56, EXEC, v:1, k:ed@gomos, mode:FULL, rate:33, size:35
+2026-03-18 19:57:28, EXEC, v:1, k:ed@gomos, mode:FULL, rate:33, size:35
+2026-03-18 19:58:52, EXEC, v:1, k:ed@gomos, mode:FULL, rate:33, size:32
+2026-03-18 19:59:43, EXEC, v:1, k:ed@gomos, mode:FULL, rate:33, size:32
+2026-03-18 20:00:58, EXEC, v:1, k:ed@gomos, mode:FULL, rate:50, size:32
+2026-03-18 20:01:58, MOVE, v:1, k:ed@gomos, mode:PICK
+2026-03-18 20:02:05, EXEC, v:1, k:ed@gomos, mode:FULL, rate:50
+2026-03-18 20:05:40, EXEC, v:1, k:ed@gomos, mode:FULL, rate:100, size:32
+2026-03-18 20:08:30, MOVE, v:1, k:ed@gomos, mode:BACK
+2026-03-18 20:09:21, SELF, v:1, k:ed@gomos, self:1, rate:100, study:50, problem:1

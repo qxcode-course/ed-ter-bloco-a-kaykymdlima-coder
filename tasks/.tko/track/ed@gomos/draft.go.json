@@ -17,8 +17,48 @@
         },
         {
             "label": "2026-03-17_11-38-48",
-            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar N int\n\tfmt.Scan(&N)\n\tx := make([]int, N)\n\ty := make([]int, N)\n\tvar D string\n\tfmt.Scan(&D)\n\tfor i := 0; i < N; i++ {\n\t\tfmt.Scan(&x[i], &y[i])\n\t}\n\n\tfor i := 0; i < N; i++ {\n\t\tif i == 0 {\n\t\t\tcontinue\n\t\t}\n\t\tx[i] = x[i-1]\n\t\ty[i] = y[i-1]\n\t}\n\tif D == \"R\" {\n\t\tx[0] = x[0] + 1\n\t} else if D == \"L\" {\n\t\tx[0] = x[0] - 1\n\t} else if D == \"U\" {\n\t\ty[0] = y[0] + 1\n\t} else if D == \"D\" {\n\t\ty[0] = y[0] - 1\n\t}\n\tfor i := 0; i < N; i++ {\n\t\tfmt.Printf(\"%d %d\\n\", x[i], y[i])\n\t}\n}\n",
+            "content": "@@ -199,21 +199,21 @@\n  := \n-N\n+0\n ; i \n-%3E 0; i--\n+%3C N; i++\n  %7B%0A%09\n",
             "lines": "35"
+        },
+        {
+            "label": "2026-03-18_19-49-52",
+            "content": "@@ -253,17 +253,17 @@\n i%5D = x%5Bi\n-+\n+-\n 1%5D%0A%09%09y%5Bi\n@@ -269,17 +269,17 @@\n i%5D = y%5Bi\n-+\n+-\n 1%5D%0A%09%7D%0A%09i\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-03-18_19-50-28",
+            "content": "@@ -191,37 +191,37 @@\n %0A%0A%09for i := \n-0\n+N\n ; i \n-%3C N; i++\n+%3E 0; i--\n  %7B%0A%09%09if i ==\n@@ -250,33 +250,33 @@\n %09x%5Bi\n--1\n %5D = x%5Bi\n++1\n %5D%0A%09%09y%5Bi\n--1\n %5D = y%5Bi\n++1\n %5D%0A%09%7D\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-03-18_19-53-56",
+            "content": "@@ -199,25 +199,21 @@\n  := \n-N - 1\n+0\n ; i \n-%3E 0; i--\n+%3C N; i++\n  %7B%0A%09\n@@ -245,16 +245,18 @@\n %09%09%7D%0A%09%09x%5B\n+i-\n 1%5D = x%5Bi\n@@ -261,16 +261,18 @@\n %5Bi%5D%0A%09%09y%5B\n+i-\n 1%5D = y%5Bi\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-03-18_19-57-28",
+            "content": "@@ -215,16 +215,46 @@\n ; i-- %7B%0A\n+%09%09if i == 0 %7B%0A%09%09%09continue%0A%09%09%7D%0A\n %09%09x%5B1%5D =\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-03-18_19-58-52",
+            "content": "@@ -227,18 +227,16 @@\n 1%5D = x%5Bi\n--1\n %5D%0A%09%09y%5B1%5D\n@@ -245,10 +245,8 @@\n  y%5Bi\n--1\n %5D%0A%09%7D\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-18_19-59-43",
+            "content": "@@ -219,17 +219,17 @@\n - %7B%0A%09%09x%5B\n-i\n+1\n %5D = x%5Bi-\n@@ -235,17 +235,17 @@\n -1%5D%0A%09%09y%5B\n-i\n+1\n %5D = y%5Bi-\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-18_20-00-58",
+            "content": "@@ -355,25 +355,25 @@\n y%5B0%5D = y%5B0%5D \n--\n++\n  1%0A%09%7D else i\n@@ -395,25 +395,25 @@\n y%5B0%5D = y%5B0%5D \n-+\n+-\n  1%0A%09%7D%0A%09for i\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-18_20-05-40",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar N int\n\tfmt.Scan(&N)\n\tx := make([]int, N)\n\ty := make([]int, N)\n\tvar D string\n\tfmt.Scan(&D)\n\tfor i := 0; i < N; i++ {\n\t\tfmt.Scan(&x[i], &y[i])\n\t}\n\n\tfor i := N - 1; i > 0; i-- {\n\t\tx[i] = x[i-1]\n\t\ty[i] = y[i-1]\n\t}\n\tif D == \"R\" {\n\t\tx[0] = x[0] + 1\n\t} else if D == \"L\" {\n\t\tx[0] = x[0] - 1\n\t} else if D == \"U\" {\n\t\ty[0] = y[0] - 1\n\t} else if D == \"D\" {\n\t\ty[0] = y[0] + 1\n\t}\n\tfor i := 0; i < N; i++ {\n\t\tfmt.Printf(\"%d %d\\n\", x[i], y[i])\n\t}\n}\n",
+            "lines": "32"
         }
     ]
 }
