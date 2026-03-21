@@ -1,0 +1,159 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-21_10-59-10",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -37,556 +37,39 @@\n ) %7B%0A\n-%09var talb int%0A%09var tfig int%0A%09fmt.Scan(&talb, &tfig)%0A%09album := make(%5B%5Dint, talb)%0A%09repet := make(%5B%5Dint, tfig)%0A%09var fig int%0A%09for i := 0; i %3C tfig; i++ %7B%0A%09%09fmt.Scan(&fig)%0A%09%09if album%5Bfig%5D == 0 %7B%0A%09%09%09album%5Bfig%5D = 1%0A%09%09%09repet%5Bi%5D = 0%0A%09%09%7D else %7B%0A%09%09%09repet%5Bi%5D = fig%0A%09%09%7D%0A%09%7D%0A%09for i := 0; i %3C tfig; i++ %7B%0A%09%09if repet%5Bi%5D != 0 %7B%0A%09%09%09fmt.Printf(%22%25d%5Cn%22, repet%5Bi%5D)%0A%09%09%7D else %7B%0A%09%09%09fmt.Print(%22N%5Cn%22)%0A%09%09%7D%0A%09%7D%0A%09temrepet := 0%0A%09for i := 0; i %3C talb; i++ %7B%0A%09%09if album%5Bi%5D != 0 %7B%0A%09%09%09temrepet = 1%0A%09%09%09fmt.Printf(%22%25d%5Cn%22, i)%0A%09%09%09continue%0A%09%09%7D%0A%09%09if temrepet == 0 %7B%0A%09%09%09fmt.Print(%22N%5Cn%22)%0A%09%09%7D%0A%09%7D\n+    fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-03-21_12-35-14",
+            "content": "@@ -582,17 +582,8 @@\n n%22)%0A\n-%09%09%09break%0A\n %09%09%7D%0A\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-03-21_12-36-56",
+            "content": "@@ -416,21 +416,24 @@\n %09%09%7D%0A%09%7D%0A%09\n-falta\n+temrepet\n  := 0%0A%09f\n@@ -473,17 +473,17 @@\n lbum%5Bi%5D \n-=\n+!\n = 0 %7B%0A%09%09\n@@ -483,21 +483,24 @@\n  0 %7B%0A%09%09%09\n-falta\n+temrepet\n  = 1%0A%09%09%09\n@@ -546,13 +546,16 @@\n %09if \n-falta\n+temrepet\n  == \n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-03-21_12-40-09",
+            "content": "@@ -117,10 +117,8 @@\n talb\n-+1\n )%0A%09r\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-03-21_12-42-02",
+            "content": "@@ -44,17 +44,25 @@\n var talb\n-,\n+ int%0A%09var\n  tfig in\n@@ -162,36 +162,8 @@\n int%0A\n-%09figant := -1%0A%09qrepet := 0%0A%0A\n %09for\n@@ -206,16 +206,19 @@\n &fig)%0A%09%09\n+if \n album%5Bfi\n@@ -225,31 +225,31 @@\n g%5D =\n- 1%0A%09%09if fig == figant %7B\n+= 0 %7B%0A%09%09%09album%5Bfig%5D = 1\n %0A%09%09%09\n@@ -258,128 +258,98 @@\n pet%5B\n-0\n+i\n %5D = \n-fig%0A%09%09%09qrepet++%0A%09%09%7D%0A%09%09figant = fig%0A%09%7D%0A%0A%09if qrepet == 0 %7B%0A%09%09fmt.Print(%22N%5Cn%22)%0A%09%7D else %7B%0A%09%09for i := 0; i %3C qrepet; i++\n+0%0A%09%09%7D else %7B%0A%09%09%09repet%5Bi%5D = fig%0A%09%09%7D%0A%09%7D%0A%09for i := 0; i %3C tfig; i++ %7B%0A%09%09if repet%5Bi%5D != 0\n  %7B%0A%09\n@@ -379,16 +379,47 @@\n pet%5Bi%5D)%0A\n+%09%09%7D else %7B%0A%09%09%09fmt.Print(%22N%5Cn%22)%0A\n %09%09%7D%0A%09%7D%0A%09\n@@ -519,21 +519,31 @@\n %22, i)%0A%09%09\n-%7D%0A\n+%09continue%0A%09\n %09%7D%0A\n+%09\n %09if falt\n@@ -551,16 +551,17 @@\n  == 0 %7B%0A\n+%09\n %09%09fmt.Pr\n@@ -571,13 +571,26 @@\n (%22N%5Cn%22)%0A\n+%09%09%09break%0A%09%09%7D%0A\n %09%7D%0A%7D%0A\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-03-21_13-38-39",
+            "content": "@@ -271,22 +271,17 @@\n %09%09repet%5B\n-qrepet\n+0\n %5D = fig%0A\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-21_13-39-49",
+            "content": "@@ -460,17 +460,17 @@\n or i := \n-1\n+0\n ; i %3C ta\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-21_13-41-09",
+            "content": "@@ -416,17 +416,18 @@\n intf(%22%25d\n- \n+%5Cn\n %22, repet\n@@ -530,17 +530,18 @@\n intf(%22%25d\n- \n+%5Cn\n %22, i)%0A%09%09\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-21_13-41-47",
+            "content": "@@ -441,25 +441,8 @@\n %0A%09%7D%0A\n-%09fmt.Print(%22%5Cn%22)%0A\n %09fal\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-21_13-42-38",
+            "content": "@@ -437,16 +437,33 @@\n %0A%09%09%7D%0A%09%7D%0A\n+%09fmt.Print(%22%5Cn%22)%0A\n %09falta :\n@@ -544,18 +544,16 @@\n Printf(%22\n-%5Cn\n %25d %22, i)\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-21_13-43-24",
+            "content": "@@ -416,16 +416,17 @@\n intf(%22%25d\n+ \n %22, repet\n@@ -434,53 +434,8 @@\n i%5D)%0A\n-%09%09%09if i %3C qrepet-1 %7B%0A%09%09%09%09fmt.Print(%22 %22)%0A%09%09%09%7D%0A\n %09%09%7D%0A\n@@ -523,24 +523,26 @@\n fmt.Printf(%22\n+%5Cn\n %25d %22, i)%0A%09%09%7D\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-21_14-00-29",
+            "content": "@@ -485,25 +485,8 @@\n %0A%09%7D%0A\n-%09fmt.Print(%22%5Cn%22)%0A\n %09fal\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-03-21_14-01-00",
+            "content": "@@ -601,51 +601,8 @@\n  i)%0A\n-%09%09%09if i %3C talb-1 %7B%0A%09%09%09%09fmt.Print(%22 %22)%0A%09%09%09%7D%0A\n %09%09%7D%0A\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-03-21_14-01-50",
+            "content": "@@ -590,16 +590,17 @@\n intf(%22%25d\n+ \n %22, i)%0A%09%09\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-03-21_14-02-25",
+            "content": "@@ -646,33 +646,16 @@\n %0A%09%09%7D%0A%09%7D%0A\n-%09fmt.Print(%22%5Cn%22)%0A\n %09if falt\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-03-21_14-02-50",
+            "content": "@@ -642,24 +642,40 @@\n %09%09%09%7D%0A%09%09%7D%0A%09%7D%0A\n+%09fmt.Print(%22%5Cn%22)\n %0A%09if falta =\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-03-21_14-03-30",
+            "content": "@@ -678,16 +678,18 @@\n Print(%22N\n+%5Cn\n %22)%0A%09%7D%0A%7D%0A\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-03-21_14-04-09",
+            "content": "@@ -646,32 +646,16 @@\n %0A%09%09%7D%0A%09%7D%0A\n-%09fmt.Print(%22%5Cn%22)\n %0A%09if fal\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-03-21_14-04-24",
+            "content": "@@ -619,60 +619,8 @@\n 1 %7B%0A\n-%09%09%09%09if i == talb-2 && falta != 0 %7B%0A%09%09%09%09%09break%0A%09%09%09%09%7D%0A\n %09%09%09%09\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-03-21_14-09-45",
+            "content": "@@ -503,40 +503,13 @@\n %22)%0A%09\n-temFaltante := 0%0A%09primeiroEspaco\n+falta\n  := \n@@ -526,17 +526,16 @@\n = 1; i %3C\n-=\n  talb; i\n@@ -567,34 +567,18 @@\n %0A%09%09%09\n-if primeiroEspaco == 1 %7B%0A%09\n+falta = 1%0A\n %09%09%09f\n@@ -589,133 +589,152 @@\n rint\n+f\n (%22\n- %22)%0A%09%09%09%7D%0A%09%09%09fmt.Print(i)%0A%09%09%09temFaltante = 1%0A%09%09%09primeiroEspaco = 1%0A\n+%25d%22, i)%0A%09%09%09if i %3C talb-1 %7B%0A%09%09%09%09if i == talb-2 && falta != 0 %7B%0A%09%09%09%09%09break%0A%09\n %09%09\n+%09\n %7D%0A%09\n-%7D%0A%0A%09if temFaltante == 0 %7B%0A%09%09fmt.Println(%22N%22)%0A%09%7D else\n+%09%09%09fmt.Print(%22 %22)%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%09fmt.Print(%22%5Cn%22)%0A%09if falta == 0\n  %7B%0A%09\n@@ -747,11 +747,12 @@\n rint\n-ln(\n+(%22N%22\n )%0A%09%7D\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-03-21_14-13-43",
+            "content": "@@ -481,16 +481,33 @@\n %0A%09%09%7D%0A%09%7D%0A\n+%09fmt.Print(%22%5Cn%22)%0A\n %09temFalt\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-03-21_14-14-00",
+            "content": "@@ -485,25 +485,8 @@\n %0A%09%7D%0A\n-%09fmt.Print(%22%5Cn%22)%0A\n %09tem\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-03-21_14-14-31",
+            "content": "@@ -482,27 +482,8 @@\n %09%09%7D%0A\n-%09%09fmt.Println(%22 %22)%0A\n %09%7D%0A%09\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-03-21_14-17-30",
+            "content": "@@ -500,16 +500,33 @@\n %22 %22)%0A%09%7D%0A\n+%09fmt.Print(%22%5Cn%22)%0A\n %09temFalt\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-03-21_14-17-54",
+            "content": "@@ -323,38 +323,8 @@\n %0A%09%7D%0A\n-%09// --- SA%C3%8DDA 1: Repetidas ---\n %0A%09if\n@@ -341,37 +341,37 @@\n  0 %7B%0A%09%09fmt.Print\n-ln\n (%22N\n+%5Cn\n %22)%0A%09%7D else %7B%0A%09%09f\n@@ -496,43 +496,15 @@\n tln(\n+%22 %22\n )%0A%09%7D\n-%0A%0A%09// --- SA%C3%8DDA 2: Faltando ---\n %0A%09te\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-03-21_14-22-18",
+            "content": "@@ -315,24 +315,54 @@\n nt = fig%0A%09%7D%0A\n+%09// --- SA%C3%8DDA 1: Repetidas ---\n %0A%09if qrepet \n@@ -379,16 +379,18 @@\n mt.Print\n+ln\n (%22N%22)%0A%09%7D\n@@ -526,15 +526,43 @@\n tln(\n-%22 %22\n )%0A%09%7D\n+%0A%0A%09// --- SA%C3%8DDA 2: Faltando ---\n %0A%09te\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-03-21_14-24-11",
+            "content": "@@ -486,24 +486,27 @@\n fmt.Println(\n+%22 %22\n )%0A%09%7D%0A%09temFal\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-03-21_14-24-39",
+            "content": "@@ -494,10 +494,8 @@\n tln(\n-%22%22\n )%0A%09%7D\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-03-21_14-25-18",
+            "content": "@@ -341,34 +341,32 @@\n  0 %7B%0A%09%09fmt.Print\n-ln\n (%22N%22)%0A%09%7D else %7B%0A\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-03-21_14-25-35",
+            "content": "@@ -500,21 +500,27 @@\n %22%22)%0A%09%7D%0A%09\n-f\n+temF\n alta\n+nte\n  := 0%0A%09p\n@@ -521,16 +521,27 @@\n = 0%0A%09pri\n+meiroEspaco\n  := 0%0A%09f\n@@ -598,16 +598,27 @@\n %09%09if pri\n+meiroEspaco\n  == 1 %7B%0A\n@@ -660,21 +660,27 @@\n t(i)%0A%09%09%09\n-f\n+temF\n alta\n+nte\n  = 1%0A%09%09%09\n@@ -682,16 +682,27 @@\n 1%0A%09%09%09pri\n+meiroEspaco\n  = 1%0A%09%09%7D\n@@ -714,13 +714,19 @@\n %09if \n-f\n+temF\n alta\n+nte\n  == \n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-03-21_14-28-46",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar talb, tfig int\n\tfmt.Scan(&talb, &tfig)\n\talbum := make([]int, talb+1)\n\trepet := make([]int, tfig)\n\tvar fig int\n\tfigant := -1\n\tqrepet := 0\n\n\tfor i := 0; i < tfig; i++ {\n\t\tfmt.Scan(&fig)\n\t\talbum[fig] = 1\n\t\tif fig == figant {\n\t\t\trepet[qrepet] = fig\n\t\t\tqrepet++\n\t\t}\n\t\tfigant = fig\n\t}\n\n\tif qrepet == 0 {\n\t\tfmt.Println(\"N\")\n\t} else {\n\t\tfor i := 0; i < qrepet; i++ {\n\t\t\tfmt.Printf(\"%d\", repet[i])\n\t\t\tif i < qrepet-1 {\n\t\t\t\tfmt.Print(\" \")\n\t\t\t}\n\t\t}\n\t\tfmt.Println(\"\")\n\t}\n\tfalta := 0\n\tpri := 0\n\tfor i := 1; i <= talb; i++ {\n\t\tif album[i] == 0 {\n\t\t\tif pri == 1 {\n\t\t\t\tfmt.Print(\" \")\n\t\t\t}\n\t\t\tfmt.Print(i)\n\t\t\tfalta = 1\n\t\t\tpri = 1\n\t\t}\n\t}\n\n\tif falta == 0 {\n\t\tfmt.Println(\"N\")\n\t} else {\n\t\tfmt.Println()\n\t}\n}\n",
+            "lines": "53"
+        }
+    ]
+}
