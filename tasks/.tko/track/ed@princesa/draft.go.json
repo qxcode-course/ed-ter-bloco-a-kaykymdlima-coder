@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-24_11-01-08",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\n\ti := 1\n\tfor i <= 3 {\n\t\tfmt.Println(i)\n\t\ti = i + 1\n\t}\n\n\tfor j := 0; j < 3; j++ {\n\t\tfmt.Println(j)\n\t}\n}\n",
+            "lines": "16"
+        }
+    ]
+}
