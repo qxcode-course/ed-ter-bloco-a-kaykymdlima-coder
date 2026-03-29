@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-28_19-28-33",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -37,400 +37,6 @@\n ) %7B%0A\n-%09var N, M int%0A%09fmt.Scan(&N)%0A%09filai := make(%5B%5Dint, N)%0A%09for i := 0; i %3C N; i++ %7B%0A%09%09fmt.Scan(&filai%5Bi%5D)%0A%09%7D%0A%09fmt.Scan(&M)%0A%09sairam := make(map%5Bint%5Dbool)%0A%09var ident int%0A%09for i := 0; i %3C M; i++ %7B%0A%09%09fmt.Scan(&ident)%0A%09%09sairam%5Bident%5D = true%0A%09%7D%0A%0A%09pri := 1%0A%09for i := 0; i %3C N; i++ %7B%0A%09%09filaf := filai%5Bi%5D%0A%09%09if !(sairam%5Bfilaf%5D) %7B%0A%09%09%09if pri != 0 %7B%0A%09%09%09%09fmt.Print(%22 %22)%0A%09%09%09%7D%0A%09%09%09pri = 0%0A%09%09%09fmt.Print(filaf)%0A%09%09%7D%0A%09%7D%0A\n %7D%0A\n",
+            "lines": "4"
+        },
+        {
+            "label": "2026-03-28_20-59-27",
+            "content": "@@ -363,17 +363,17 @@\n  pri != \n-1\n+0\n  %7B%0A%09%09%09%09f\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-03-28_21-00-34",
+            "content": "@@ -433,21 +433,6 @@\n %0A%09%7D%0A\n-%09fmt.Println()%0A\n %7D%0A\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-03-28_21-00-56",
+            "content": "@@ -270,16 +270,26 @@\n rue%0A%09%7D%0A%0A\n+%09pri := 1%0A\n %09for i :\n@@ -350,16 +350,34 @@\n laf%5D) %7B%0A\n+%09%09%09if pri != 1 %7B%0A%09\n %09%09%09fmt.P\n@@ -384,17 +384,43 @@\n rint\n-f\n (%22\n-%25d %22, \n+ %22)%0A%09%09%09%7D%0A%09%09%09pri = 0%0A%09%09%09fmt.Print(\n fila\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-28_21-02-22",
+            "content": "@@ -269,16 +269,17 @@\n true%0A%09%7D%0A\n+%0A\n %09for i :\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-03-28_21-13-46",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar N, M int\n\tfmt.Scan(&N)\n\tfilai := make([]int, N)\n\tfor i := 0; i < N; i++ {\n\t\tfmt.Scan(&filai[i])\n\t}\n\tfmt.Scan(&M)\n\tsairam := make(map[int]bool)\n\tvar ident int\n\tfor i := 0; i < M; i++ {\n\t\tfmt.Scan(&ident)\n\t\tsairam[ident] = true\n\t}\n\tfor i := 0; i < N; i++ {\n\t\tfilaf := filai[i]\n\t\tif !(sairam[filaf]) {\n\t\t\tfmt.Printf(\"%d \", filaf)\n\t\t}\n\t}\n\tfmt.Println()\n}\n",
+            "lines": "26"
+        }
+    ]
+}
