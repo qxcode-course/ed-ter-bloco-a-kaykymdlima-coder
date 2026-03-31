@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-30_20-12-24",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -37,323 +37,39 @@\n ) %7B%0A\n-%09var T, R int%0A%09fmt.Scan(&T, &R)%0A%0A%09vetori := make(%5B%5Dint, T)%0A%09for i := 0; i %3C T; i++ %7B%0A%09%09fmt.Scan(&vetori%5Bi%5D)%0A%09%7D%0A%09vetorf := make(%5B%5Dint, T)%0A%09for i := 0; i %3C T; i++ %7B%0A%09%09alterna := (i + R) %25 T%0A%09%09vetorf%5Balterna%5D = vetori%5Bi%5D%0A%09%7D%0A%09for i, vetorfp := range vetorf %7B%0A%09%09if i == len(vetorf)-1 %7B%0A%09%09%09fmt.Printf(%22%25d%22, vetorfp)%0A%09%09%7D%0A%09%7D\n+    fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-03-30_21-41-01",
+            "content": "@@ -353,37 +353,8 @@\n %09%09%7D%0A\n-%09%09fmt.Printf(%22%25d %22, vetorfp)%0A\n %09%7D%0A%7D\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-30_21-41-42",
+            "content": "@@ -260,25 +260,8 @@\n %0A%09%7D%0A\n-%09fmt.Print(%22%5B %22)%0A\n %09for\n@@ -385,24 +385,6 @@\n %0A%09%7D%0A\n-%09fmt.Println(%22%5D%22)%0A\n %7D%0A\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-03-30_21-44-09",
+            "content": "@@ -282,9 +282,9 @@\n for \n-_\n+i\n , ve\n@@ -307,16 +307,75 @@\n etorf %7B%0A\n+%09%09if i == len(vetorf)-1 %7B%0A%09%09%09fmt.Printf(%22%25d%22, vetorfp)%0A%09%09%7D%0A\n %09%09fmt.Pr\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-03-30_21-44-45",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar T, R int\n\tfmt.Scan(&T, &R)\n\n\tvetori := make([]int, T)\n\tfor i := 0; i < T; i++ {\n\t\tfmt.Scan(&vetori[i])\n\t}\n\tvetorf := make([]int, T)\n\tfor i := 0; i < T; i++ {\n\t\talterna := (i + R) % T\n\t\tvetorf[alterna] = vetori[i]\n\t}\n\tfmt.Print(\"[ \")\n\tfor _, vetorfp := range vetorf {\n\t\tfmt.Printf(\"%d \", vetorfp)\n\t}\n\tfmt.Println(\"]\")\n}\n",
+            "lines": "23"
+        }
+    ]
+}
