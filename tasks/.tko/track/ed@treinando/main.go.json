@@ -1,0 +1,74 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-06_16-55-16",
+            "content": "@@ -99,416 +99,83 @@\n  %7B%0A%09\n-if len(vet) == 0 %7B%0A%09%09return %22%22%0A%09%7D%0A%09//guarda a string%0A%09pri := fmt.Sprintf(%22%25d%22, vet%5B0%5D)%0A%09//ultimo caso%0A%09if len(vet) == 1 %7B%0A%09%09return pri%0A%09%7D%0A%09//outros casos%0A%09return pri + %22, %22 + tostr(vet%5B1:%5D)%0A%7D%0A%0Afunc tostrrev(vet %5B%5Dint) string %7B%0A%09if len(vet) == 0 %7B%0A%09%09return %22%22%0A%09%7D%0A%09//msm coisa, soq pega o id do ultimo caso%0A%09ultid := len(vet) - 1%0A%09ult := fmt.Sprintf(%22%25d%22, vet%5Bultid%5D)%0A%09return ult + %22, %22 + tostrrev(vet%5B:ultid%5D)\n+_ = vet%0A%09return %22%22%0A%7D%0A%0Afunc tostrrev(vet %5B%5Dint) string %7B%0A%09_ = vet%0A%09return %22%22\n %0A%7D%0A%0A\n",
+            "lines": "93"
+        },
+        {
+            "label": "2026-04-06_17-16-25",
+            "content": "@@ -128,52 +128,65 @@\n rn %22\n-%5B%5D\n %22%0A%09%7D%0A\n-%0A%7D%0Afunc tostrrecu(vet %5B%5Dint) string %7B\n+%09//guarda a string%0A%09pri := fmt.Sprintf(%22%25d%22, vet%5B0%5D)\n %0A%09//\n@@ -230,33 +230,11 @@\n urn \n-fmt.Sprintf(%22%25d%22, vet%5B0%5D)\n+pri\n %0A%09%7D%0A\n@@ -261,43 +261,26 @@\n urn \n-fmt.Sprintf(%22%25d, %22, vet%5B0%5D)\n+pri + %22, %22\n  + tostr\n recu\n@@ -275,20 +275,16 @@\n  + tostr\n-recu\n (vet%5B1:%5D\n",
+            "lines": "107"
+        },
+        {
+            "label": "2026-04-06_17-36-36",
+            "content": "@@ -135,42 +135,8 @@\n %0A%09%7D%0A\n-%09return %22%5B%22 + tostrrecu(vet) + %22%5D%22\n %0A%7D%0Af\n",
+            "lines": "108"
+        },
+        {
+            "label": "2026-04-06_17-38-06",
+            "content": "@@ -425,144 +425,8 @@\n %0A%09%7D%0A\n-%09return %22%5B%22 + tostrrevrecu(vet) + %22%5D%22%0A%7D%0Afunc tostrrevrecu(vet %5B%5Dint) string %7B%0A%09if len(vet) == 1 %7B%0A%09%09return fmt.Sprintf(%22%25d%22, vet%5B0%5D)%0A%09%7D%0A\n %09//m\n@@ -488,22 +488,22 @@\n t) - 1%0A%09\n-return\n+ult :=\n  fmt.Spr\n@@ -506,26 +506,24 @@\n .Sprintf(%22%25d\n-, \n %22, vet%5Bultid\n@@ -524,16 +524,35 @@\n %5Bultid%5D)\n+%0A%09return ult + %22, %22\n  + tostr\n@@ -554,20 +554,16 @@\n tostrrev\n-recu\n (vet%5B:ul\n",
+            "lines": "108"
+        },
+        {
+            "label": "2026-04-06_17-42-03",
+            "content": "@@ -408,34 +408,32 @@\n = 0 %7B%0A%09%09return %22\n-%5B%5D\n %22%0A%09%7D%0A%09return %22%5B%22\n",
+            "lines": "113"
+        },
+        {
+            "label": "2026-04-06_17-42-21",
+            "content": "@@ -416,16 +416,18 @@\n return %22\n+%5B%5D\n %22%0A%09%7D%0A%09re\n",
+            "lines": "113"
+        },
+        {
+            "label": "2026-04-06_17-42-49",
+            "content": "@@ -408,34 +408,32 @@\n = 0 %7B%0A%09%09return %22\n-%5B%5D\n %22%0A%09%7D%0A%09return %22%5B%22\n",
+            "lines": "113"
+        },
+        {
+            "label": "2026-04-06_17-43-16",
+            "content": "@@ -1073,100 +1073,25 @@\n  %7B%0A%09\n-//se 0, 0%0A%09if len(vet) == 0 %7B%0A%09%09return 0%0A%09%7D%0A%09//faz a soma recu%0A%09return vet%5B0%5D + sum(vet%5B1:%5D)\n+_ = vet%0A%09return 0\n %0A%7D%0A%0A\n",
+            "lines": "113"
+        },
+        {
+            "label": "2026-04-06_19-54-21",
+            "content": "@@ -1237,119 +1237,25 @@\n  %7B%0A%09\n-//se 0, 0%0A%09if len(vet) == 0 %7B%0A%09%09return 0%0A%09%7D%0A%09//faz a msm coisa da soma recu soq *%0A%09return vet%5B0%5D * sum(vet%5B1:%5D)\n+_ = vet%0A%09return 0\n %0A%7D%0A%0A\n",
+            "lines": "117"
+        },
+        {
+            "label": "2026-04-06_19-58-17",
+            "content": "@@ -1272,17 +1272,17 @@\n %09return \n-1\n+0\n %0A%09%7D%0A%09//f\n",
+            "lines": "121"
+        },
+        {
+            "label": "2026-04-06_19-58-38",
+            "content": "@@ -1332,20 +1332,19 @@\n et%5B0%5D * \n-mult\n+sum\n (vet%5B1:%5D\n",
+            "lines": "121"
+        },
+        {
+            "label": "2026-04-06_19-59-08",
+            "content": "@@ -1565,906 +1565,25 @@\n  %7B%0A%09\n-// Caso especial: lista vazia retorna -1 conforme seus testes%0A%09if len(vet) == 0 %7B%0A%09%09return -1%0A%09%7D%0A%0A%09// Definimos a fun%C3%A7%C3%A3o recursiva interna%0A%09// Ela retorna (%C3%ADndice_do_menor, valor_do_menor)%0A%09var rec func(v %5B%5Dint) (int, int)%0A%0A%09rec = func(v %5B%5Dint) (int, int) %7B%0A%09%09// Caso base: se sobrar apenas um elemento%0A%09%09if len(v) == 1 %7B%0A%09%09%09return 0, v%5B0%5D%0A%09%09%7D%0A%0A%09%09// Passo recursivo: Descobre quem %C3%A9 o menor no %22resto%22 da lista%0A%09%09idxResto, valResto := rec(v%5B1:%5D)%0A%0A%09%09// Ajustamos o %C3%ADndice do resto: como cortamos o primeiro elemento v%5B0%5D,%0A%09%09// o %C3%ADndice real no slice atual %C3%A9 idxResto + 1%0A%09%09idxRealNoSliceAtual := idxResto + 1%0A%0A%09%09// Compara o elemento atual (v%5B0%5D) com o menor do resto (valResto)%0A%09%09if v%5B0%5D %3C= valResto %7B%0A%09%09%09return 0, v%5B0%5D%0A%09%09%7D else %7B%0A%09%09%09return idxRealNoSliceAtual, valResto%0A%09%09%7D%0A%09%7D%0A%0A%09// Chamamos a recurs%C3%A3o e retornamos apenas o %C3%ADndice (primeiro retorno)%0A%09indiceFinal, _ := rec(vet)%0A%09return indiceFinal\n+_ = vet%0A%09return 0\n %0A%7D%0A%0A\n",
+            "lines": "121"
+        },
+        {
+            "label": "2026-04-06_20-16-40",
+            "content": "@@ -1568,50 +1568,193 @@\n %09// \n-if 0 -1%0A%09if len(vet) == 0 %7B%0A%09%09return -1%0A%09%7D\n+Caso especial: lista vazia retorna -1 conforme seus testes%0A%09if len(vet) == 0 %7B%0A%09%09return -1%0A%09%7D%0A%0A%09// Definimos a fun%C3%A7%C3%A3o recursiva interna%0A%09// Ela retorna (%C3%ADndice_do_menor, valor_do_menor)\n %0A%09va\n@@ -1788,28 +1788,8 @@\n nt)%0A\n-%09//recursiva interna\n %0A%09re\n@@ -1828,15 +1828,47 @@\n %09// \n-se so 1\n+Caso base: se sobrar apenas um elemento\n %0A%09%09i\n@@ -1909,20 +1909,28 @@\n %09%09%7D%0A\n+%0A\n %09%09//\n+ Passo \n recursiv\n a%0A%09%09\n@@ -1929,25 +1929,75 @@\n rsiv\n-a%0A%09%09idres\n+o: Descobre quem %C3%A9 o menor no %22resto%22 da lista%0A%09%09idxResto\n , val\n-r\n+R\n es\n+to\n  := \n@@ -2011,26 +2011,165 @@\n :%5D)%0A\n+%0A\n %09%09\n-idslide := idres\n+// Ajustamos o %C3%ADndice do resto: como cortamos o primeiro elemento v%5B0%5D,%0A%09%09// o %C3%ADndice real no slice atual %C3%A9 idxResto + 1%0A%09%09idxRealNoSliceAtual := idxResto\n  + 1\n@@ -2178,16 +2178,72 @@\n %09%09//\n-/c\n+ C\n ompara\n+ o elemento atual (v%5B0%5D) com o menor do resto (valResto)\n %0A%09%09i\n@@ -2255,19 +2255,21 @@\n %5D %3C= val\n-r\n+R\n es\n+to\n  %7B%0A%09%09%09re\n@@ -2308,28 +2308,115 @@\n n id\n-slide\n+xRealNoSliceAtual\n , val\n-r\n+R\n es\n+to\n %0A%09%09%7D%0A%09%7D\n+%0A%0A%09// Chamamos a recurs%C3%A3o e retornamos apenas o %C3%ADndice (primeiro retorno)\n %0A%09in\n",
+            "lines": "152"
+        },
+        {
+            "label": "2026-04-06_20-24-38",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc tostr(vet []int) string {\n\tif len(vet) == 0 {\n\t\treturn \"[]\"\n\t}\n\treturn \"[\" + tostrrecu(vet) + \"]\"\n}\nfunc tostrrecu(vet []int) string {\n\t//ultimo caso\n\tif len(vet) == 1 {\n\t\treturn fmt.Sprintf(\"%d\", vet[0])\n\t}\n\t//outros casos\n\treturn fmt.Sprintf(\"%d, \", vet[0]) + tostrrecu(vet[1:])\n}\n\nfunc tostrrev(vet []int) string {\n\tif len(vet) == 0 {\n\t\treturn \"[]\"\n\t}\n\treturn \"[\" + tostrrevrecu(vet) + \"]\"\n}\nfunc tostrrevrecu(vet []int) string {\n\tif len(vet) == 1 {\n\t\treturn fmt.Sprintf(\"%d\", vet[0])\n\t}\n\t//msm coisa, soq pega o id do ultimo caso\n\tultid := len(vet) - 1\n\treturn fmt.Sprintf(\"%d, \", vet[ultid]) + tostrrevrecu(vet[:ultid])\n}\n\n// reverse: inverte os elementos do slice\nfunc reverse(vet []int) {\n\t//quando o espa\u00e7amento acaba, o vetor tbm\n\tif len(vet) <= 1 {\n\t\treturn\n\t}\n\t//troca as pontas\n\tvetori := vet[0]\n\tvet[0] = vet[len(vet)-1]\n\tvet[len(vet)-1] = vetori\n\t///reduz o espacamento do vetor a cada giro\n\treverse(vet[1 : len(vet)-1])\n}\n\n// sum: soma dos elementos do slice\nfunc sum(vet []int) int {\n\t//se 0, 0\n\tif len(vet) == 0 {\n\t\treturn 0\n\t}\n\t//faz a soma recu\n\treturn vet[0] + sum(vet[1:])\n}\n\n// mult: produto dos elementos do slice\nfunc mult(vet []int) int {\n\t//se 0, 0\n\tif len(vet) == 0 {\n\t\treturn 1\n\t}\n\t//faz a msm coisa da soma recu soq *\n\treturn vet[0] * mult(vet[1:])\n}\n\n// min: retorna o \u00edndice e valor do menor valor\n// crie uma fun\u00e7\u00e3o recursiva interna do modelo\n// var rec func(v []int) (int, int)\n// para fazer uma recurs\u00e3o que retorna valor e \u00edndice\nfunc min(vet []int) int {\n\t// if 0 -1\n\tif len(vet) == 0 {\n\t\treturn -1\n\t}\n\tvar rec func(v []int) (int, int)\n\t//recursiva interna\n\trec = func(v []int) (int, int) {\n\t\t// se so 1\n\t\tif len(v) == 1 {\n\t\t\treturn 0, v[0]\n\t\t}\n\t\t//recursiva\n\t\tidres, valres := rec(v[1:])\n\t\tidslide := idres + 1\n\n\t\t///compara\n\t\tif v[0] <= valres {\n\t\t\treturn 0, v[0]\n\t\t} else {\n\t\t\treturn idslide, valres\n\t\t}\n\t}\n\tindiceFinal, _ := rec(vet)\n\treturn indiceFinal\n}\n\nfunc main() {\n\tvar vet []int\n\tscanner := bufio.NewScanner(os.Stdin)\n\tfor {\n\t\tif !scanner.Scan() {\n\t\t\tbreak\n\t\t}\n\t\tline := scanner.Text()\n\t\targs := strings.Fields(line)\n\t\tfmt.Println(\"$\" + line)\n\n\t\tswitch args[0] {\n\t\tcase \"end\":\n\t\t\treturn\n\t\tcase \"read\":\n\t\t\tvet = nil\n\t\t\tfor _, arg := range args[1:] {\n\t\t\t\tif val, err := strconv.Atoi(arg); err == nil {\n\t\t\t\t\tvet = append(vet, val)\n\t\t\t\t}\n\t\t\t}\n\t\tcase \"tostr\":\n\t\t\tfmt.Println(tostr(vet))\n\t\tcase \"torev\":\n\t\t\tfmt.Println(tostrrev(vet))\n\t\tcase \"reverse\":\n\t\t\treverse(vet)\n\t\tcase \"sum\":\n\t\t\tfmt.Println(sum(vet))\n\t\tcase \"mult\":\n\t\t\tfmt.Println(mult(vet))\n\t\tcase \"min\":\n\t\t\tfmt.Println(min(vet))\n\t\tdefault:\n\t\t\tfmt.Println(\"fail: comando invalido\")\n\t\t}\n\t}\n}\n",
+            "lines": "143"
+        }
+    ]
+}
