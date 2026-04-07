@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-06_21-25-26",
+            "content": "@@ -151,10 +151,8 @@\n d %25d\n-%5Cn\n %22, r\n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-04-06_21-25-48",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc restoeprint(num int) {\n\tif num == 0 {\n\t\treturn\n\t}\n\tresu := num / 2\n\trest := num % 2\n\trestoeprint(resu)\n\tfmt.Printf(\"%d %d\\n\", resu, rest)\n}\nfunc main() {\n\tvar num int\n\tfmt.Scan(&num)\n\trestoeprint(num)\n}\n",
+            "lines": "18"
+        }
+    ]
+}

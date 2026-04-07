@@ -26,3 +26,8 @@
 2026-04-06 20:11:01, EXEC, v:1, k:ed@treinando, mode:FULL, rate:83
 2026-04-06 20:16:40, EXEC, v:1, k:ed@treinando, mode:FULL, rate:100, size:152
 2026-04-06 20:24:38, EXEC, v:1, k:ed@treinando, mode:FULL, rate:100, size:143
+2026-04-06 21:14:01, MOVE, v:1, k:ed@resto, mode:DOWN
+2026-04-06 21:14:02, MOVE, v:1, k:ed@resto, mode:PICK
+2026-04-06 21:25:26, EXEC, v:1, k:ed@resto, mode:FULL, rate:0, size:18
+2026-04-06 21:25:30, EXEC, v:1, k:ed@resto, mode:FULL, rate:0
+2026-04-06 21:25:48, EXEC, v:1, k:ed@resto, mode:FULL, rate:100, size:18
