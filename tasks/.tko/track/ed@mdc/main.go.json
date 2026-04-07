@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-06_21-37-27",
+            "content": "@@ -55,22 +55,8 @@\n t %7B%0A\n-%09var resu int%0A\n %09if \n@@ -68,20 +68,20 @@\n 0 %7B%0A%09%09re\n-su =\n+turn\n  b%0A%09%7D%0A%09i\n@@ -99,12 +99,12 @@\n %09%09re\n-su =\n+turn\n  a%0A%09\n@@ -121,16 +121,17 @@\n = a %25 b%0A\n+%0A\n %09mdc(b, \n@@ -141,21 +141,8 @@\n to)%0A\n-%09return resu%0A\n %7D%0A%0Af\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-04-06_21-42-01",
+            "content": "@@ -51,16 +51,30 @@\n ) int %7B%0A\n+%09var resu int%0A\n %09if a ==\n@@ -82,20 +82,20 @@\n 0 %7B%0A%09%09re\n-turn\n+su =\n  b%0A%09%7D%0A%09i\n@@ -109,20 +109,20 @@\n 0 %7B%0A%09%09re\n-turn\n+su =\n  a%0A%09%7D%0A%09r\n@@ -140,15 +140,8 @@\n  b%0A%09\n-return \n mdc(\n@@ -150,16 +150,29 @@\n  resto)%0A\n+%09return resu%0A\n %7D%0A%0Afunc \n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-04-06_21-48-26",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc mdc(a, b int) int {\n\tif a == 0 {\n\t\treturn b\n\t}\n\tif b == 0 {\n\t\treturn a\n\t}\n\tresto := a % b\n\treturn mdc(b, resto)\n}\n\nfunc main() {\n\tvar a, b int\n\tfmt.Scan(&a, &b)\n\tfmt.Println(mdc(a, b))\n}\n",
+            "lines": "22"
+        }
+    ]
+}
