@@ -1,0 +1,59 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-14_11-08-34",
+            "content": "@@ -144,20 +144,21 @@\n %5B%5Dint, t\n-figu\n+album\n )%0A%09repet\n@@ -178,20 +178,21 @@\n %5B%5Dint, t\n-figu\n+album\n )%0A%09quant\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-14_11-09-30",
+            "content": "@@ -325,26 +325,17 @@\n petidas%5B\n-quantrepet\n+i\n %5D = atua\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-14_11-10-12",
+            "content": "@@ -152,10 +152,8 @@\n figu\n--1\n )%0A%09r\n@@ -544,16 +544,31 @@\n )%0A%09%09%7D%0A%09%7D\n+%0A%09fmt.Println()\n %0A%0A%09temno\n@@ -721,13 +721,22 @@\n %0A%09%7D%0A\n-    if\n+%0A%09fmt.Println()\n %0A%7D%0A\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-14_11-12-25",
+            "content": "@@ -559,25 +559,25 @@\n mnoalbum := \n-0\n+1\n %0A%09for i := 0\n@@ -703,71 +703,18 @@\n )%0A%09%09\n-%09temnoalbum++%0A%09%09%7D%0A%09%7D%0A%09if temnoalbum == 0 %7B%0A%09%09fmt.Println(%22N%22)%0A%09%7D\n+%7D%0A%09%7D%0A    if\n %0A%7D%0A\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-14_11-15-22",
+            "content": "@@ -148,16 +148,18 @@\n t, tfigu\n+-1\n )%0A%09repet\n@@ -551,13 +551,9 @@\n %0A%09%7D%0A\n-%09/*%0A%09\n+%0A\n %09tem\n@@ -565,17 +565,16 @@\n um := 0%0A\n-%09\n %09for i :\n@@ -597,17 +597,16 @@\n i++ %7B%0A%09%09\n-%09\n if barue\n@@ -625,25 +625,24 @@\n oalbum %7B%0A%09%09%09\n-%09\n temnoalbum++\n@@ -642,17 +642,16 @@\n album++%0A\n-%09\n %09%09%09conti\n@@ -656,17 +656,16 @@\n tinue%0A%09%09\n-%09\n %7D else %7B\n@@ -665,17 +665,16 @@\n  else %7B%0A\n-%09\n %09%09%09fmt.P\n@@ -700,17 +700,16 @@\n %5Bi%5D)%0A%09%09%09\n-%09\n temnoalb\n@@ -719,16 +719,13 @@\n +%0A%09%09\n-%09\n %7D%0A\n-%09\n %09%7D%0A\n-%09\n %09if \n@@ -742,17 +742,16 @@\n  == 0 %7B%0A\n-%09\n %09%09fmt.Pr\n@@ -766,13 +766,8 @@\n %22)%0A%09\n-%09%7D%0A%09*/\n+%7D\n %0A%7D%0A\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-04-14_11-16-12",
+            "content": "@@ -545,16 +545,20 @@\n %0A%09%09%7D%0A%09%7D%0A\n+%09/*%0A\n %09%09temnoa\n@@ -568,27 +568,8 @@\n m :=\n- 1%0A        falta :=\n  0%0A%09\n@@ -651,35 +651,8 @@\n m++%0A\n-                falta := 1%0A\n %09%09%09%09\n@@ -740,13 +740,18 @@\n %09if \n-falta\n+temnoalbum\n  == \n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-14_11-19-45",
+            "content": "@@ -545,16 +545,17 @@\n %0A%09%09%7D%0A%09%7D%0A\n+%09\n %09temnoal\n@@ -563,17 +563,24 @@\n um := 1%0A\n-%09\n+        \n falta :=\n@@ -578,24 +578,25 @@\n  falta := 0%0A\n+%09\n %09for i := 0;\n@@ -613,16 +613,17 @@\n ; i++ %7B%0A\n+%09\n %09%09if bar\n@@ -644,24 +644,25 @@\n oalbum %7B%0A%09%09%09\n+%09\n temnoalbum++\n@@ -662,19 +662,32 @@\n album++%0A\n-%09%09%09\n+                \n falta :=\n@@ -692,16 +692,17 @@\n := 1%0A%09%09%09\n+%09\n continue\n@@ -702,16 +702,17 @@\n ontinue%0A\n+%09\n %09%09%7D else\n@@ -713,24 +713,25 @@\n %7D else %7B%0A%09%09%09\n+%09\n fmt.Printf(%22\n@@ -750,16 +750,17 @@\n %5Bi%5D)%0A%09%09%09\n+%09\n temnoalb\n@@ -764,23 +764,26 @@\n album++%0A\n+%09\n %09%09%7D%0A\n+%09\n %09%7D%0A\n+%09\n %09if falt\n@@ -783,32 +783,33 @@\n if falta == 0 %7B%0A\n+%09\n %09%09fmt.Println(%22N\n@@ -812,12 +812,17 @@\n n(%22N%22)%0A%09\n-%7D\n+%09%7D%0A%09*/\n %0A%7D%0A\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-14_11-19-57",
+            "content": "@@ -660,16 +660,17 @@\n %09%09falta \n+:\n = 1%0A%09%09%09c\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-14_11-20-08",
+            "content": "@@ -549,24 +549,8 @@\n %0A%09%7D%0A\n-%09fmt.Println()%0A%0A\n %09tem\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-14_11-20-39",
+            "content": "@@ -562,10 +562,8 @@\n tln(\n-%22%22\n )%0A%0A%09\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-04-14_11-20-53",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar talbum, tfigu int\n\tfmt.Scan(&talbum, &tfigu)\n\n\t//doalbum := make([]int, talbum)\n\tbaruel := make([]int, tfigu)\n\trepetidas := make([]int, tfigu)\n\tquantrepet := 0\n\tvar atualfig int\n\tanterfig := 0\n\tfor i := 0; i < tfigu; i++ {\n\t\tfmt.Scan(atualfig)\n\t\tif anterfig == atualfig {\n\t\t\trepetidas[quantrepet] = atualfig\n\t\t\tquantrepet++\n\t\t}\n\t\tbaruel[i] = atualfig\n\t\tanterfig = atualfig\n\t}\n\tif quantrepet == 0 {\n\t\tfmt.Println(\"N\")\n\t} else {\n\t\tfor i := 0; i < quantrepet; i++ {\n\t\t\tfmt.Printf(\"%d \", repetidas[i])\n\t\t}\n\t}\n\tfmt.Println(\"\")\n\n\ttemnoalbum := 1\n\tfalta := 0\n\tfor i := 0; i < tfigu; i++ {\n\t\tif baruel[i] == temnoalbum {\n\t\t\ttemnoalbum++\n\t\t\tfalta = 1\n\t\t\tcontinue\n\t\t} else {\n\t\t\tfmt.Printf(\"%d \", baruel[i])\n\t\t\ttemnoalbum++\n\t\t}\n\t}\n\tif falta == 0 {\n\t\tfmt.Println(\"N\")\n\t}\n}\n",
+            "lines": "48"
+        }
+    ]
+}

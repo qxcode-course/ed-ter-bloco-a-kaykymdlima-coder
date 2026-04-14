@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-14_10-36-23",
+            "content": "@@ -231,19 +231,12 @@\n %5D ==\n- (-1 *\n  ani\n-)\n  %7B%0A%09\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-14_10-36-56",
+            "content": "@@ -420,21 +420,6 @@\n em)%0A\n-%09fmt.Println()%0A\n %7D%0A\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-14_10-37-18",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar N int\n\tfmt.Scan(&N)\n\tdescasados := make([]int, N)\n\tvar ani int\n\tcontagem := 0\n\tencontrado := 0\n\tfor i := 0; i < N; i++ {\n\t\tfmt.Scan(&ani)\n\t\tfor k := 0; k < N; k++ {\n\t\t\tif descasados[k] == (-1 * ani) {\n\t\t\t\tdescasados[k] = 0\n\t\t\t\tcontagem++\n\t\t\t\tencontrado = 1\n\t\t\t}\n\t\t}\n\t\tif encontrado == 1 {\n\t\t\tencontrado = 0\n\t\t} else {\n\t\t\tdescasados[i] = ani\n\t\t}\n\t}\n\tfmt.Printf(\"%d\", contagem)\n\tfmt.Println()\n}\n",
+            "lines": "29"
+        }
+    ]
+}

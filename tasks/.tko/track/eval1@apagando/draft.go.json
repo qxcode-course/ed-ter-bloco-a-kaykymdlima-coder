@@ -1,0 +1,74 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-14_11-46-39",
+            "content": "@@ -107,10 +107,8 @@\n tini\n--1\n )%0A%09i\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-14_11-46-53",
+            "content": "@@ -103,16 +103,18 @@\n quantini\n+-1\n )%0A%09ident\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-14_11-47-12",
+            "content": "@@ -103,18 +103,16 @@\n quantini\n--1\n )%0A%09ident\n@@ -385,10 +385,8 @@\n iram\n--1\n )%0A%09s\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-14_11-47-28",
+            "content": "@@ -548,18 +548,16 @@\n antfinal\n--1\n )%0A%09k := \n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-14_11-47-53",
+            "content": "@@ -733,18 +733,16 @@\n antfinal\n--1\n ; i++ %7B%0A\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-14_11-48-37",
+            "content": "@@ -103,16 +103,18 @@\n quantini\n+-1\n )%0A%09ident\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-14_11-50-29",
+            "content": "@@ -731,16 +731,18 @@\n antfinal\n+-1\n ; i++ %7B%0A\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-14_11-50-47",
+            "content": "@@ -546,16 +546,18 @@\n antfinal\n+-1\n )%0A%09k := \n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-14_11-50-58",
+            "content": "@@ -381,16 +381,18 @@\n ntsairam\n+-1\n )%0A%09saiu \n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-14_11-51-13",
+            "content": "@@ -548,10 +548,8 @@\n inal\n--1\n )%0A%09k\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-14_11-51-34",
+            "content": "@@ -729,18 +729,16 @@\n antfinal\n--1\n ; i++ %7B%0A\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-14_11-51-47",
+            "content": "@@ -694,21 +694,8 @@\n k++%0A\n-%09%09%09%09continue%0A\n %09%09%09%7D\n@@ -729,16 +729,18 @@\n antfinal\n+-1\n ; i++ %7B%0A\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-14_11-52-25",
+            "content": "@@ -544,16 +544,18 @@\n antfinal\n+-1\n )%0A%09k := \n@@ -690,16 +690,29 @@\n %09%09%09%09k++%0A\n+%09%09%09%09continue%0A\n %09%09%09%7D%0A%09%09%7D\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-14_11-52-46",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar quantini int\n\tfmt.Scan(&quantini)\n\tfila := make([]int, quantini)\n\tidentificador := 0\n\tfor i := 0; i < quantini; i++ {\n\t\tfmt.Scan(&identificador)\n\t\tfila[i] = identificador\n\t}\n\tvar quantsairam int\n\tfmt.Scan(&quantsairam)\n\t/*esqueci a identa\u00e7\u00e3o do map, :(, ent vou fzer com vetores)\n\tsairam := map[int]int\n\t*/\n\tsairam := make([]int, quantsairam)\n\tsaiu := 0\n\tfor i := 0; i < quantsairam; i++ {\n\t\tfmt.Scan(&saiu)\n\t\tsairam[i] = saiu\n\t}\n\tquantfinal := quantini - quantsairam\n\tfilafinal := make([]int, quantfinal)\n\tk := 0\n\tfor i := 0; i < quantini; i++ {\n\t\tfor j := 0; j < quantsairam; j++ {\n\t\t\tif fila[i] == sairam[j] {\n\t\t\t\tfilafinal[k] = fila[i]\n\t\t\t\tk++\n\t\t\t}\n\t\t}\n\t}\n\tfor i := 0; i < quantfinal; i++ {\n\t\tfmt.Printf(\"%d\", filafinal[i])\n\t}\n\n}\n",
+            "lines": "40"
+        }
+    ]
+}
