@@ -10,7 +10,7 @@ func main() {
 	var fig int
 	figant := -1
 	qrepet := 0
-
+	//pega figurinhas
 	for i := 0; i < tfig; i++ {
 		fmt.Scan(&fig)
 		album[fig] = 1
