@@ -15,12 +15,21 @@ sources:
   quests: null
   tasks: null
 expanded:
+- ed@vector
+- ed@list
+- ed@linear
+- ed@tree
+- ed@backtrack
+- ed@basic
+- ed@dfs
 - ed@rec
+- ed@bfs
+- ed@map_set
 flags:
   inbox: inbox
-  panel: help
-  show_panel: 'true'
+  panel: graph
+  show_panel: 'false'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@treinando
+selected: ed@fractais_png

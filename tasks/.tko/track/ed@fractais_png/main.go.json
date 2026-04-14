@@ -1,0 +1,59 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-08_11-46-51",
+            "content": "@@ -112,159 +112,8 @@\n 1)%0A%7D\n-%0Afunc circulo(pen Pen, raio float64) %7B%0A%09if raio %3C 10 %7B%0A%09%09return%0A%09%7D%0A%09pen.DrawCircle(raio)%0A%09for range 6 %7B%0A%09%09pen.Walk(raio)%0A%09%09circulo(pen, raio+0.3)%0A%0A%09%7D%0A%7D\n %0A%0Afu\n@@ -292,18 +292,18 @@\n on(250, \n-2\n 5\n+0\n 0) // mo\n@@ -348,19 +348,19 @@\n Heading(\n+9\n 0)\n- \n         \n@@ -412,16 +412,490 @@\n alk(100)\n+             // anda 100 pixels%0A%09pen.Left(30)              // dobra 30 graus para esquerda%0A%09pen.Walk(100)             // anda 100 pixels%0A%09//pen.DrawCircle(50)        // desenha um c%C3%ADrculo de raio 50%0A%09pen.Right(60) // gira para direita 60 graus%0A%09pen.Walk(150)%0A%09for range 10 %7B%0A%09%09pen.Up()%0A%09%09pen.Walk(30) // anda sem riscar%0A%09%09pen.Down()%0A%0A%09%09//pen.DrawCircle(10) //desenha um circulo pequeno%0A%0A%09%09pen.Up()%0A%09%09pen.Walk(-30) // volta sem riscar%0A%09%09pen.Down()%0A%0A%09%09pen.Left(36) // gira%0A%09%7D%0A\n %0A%09pen.Sa\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-11_16-05-13",
+            "content": "@@ -568,61 +568,8 @@\n 00)%0A\n-%09pen.SetRGB(0, 0, 200)%0A%09pen.Right(90)%0A%09pen.Walk(100)%0A\n %09pen\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-11_16-11-56",
+            "content": "@@ -279,17 +279,8 @@\n ) %7B%0A\n-%09//EMBUA%0A\n %09pen\n@@ -356,16 +356,16 @@\n  altura%0A\n+\n %09pen.Set\n@@ -442,15 +442,15 @@\n ion(\n-100, 10\n+250, 25\n 0) /\n@@ -553,24 +553,8 @@\n ima%0A\n-%09for range 4 %7B%0A%09\n %09pen\n@@ -563,14 +563,36 @@\n alk(\n-3\n+1\n 00)%0A%09\n+pen.SetRGB(0, 0, 200)%0A\n %09pen\n@@ -603,17 +603,29 @@\n ht(90)%0A%09\n-%7D\n+pen.Walk(100)\n %0A%09pen.Sa\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-04-11_16-16-28",
+            "content": "@@ -563,264 +563,53 @@\n ma%0A%09\n-dista := 300.0%0A%09corx := 250.0%0A%09corz := 0.0%0A%09for dista %3E 0 %7B%0A%09%09pen.Walk(dista) //move%0A%09%09dista = dista - 10%0A%09%09pen.Right(90) //vira%0A%09%09pen.SetRGB(corx, 0, corz)%0A%09%09if corx == 250 %7B%0A%09%09%09corx = 0%0A%09%09%09corz = 250%0A%09%09%7D else if corx == 0 %7B%0A%09%09%09corx = 250%0A%09%09%09corz = 0%0A%09%09%7D%0A\n+for range 4 %7B%0A%09%09pen.Walk(300)%0A%09%09pen.Right(90)\n %0A%09%7D%0A\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-11_16-24-13",
+            "content": "@@ -662,17 +662,18 @@\n dista - \n-5\n+10\n %0A%09%09pen.R\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-04-11_16-25-55",
+            "content": "@@ -602,17 +602,16 @@\n  := 0.0%0A\n-%0A\n %09for dis\n@@ -623,38 +623,8 @@\n 0 %7B%0A\n-%09%09pen.SetLineWidth(dista / 2)%0A\n %09%09pe\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-04-11_16-40-36",
+            "content": "@@ -620,16 +620,45 @@\n a %3E 0 %7B%0A\n+%09%09pen.SetLineWidth(dista / 2)\n %0A%09%09pen.W\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-04-11_16-40-51",
+            "content": "@@ -624,38 +624,8 @@\n 0 %7B%0A\n-%09%09pen.SetLineWidth(dista / 30)\n %0A%09%09p\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-04-11_16-41-16",
+            "content": "@@ -647,17 +647,17 @@\n dista / \n-5\n+3\n 0)%0A%09%09pen\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-04-11_16-41-31",
+            "content": "@@ -868,13 +868,12 @@\n NG(%22\n-embua\n+tree\n .png\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-04-11_16-55-26",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math/rand\"\n)\n\nfunc randInt(min, max int) int {\n\treturn min + rand.Intn(max-min+1)\n}\nfunc circulo(pen Pen, raio float64) {\n\tif raio < 10 {\n\t\treturn\n\t}\n\tpen.DrawCircle(raio)\n\tfor range 6 {\n\t\tpen.Walk(raio)\n\t\tcirculo(pen, raio+0.3)\n\n\t}\n}\n\nfunc main() {\n\t//EMBUA\n\tpen := NewPen(500, 500)   // cria um canvas de 500 de largura por 500 de altura\n\tpen.SetRGB(255, 0, 0)     // muda a cor do pincel para vermelho\n\tpen.SetPosition(100, 100) // move o pincel para x 250, y 500\n\tpen.SetHeading(0)         // coloca o pincel apontando para cima\n\tdista := 300.0\n\tcorx := 250.0\n\tcorz := 0.0\n\n\tfor dista > 0 {\n\t\tpen.SetLineWidth(dista / 50)\n\t\tpen.Walk(dista) //move\n\t\tdista = dista - 5\n\t\tpen.Right(90) //vira\n\t\tpen.SetRGB(corx, 0, corz)\n\t\tif corx == 250 {\n\t\t\tcorx = 0\n\t\t\tcorz = 250\n\t\t} else if corx == 0 {\n\t\t\tcorx = 250\n\t\t\tcorz = 0\n\t\t}\n\n\t}\n\tpen.SavePNG(\"embua.png\")\n\tfmt.Println(\"PNG file created successfully.\")\n}\n",
+            "lines": "50"
+        }
+    ]
+}
