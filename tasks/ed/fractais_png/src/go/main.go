@@ -5,9 +5,9 @@ import (
 	"math/rand"
 )
 
-func ri(min, max int) int {
-	return float64 (rand. intn(
-
+func ri(inf, sup int) float64 {
+	return float64(rand.Intn(sup-inf+1) + inf)
+}
 func circulo(pen Pen, raio float64) {
 	if raio < 10 {
 		return
@@ -32,35 +32,28 @@ func embua(pen *Pen, dista float64) {
 	dista = dista - 5
 	pen.Right(90) //vira
 	embua(pen, dista)
-	/*
-			corx := 250.0
-			corz := 0.0
-		pen.SetRGB(corx, 0, corz)
-			if corx == 250 {
-				corx = 0
-				corz = 250
-			} else if corx == 0 {
-				corx = 250
-				corz = 0
-			}
-
-		}
-	*/
 }
 
 func arvore(pen *Pen, dista float64) {
 	if dista < 10 {
+		if ri(0, 200) == 0 {
+			pen.SetRGB(255, 0, 0)
+			pen.FillCircle(10)
+		}
 		return
 	}
-	ang := 25.0
-	fator := 0.8
+
+	angDI := ri(20, 26)
+	angES := ri(20, 26)
 	pen.SetLineWidth(dista / 10)
+	pen.SetRGB(101, 67, 33)
 	pen.Walk(dista)
-	pen.Right(ang)
-	arvore(pen, dista*(ri(80,85)/100))
-	pen.Right(-2 * ang)
-	arvore(pen, dista*fator)
-	pen.Right(ang)
+	pen.Right(angDI)
+	pen.SetRGB(0, 67, 0)
+	arvore(pen, dista*(ri(80, 85)/100))
+	pen.Right(-(angDI + angES))
+	arvore(pen, dista*(ri(80, 85)/100))
+	pen.Right(angES)
 	pen.Walk(-dista)
 
 }
@@ -70,7 +63,7 @@ func main() {
 	pen.SetHeading(90)        // coloca o pincel apontando para cima
 	pen.SetPosition(250, 500) // move o pincel para x 250, y 500
 
-	dista := 90.0
+	dista := 75.0
 	//embua(pen, dista)
 	arvore(pen, dista)
 	pen.SavePNG("tree.png")

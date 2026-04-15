@@ -22,17 +22,16 @@ sources:
   quests: null
   tasks: null
 expanded:
+- ed@vector
+- ed@linear
+- ed@tree
 - ed@basic
+- ed@dfs
+- ed@map_set
+- ed@bfs
+- ed@list
 - ed@rec
 - ed@backtrack
-- ed@bfs
-- eval1@teste-1
-- ed@vector
-- ed@dfs
-- ed@list
-- ed@tree
-- ed@map_set
-- ed@linear
 flags:
   inbox: inbox
   panel: graph
@@ -40,4 +39,4 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: eval1@triangulo
+selected: ed@fractais_png

@@ -112,8 +112,113 @@
         },
         {
             "label": "2026-04-14_09-42-13",
-            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math/rand\"\n)\n\nfunc randInt(min, max int) int {\n\treturn min + rand.Intn(max-min+1)\n}\nfunc circulo(pen Pen, raio float64) {\n\tif raio < 10 {\n\t\treturn\n\t}\n\tpen.DrawCircle(raio)\n\tfor range 6 {\n\t\tpen.Walk(raio)\n\t\tcirculo(pen, raio+0.3)\n\n\t}\n}\nfunc embua(pen *Pen, dista float64) {\n\tif dista < 0 {\n\t\treturn\n\t}\n\tpen.SetLineWidth(dista / 50)\n\tpen.SetRGB(255, 0, 0) // muda a cor do pincel para vermelho\n\tpen.Walk(dista)       //move\n\tpen.SavePNG(\"embua.png\")\n\tvar dummy rune\n\tfmt.Scanf(\"%c\", &dummy)\n\tdista = dista - 5\n\tpen.Right(90) //vira\n\tembua(pen, dista)\n\t/*\n\t\t\tcorx := 250.0\n\t\t\tcorz := 0.0\n\t\tpen.SetRGB(corx, 0, corz)\n\t\t\tif corx == 250 {\n\t\t\t\tcorx = 0\n\t\t\t\tcorz = 250\n\t\t\t} else if corx == 0 {\n\t\t\t\tcorx = 250\n\t\t\t\tcorz = 0\n\t\t\t}\n\n\t\t}\n\t*/\n}\n\nfunc arvore(pen *Pen, dista float64) {\n\tif dista < 10 {\n\t\treturn\n\t}\n\tang := 25.0\n\tfator := 0.8\n\tpen.SetLineWidth(dista / 10)\n\tpen.Walk(dista)\n\tpen.Right(ang)\n\tarvore(pen, dista*fator)\n\tpen.Right(-2 * ang)\n\tarvore(pen, dista*fator)\n\tpen.Right(ang)\n\tpen.Walk(-dista)\n\n}\n\nfunc main() {\n\tpen := NewPen(500, 500)   // cria um canvas de 500 de largura por 500 de altura\n\tpen.SetHeading(90)        // coloca o pincel apontando para cima\n\tpen.SetPosition(250, 500) // move o pincel para x 250, y 500\n\n\tdista := 90.0\n\t//embua(pen, dista)\n\tarvore(pen, dista)\n\tpen.SavePNG(\"tree.png\")\n\tfmt.Println(\"PNG file created successfully.\")\n}\n",
+            "content": "@@ -49,31 +49,32 @@\n nc r\n-i(\n+andInt(m\n in\n-f\n , \n-sup\n+max\n  int) \n-float64\n+int\n  %7B%0A%09\n@@ -84,16 +84,14 @@\n urn \n-float64(\n+min + \n rand\n@@ -100,25 +100,18 @@\n ntn(\n-sup-\n+max-m\n in\n-f\n +1)\n- + inf)\n %0A%7D%0Af\n@@ -574,16 +574,195 @@\n  dista)%0A\n+%09/*%0A%09%09%09corx := 250.0%0A%09%09%09corz := 0.0%0A%09%09pen.SetRGB(corx, 0, corz)%0A%09%09%09if corx == 250 %7B%0A%09%09%09%09corx = 0%0A%09%09%09%09corz = 250%0A%09%09%09%7D else if corx == 0 %7B%0A%09%09%09%09corx = 250%0A%09%09%09%09corz = 0%0A%09%09%09%7D%0A%0A%09%09%7D%0A%09*/%0A\n %7D%0A%0Afunc \n@@ -837,16 +837,30 @@\n := 25.0%0A\n+%09fator := 0.8%0A\n %09pen.Set\n@@ -933,32 +933,21 @@\n , dista*\n-(ri(80, 85)/100)\n+fator\n )%0A%09pen.R\n@@ -984,24 +984,13 @@\n sta*\n-(ri(80, 85)/100)\n+fator\n )%0A%09p\n",
             "lines": "78"
+        },
+        {
+            "label": "2026-04-15_20-12-35",
+            "content": "@@ -662,17 +662,17 @@\n ang := 2\n-8\n+5\n .0%0A%09pen.\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-04-15_20-17-51",
+            "content": "@@ -662,17 +662,17 @@\n ang := 2\n-0\n+8\n .0%0A%09pen.\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-04-15_20-18-00",
+            "content": "@@ -662,17 +662,17 @@\n ang := 2\n-5\n+0\n .0%0A%09pen.\n@@ -1100,10 +1100,10 @@\n  := \n-87\n+90\n .0%0A%09\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-04-15_20-18-26",
+            "content": "@@ -1100,10 +1100,10 @@\n  := \n-99\n+87\n .0%0A%09\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-04-15_20-18-39",
+            "content": "@@ -1100,10 +1100,10 @@\n  := \n-70\n+99\n .0%0A%09\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-04-15_20-18-59",
+            "content": "@@ -1097,17 +1097,17 @@\n sta := 7\n-5\n+0\n .0%0A%09//em\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-04-15_20-19-08",
+            "content": "@@ -657,50 +657,20 @@\n %0A%09%7D%0A\n-%0A\n %09ang\n-DI\n  := \n-ri(20, 26)%0A%09angES := ri(20, 26)\n+25.0\n %0A%09pe\n@@ -727,18 +727,16 @@\n ight(ang\n-DI\n )%0A%09arvor\n@@ -782,23 +782,15 @@\n ht(-\n-(angDI +\n+2 *\n  ang\n-ES)\n )%0A%09a\n@@ -816,32 +816,32 @@\n i(80, 85)/100))%0A\n+\n %09pen.Right(angES\n@@ -842,10 +842,8 @@\n (ang\n-ES\n )%0A%09p\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-04-15_20-22-52",
+            "content": "@@ -645,56 +645,8 @@\n 0 %7B%0A\n-%09%09if ri(0, 25) == 5 %7B%0A%09%09%09pen.FillCircle(10)%0A%09%09%7D%0A\n %09%09re\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-04-15_20-25-38",
+            "content": "@@ -652,18 +652,18 @@\n f ri(0, \n+2\n 5\n-0\n ) == 5 %7B\n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-04-15_20-25-59",
+            "content": "@@ -659,17 +659,17 @@\n  50) == \n-0\n+5\n  %7B%0A%09%09%09pe\n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-04-15_20-26-12",
+            "content": "@@ -652,18 +652,17 @@\n f ri(0, \n-10\n+5\n 0) == 0 \n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-04-15_20-26-22",
+            "content": "@@ -652,17 +652,17 @@\n f ri(0, \n-2\n+1\n 00) == 0\n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-04-15_20-26-38",
+            "content": "@@ -668,33 +668,8 @@\n 0 %7B%0A\n-%09%09%09pen.SetRGB(255, 0, 0)%0A\n %09%09%09p\n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-04-15_20-27-39",
+            "content": "@@ -804,29 +804,8 @@\n 10)%0A\n-%09pen.SetRGB(0, 0, 0)%0A\n %09pen\n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-04-15_20-28-37",
+            "content": "@@ -815,17 +815,16 @@\n tRGB(0, \n-5\n 0, 0)%0A%09p\n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-04-15_20-38-32",
+            "content": "@@ -819,17 +819,16 @@\n (0, 50, \n-5\n 0)%0A%09pen.\n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-04-15_20-38-52",
+            "content": "@@ -812,18 +812,16 @@\n .SetRGB(\n-10\n 0, 50, 5\n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-04-15_20-39-01",
+            "content": "@@ -817,16 +817,17 @@\n GB(1\n-5\n+0\n 0, \n-7\n 5\n+0\n , \n+5\n 0)%0A%09\n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-04-15_20-39-34",
+            "content": "@@ -817,18 +817,17 @@\n GB(1\n-01, 67, 33\n+50, 75, 0\n )%0A%09p\n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-04-15_20-40-14",
+            "content": "@@ -864,30 +864,8 @@\n DI)%0A\n-%09pen.SetRGB(0, 67, 0)%0A\n %09arv\n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-04-15_20-41-08",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math/rand\"\n)\n\nfunc ri(inf, sup int) float64 {\n\treturn float64(rand.Intn(sup-inf+1) + inf)\n}\nfunc circulo(pen Pen, raio float64) {\n\tif raio < 10 {\n\t\treturn\n\t}\n\tpen.DrawCircle(raio)\n\tfor range 6 {\n\t\tpen.Walk(raio)\n\t\tcirculo(pen, raio+0.3)\n\n\t}\n}\nfunc embua(pen *Pen, dista float64) {\n\tif dista < 0 {\n\t\treturn\n\t}\n\tpen.SetLineWidth(dista / 50)\n\tpen.SetRGB(255, 0, 0) // muda a cor do pincel para vermelho\n\tpen.Walk(dista)       //move\n\tpen.SavePNG(\"embua.png\")\n\tvar dummy rune\n\tfmt.Scanf(\"%c\", &dummy)\n\tdista = dista - 5\n\tpen.Right(90) //vira\n\tembua(pen, dista)\n}\n\nfunc arvore(pen *Pen, dista float64) {\n\tif dista < 10 {\n\t\tif ri(0, 200) == 0 {\n\t\t\tpen.SetRGB(255, 0, 0)\n\t\t\tpen.FillCircle(10)\n\t\t}\n\t\treturn\n\t}\n\n\tangDI := ri(20, 26)\n\tangES := ri(20, 26)\n\tpen.SetLineWidth(dista / 10)\n\tpen.SetRGB(101, 67, 33)\n\tpen.Walk(dista)\n\tpen.Right(angDI)\n\tpen.SetRGB(0, 67, 0)\n\tarvore(pen, dista*(ri(80, 85)/100))\n\tpen.Right(-(angDI + angES))\n\tarvore(pen, dista*(ri(80, 85)/100))\n\tpen.Right(angES)\n\tpen.Walk(-dista)\n\n}\n\nfunc main() {\n\tpen := NewPen(500, 500)   // cria um canvas de 500 de largura por 500 de altura\n\tpen.SetHeading(90)        // coloca o pincel apontando para cima\n\tpen.SetPosition(250, 500) // move o pincel para x 250, y 500\n\n\tdista := 75.0\n\t//embua(pen, dista)\n\tarvore(pen, dista)\n\tpen.SavePNG(\"tree.png\")\n\tfmt.Println(\"PNG file created successfully.\")\n}\n",
+            "lines": "71"
         }
     ]
 }
