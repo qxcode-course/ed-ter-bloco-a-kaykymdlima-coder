@@ -9,12 +9,20 @@ import (
 )
 
 func processa(vet []int) {
-	if len(vet) == 1 {
+	//parada
+	if len(vet) == 0 {
 		return
 	}
+	//vetor auxiliar menor
+	prox := make([]int, len(vet)-1)
+	for i := 0; i < len(vet)-1; i++ {
+		//guarda dois bicho do vet original
+		prox[i] = vet[i] + vet[i+1]
+	}
+	//chama prox, e ai reduz o tamain ao msm tempo q soma
+	processa(prox)
+	//imprime ao contrario uhuhuhuhuhuhuhuhuhhhhhhuhuuh
 	fmt.Println("[ " + Join(vet, " ") + " ]")
-	_ = vet
-
 	// 1. defina o ponto de parada
 	// 2. monte o vetor auxiliar com os resultados das somas
 	// 3. chame recursivamente a função processa para o vetor auxiliar
