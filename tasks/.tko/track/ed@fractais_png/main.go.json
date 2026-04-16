@@ -217,8 +217,43 @@
         },
         {
             "label": "2026-04-15_20-41-08",
-            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math/rand\"\n)\n\nfunc ri(inf, sup int) float64 {\n\treturn float64(rand.Intn(sup-inf+1) + inf)\n}\nfunc circulo(pen Pen, raio float64) {\n\tif raio < 10 {\n\t\treturn\n\t}\n\tpen.DrawCircle(raio)\n\tfor range 6 {\n\t\tpen.Walk(raio)\n\t\tcirculo(pen, raio+0.3)\n\n\t}\n}\nfunc embua(pen *Pen, dista float64) {\n\tif dista < 0 {\n\t\treturn\n\t}\n\tpen.SetLineWidth(dista / 50)\n\tpen.SetRGB(255, 0, 0) // muda a cor do pincel para vermelho\n\tpen.Walk(dista)       //move\n\tpen.SavePNG(\"embua.png\")\n\tvar dummy rune\n\tfmt.Scanf(\"%c\", &dummy)\n\tdista = dista - 5\n\tpen.Right(90) //vira\n\tembua(pen, dista)\n}\n\nfunc arvore(pen *Pen, dista float64) {\n\tif dista < 10 {\n\t\tif ri(0, 200) == 0 {\n\t\t\tpen.SetRGB(255, 0, 0)\n\t\t\tpen.FillCircle(10)\n\t\t}\n\t\treturn\n\t}\n\n\tangDI := ri(20, 26)\n\tangES := ri(20, 26)\n\tpen.SetLineWidth(dista / 10)\n\tpen.SetRGB(101, 67, 33)\n\tpen.Walk(dista)\n\tpen.Right(angDI)\n\tpen.SetRGB(0, 67, 0)\n\tarvore(pen, dista*(ri(80, 85)/100))\n\tpen.Right(-(angDI + angES))\n\tarvore(pen, dista*(ri(80, 85)/100))\n\tpen.Right(angES)\n\tpen.Walk(-dista)\n\n}\n\nfunc main() {\n\tpen := NewPen(500, 500)   // cria um canvas de 500 de largura por 500 de altura\n\tpen.SetHeading(90)        // coloca o pincel apontando para cima\n\tpen.SetPosition(250, 500) // move o pincel para x 250, y 500\n\n\tdista := 75.0\n\t//embua(pen, dista)\n\tarvore(pen, dista)\n\tpen.SavePNG(\"tree.png\")\n\tfmt.Println(\"PNG file created successfully.\")\n}\n",
+            "content": "@@ -130,25 +130,24 @@\n circulo(pen \n-*\n Pen, raio fl\n@@ -1286,23 +1286,22 @@\n dista)%0A%09\n-circulo\n+arvore\n (pen, di\n@@ -1323,16 +1323,11 @@\n NG(%22\n-floconev\n+tre\n e.pn\n",
             "lines": "71"
+        },
+        {
+            "label": "2026-04-15_20-56-27",
+            "content": "@@ -1030,150 +1030,8 @@\n %0A%7D%0A%0A\n-func fractal(pen *Pen, dista float64) %7B%0A%09if dista %3C 10 %7B%0A%09%09return%0A%09%7D%0A%09pen.Walk(100)%0A%09pen.Right(90)%0A%09dista = dista - 5%0A%09fractal(pen, dista)%0A%7D%0A%0A\n func\n",
+            "lines": "71"
+        },
+        {
+            "label": "2026-04-15_21-01-12",
+            "content": "@@ -1429,23 +1429,23 @@\n dista)%0A%09\n-fractal\n+circulo\n (pen, di\n",
+            "lines": "81"
+        },
+        {
+            "label": "2026-04-15_21-01-31",
+            "content": "@@ -1351,18 +1351,18 @@\n on(250, \n-2\n 5\n+0\n 0) // mo\n",
+            "lines": "81"
+        },
+        {
+            "label": "2026-04-15_21-01-58",
+            "content": "@@ -1402,19 +1402,18 @@\n ista := \n-100\n+75\n .0%0A%09//em\n",
+            "lines": "81"
+        },
+        {
+            "label": "2026-04-15_21-02-23",
+            "content": "@@ -1044,21 +1044,22 @@\n al(p\n+en\n  *Pen, \n-radius\n+dista\n  flo\n@@ -1070,22 +1070,21 @@\n ) %7B%0A%09if \n-radius\n+dista\n  %3C 10 %7B%0A\n@@ -1100,361 +1100,76 @@\n %09%7D%0A%09\n-n := 6%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09// salva posi%C3%A7%C3%A3o atual%0A%09%09angle := float64(i) * (360.0 / float64(n))%0A%0A%09%09p.Up()%0A%09%09p.SetHeading(angle)%0A%09%09p.Walk(radius * 2) // vai at%C3%A9 a borda externa%0A%09%09p.Down()%0A%0A%09%09// chama recursivamente com raio menor%0A%09%09fractal(p, radius/2)%0A%0A%09%09// volta pro centro%0A%09%09p.Up()%0A%09%09p.SetHeading(angle + 180)%0A%09%09p.Walk(radius * 2)%0A%09%09p.Down()%0A%09%7D\n+pen.Walk(100)%0A%09pen.Right(90)%0A%09dista = dista - 5%0A%09fractal(pen, dista)\n %0A%7D%0A%0A\n",
+            "lines": "81"
+        },
+        {
+            "label": "2026-04-15_21-16-55",
+            "content": "@@ -1040,18 +1040,16 @@\n ractal(p\n-en\n  *Pen, r\n@@ -1129,16 +1129,40 @@\n ; i++ %7B%0A\n+%09%09// salva posi%C3%A7%C3%A3o atual\n %0A%09%09angle\n@@ -1199,26 +1199,24 @@\n t64(n))%0A%0A%09%09p\n-en\n .Up()%0A%09%09pen.\n@@ -1204,34 +1204,32 @@\n ))%0A%0A%09%09p.Up()%0A%09%09p\n-en\n .SetHeading(angl\n@@ -1230,26 +1230,24 @@\n g(angle)%0A%09%09p\n-en\n .Walk(radius\n@@ -1278,26 +1278,24 @@\n  externa%0A%09%09p\n-en\n .Down()%0A%0A%09%09/\n@@ -1343,18 +1343,16 @@\n ractal(p\n-en\n , radius\n@@ -1381,18 +1381,16 @@\n ntro%0A%09%09p\n-en\n .Up()%0A%09%09\n@@ -1390,18 +1390,16 @@\n Up()%0A%09%09p\n-en\n .SetHead\n@@ -1414,26 +1414,24 @@\n e + 180)%0A%09%09p\n-en\n .Walk(radius\n@@ -1439,18 +1439,16 @@\n * 2)%0A%09%09p\n-en\n .Down()%0A\n@@ -1687,17 +1687,18 @@\n ista := \n-5\n+10\n 0.0%0A%09//e\n",
+            "lines": "96"
+        },
+        {
+            "label": "2026-04-15_21-18-24",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math/rand\"\n)\n\nfunc ri(inf, sup int) float64 {\n\treturn float64(rand.Intn(sup-inf+1) + inf)\n}\nfunc circulo(pen *Pen, raio float64) {\n\tif raio < 10 {\n\t\treturn\n\t}\n\tpen.DrawCircle(raio)\n\tfor range 6 {\n\t\tpen.Walk(raio)\n\t\tcirculo(pen, raio+0.3)\n\n\t}\n}\nfunc embua(pen *Pen, dista float64) {\n\tif dista < 0 {\n\t\treturn\n\t}\n\tpen.SetLineWidth(dista / 50)\n\tpen.SetRGB(255, 0, 0) // muda a cor do pincel para vermelho\n\tpen.Walk(dista)       //move\n\tpen.SavePNG(\"embua.png\")\n\tvar dummy rune\n\tfmt.Scanf(\"%c\", &dummy)\n\tdista = dista - 5\n\tpen.Right(90) //vira\n\tembua(pen, dista)\n}\n\nfunc arvore(pen *Pen, dista float64) {\n\tif dista < 10 {\n\t\tif ri(0, 200) == 0 {\n\t\t\tpen.SetRGB(255, 0, 0)\n\t\t\tpen.FillCircle(10)\n\t\t}\n\t\treturn\n\t}\n\n\tangDI := ri(20, 26)\n\tangES := ri(20, 26)\n\tpen.SetLineWidth(dista / 10)\n\tpen.SetRGB(101, 67, 33)\n\tpen.Walk(dista)\n\tpen.Right(angDI)\n\tpen.SetRGB(0, 67, 0)\n\tarvore(pen, dista*(ri(80, 85)/100))\n\tpen.Right(-(angDI + angES))\n\tarvore(pen, dista*(ri(80, 85)/100))\n\tpen.Right(angES)\n\tpen.Walk(-dista)\n\n}\n\nfunc fractal(pen *Pen, radius float64) {\n\tif radius < 10 {\n\t\treturn\n\t}\n\tn := 6\n\tfor i := 0; i < n; i++ {\n\n\t\tangle := float64(i) * (360.0 / float64(n))\n\n\t\tpen.Up()\n\t\tpen.SetHeading(angle)\n\t\tpen.Walk(radius * 2) // vai at\u00e9 a borda externa\n\t\tpen.Down()\n\n\t\t// chama recursivamente com raio menor\n\t\tfractal(pen, radius/2)\n\n\t\t// volta pro centro\n\t\tpen.Up()\n\t\tpen.SetHeading(angle + 180)\n\t\tpen.Walk(radius * 2)\n\t\tpen.Down()\n\t}\n}\n\nfunc main() {\n\tpen := NewPen(500, 500)   // cria um canvas de 500 de largura por 500 de altura\n\tpen.SetHeading(90)        // coloca o pincel apontando para cima\n\tpen.SetPosition(250, 250) // move o pincel para x 250, y 500\n\n\tdista := 50.0\n\t//embua(pen, dista)\n\tfractal(pen, dista)\n\tpen.SavePNG(\"floconeve.png\")\n\tfmt.Println(\"PNG file created successfully.\")\n}\n",
+            "lines": "96"
         }
     ]
 }

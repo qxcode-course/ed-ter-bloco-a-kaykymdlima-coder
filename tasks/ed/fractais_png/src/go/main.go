@@ -8,7 +8,7 @@ import (
 func ri(inf, sup int) float64 {
 	return float64(rand.Intn(sup-inf+1) + inf)
 }
-func circulo(pen Pen, raio float64) {
+func circulo(pen *Pen, raio float64) {
 	if raio < 10 {
 		return
 	}
@@ -58,14 +58,20 @@ func arvore(pen *Pen, dista float64) {
 
 }
 
+func fractal(pen *Pen, rad float64) {
+	if rad < 10 {
+		return
+	}
+}
+
 func main() {
 	pen := NewPen(500, 500)   // cria um canvas de 500 de largura por 500 de altura
 	pen.SetHeading(90)        // coloca o pincel apontando para cima
-	pen.SetPosition(250, 500) // move o pincel para x 250, y 500
+	pen.SetPosition(250, 250) // move o pincel para x 250, y 500
 
-	dista := 75.0
+	dista := 50.0
 	//embua(pen, dista)
-	arvore(pen, dista)
-	pen.SavePNG("tree.png")
+	fractal(pen, dista)
+	pen.SavePNG("floconeve.png")
 	fmt.Println("PNG file created successfully.")
 }

@@ -22,21 +22,21 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@vector
 - ed@linear
-- ed@tree
-- ed@basic
-- ed@dfs
-- ed@map_set
 - ed@bfs
-- ed@list
+- ed@basic
+- ed@vector
+- ed@map_set
+- ed@tree
 - ed@rec
+- ed@dfs
 - ed@backtrack
+- ed@list
 flags:
   inbox: inbox
   panel: graph
-  show_panel: 'false'
+  show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@fractais_png
+selected: ed@map_set
