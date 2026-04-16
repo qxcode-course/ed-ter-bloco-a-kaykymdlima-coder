@@ -1,0 +1,14 @@
+2026-04-16 07:42:38, MOVE, v:1, k:ed@triangulo, mode:DOWN
+2026-04-16 07:42:39, MOVE, v:1, k:ed@triangulo, mode:PICK
+2026-04-16 07:42:54, EXEC, v:1, k:ed@triangulo, mode:FULL, rate:0, size:48
+2026-04-16 07:42:38, MOVE, v:1, k:ed@triangulo, mode:EDIT
+2026-04-16 07:42:38, MOVE, v:1, k:ed@triangulo, mode:EDIT
+2026-04-16 08:01:24, MOVE, v:1, k:ed@triangulo, mode:BACK
+2026-04-16 08:01:32, MOVE, v:1, k:ed@labirinto, mode:DOWN
+2026-04-16 08:01:34, MOVE, v:1, k:ed@labirinto, mode:PICK
+2026-04-16 08:01:15, MOVE, v:1, k:ed@triangulo, mode:EDIT
+2026-04-16 08:01:32, MOVE, v:1, k:ed@labirinto, mode:EDIT
+2026-04-16 08:01:32, MOVE, v:1, k:ed@labirinto, mode:EDIT
+2026-04-16 08:01:32, MOVE, v:1, k:ed@labirinto, mode:EDIT
+2026-04-16 08:02:36, EXEC, v:1, k:ed@labirinto, mode:FULL, rate:0, size:66
+2026-04-16 08:02:45, EXEC, v:1, k:ed@labirinto, mode:FULL, rate:0

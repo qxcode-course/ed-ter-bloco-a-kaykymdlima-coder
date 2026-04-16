@@ -23,20 +23,20 @@ sources:
   tasks: null
 expanded:
 - ed@linear
-- ed@bfs
-- ed@basic
-- ed@vector
 - ed@map_set
-- ed@tree
+- ed@bfs
+- ed@vector
 - ed@rec
-- ed@dfs
+- ed@basic
 - ed@backtrack
+- ed@dfs
+- ed@tree
 - ed@list
 flags:
   inbox: inbox
   panel: graph
-  show_panel: 'true'
+  show_panel: 'false'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@map_set
+selected: ed@labirinto
