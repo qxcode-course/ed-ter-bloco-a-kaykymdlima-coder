@@ -6,8 +6,26 @@ import (
 	"os"
 )
 
+func eh_valido(grid [][]rune, l, c int, x rune) bool {
+	nlin := len(grid)
+	ncol := len(grid[0])
+	if (c < 0) || (c >= ncol) || (l < 0) || (l >= nlin) {
+		return false
+	}
+	return grid[l][c] == x
+}
 func burnTrees(grid [][]rune, l, c int) {
-	_, _, _ = mat, l, c
+	if !eh_valido(grid, l, c, '#') {
+		return
+	}
+	//showGrid(grid)
+	grid[l][c] = 'o'
+	burnTrees(grid, l, c-1)
+	burnTrees(grid, l, c+1)
+	burnTrees(grid, l+1, c)
+	burnTrees(grid, l-1, c)
+	//grid[l][c] = '.'
+	//showGrid(grid)
 	// se estiver fora da matriz, retorne
 	// se o elemento atual não for uma arvore, retorne
 	// queime a arvore colocando o caractere 'o' na posição atual

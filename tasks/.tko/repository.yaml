@@ -22,16 +22,16 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@map_set
-- ed@rec
-- ed@bfs
 - ed@basic
-- ed@backtrack
-- ed@tree
-- ed@list
-- ed@vector
-- ed@dfs
+- ed@bfs
 - ed@linear
+- ed@dfs
+- ed@tree
+- ed@vector
+- ed@rec
+- ed@backtrack
+- ed@map_set
+- ed@list
 flags:
   inbox: inbox
   panel: graph
@@ -39,4 +39,4 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@triangulo
+selected: ed@labirinto
