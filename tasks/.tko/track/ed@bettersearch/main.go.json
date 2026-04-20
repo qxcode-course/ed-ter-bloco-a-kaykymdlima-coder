@@ -1,0 +1,54 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-19_12-55-56",
+            "content": "@@ -124,10 +124,8 @@\n  %7B%0A%09\n-//\n _, _\n@@ -144,38 +144,8 @@\n lue%0A\n-%09ini := 0%0A%09fim := len(slice)%0A%0A\n %09ret\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-19_17-00-39",
+            "content": "@@ -176,129 +176,8 @@\n e)%0A%0A\n-%09for ini %3C fim %7B%0A%09%09meio := (ini + fim) / 2%0A%0A%09%09if meio == value %7B%0A%09%09%09return true, meio%0A%09%09%7D else if meio %3C value %7B%0A%0A%09%09%7D%0A%09%7D%0A\n %09ret\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-04-19_17-03-30",
+            "content": "@@ -289,62 +289,8 @@\n e %7B%0A\n-%09%09%09ini = meio%0A%09%09%7D else if meio %3E value %7B%0A%09%09%09fim = meio\n %0A%09%09%7D\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-04-19_17-07-51",
+            "content": "@@ -302,12 +302,8 @@\n meio\n- + 1\n %0A%09%09%7D\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-19_17-09-03",
+            "content": "@@ -221,27 +221,20 @@\n 2%0A%0A%09%09if \n-slice%5B\n meio\n-%5D\n  == valu\n@@ -270,27 +270,20 @@\n else if \n-slice%5B\n meio\n-%5D\n  %3C value\n@@ -319,19 +319,12 @@\n  if \n-slice%5B\n meio\n-%5D\n  %3E v\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-19_17-10-35",
+            "content": "@@ -210,19 +210,11 @@\n i + \n-(\n fim\n- - ini)\n ) / \n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-19_17-11-46",
+            "content": "@@ -199,16 +199,17 @@\n meio := \n+(\n ini + (f\n@@ -214,14 +214,19 @@\n (fim\n--\n+ - \n ini)\n-/\n+) / \n 2%0A%0A%09\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-19_17-12-09",
+            "content": "@@ -203,22 +203,24 @@\n  := \n-(\n ini + \n+(\n fim\n-) / \n+-ini)/\n 2%0A%0A%09\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-19_17-16-53",
+            "content": "@@ -387,19 +387,17 @@\n  false, \n-ini\n+0\n %0A%7D%0A%0Afunc\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-19_17-21-48",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc BetterSearch(slice []int, value int) (bool, int) {\n\t//_, _ = slice, value\n\tini := 0\n\tfim := len(slice)\n\n\tfor ini < fim {\n\t\tmeio := (ini + fim) / 2\n\n\t\tif slice[meio] == value {\n\t\t\treturn true, meio\n\t\t} else if slice[meio] < value {\n\t\t\tini = meio + 1\n\t\t} else if slice[meio] > value {\n\t\t\tfim = meio\n\t\t}\n\t}\n\treturn false, ini\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tparts := strings.Split(scanner.Text(), \" \")\n\tslice := []int{}\n\tfor _, elem := range parts[1 : len(parts)-1] {\n\t\tvalue, _ := strconv.Atoi(elem)\n\t\tslice = append(slice, value)\n\t}\n\tscanner.Scan()\n\tvalue, _ := strconv.Atoi(scanner.Text())\n\tfound, result := BetterSearch(slice, value)\n\tif found {\n\t\tfmt.Println(\"V\", result)\n\t} else {\n\t\tfmt.Println(\"F\", result)\n\t}\n}\n",
+            "lines": "47"
+        }
+    ]
+}

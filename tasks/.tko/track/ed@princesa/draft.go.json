@@ -2,8 +2,43 @@
     "patches": [
         {
             "label": "2026-03-24_11-01-08",
-            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\n\ti := 1\n\tfor i <= 3 {\n\t\tfmt.Println(i)\n\t\ti = i + 1\n\t}\n\n\tfor j := 0; j < 3; j++ {\n\t\tfmt.Println(j)\n\t}\n}\n",
+            "content": "@@ -39,159 +39,28 @@\n ) %7B%0A\n-%09var N, E int%0A%09fmt.Scan(&N, &E)%0A%0A%09vivos := make(%5B%5Dint, N)%0A%09espada := E - 1%0A%09tvivos := N%0A%09for i := 0; i %3C N; i++ %7B%0A%09%09vivos%5Bi%5D = i + 1%0A%09%7D%0A%09for tvivos %3E 0\n+%0A%09i := 1%0A%09for i %3C= 3\n  %7B%0A%09\n@@ -73,360 +73,74 @@\n rint\n-(%22%5B %22)%0A%09%09for \n+ln(i)%0A%09%09\n i \n-:\n = \n-0; i %3C N; i++ %7B%0A%09%09%09if vivos%5Bi%5D != 0 %7B%0A%09%09%09%09if i == espada %7B%0A%09%09%09%09%09fmt.Printf(%22%25d%3E %22, i)%0A%09%09%09%09%7D else %7B%0A%09%09%09%09%09fmt.Printf(%22%25d %22, i)%0A%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09%7D%0A%09%09fmt.Println(%22%5D%22)%0A%09%09if tvivos == 1 %7B%0A%09%09%09break%0A%09%09%7D%0A%09\n+i + 1%0A%09%7D%0A%0A\n %09for \n-i\n+j\n  := 0; \n-i %3C N; i\n+j %3C 3; j\n ++ %7B%0A%09%09\n-%09if vivos%5Bi%5D == 0 %7B%0A%09%09%09%09continue%0A%09%09%09%7D%0A%09%09%09if i == espada %7B%0A%09%09%09%09if i == N-1 %7B%0A%0A%09%09%09%09%7D%0A%09%09%09%09vivos%5Bi+1%5D = 0%0A%09%09%09%7D%0A%09%09%7D%0A%0A%09%7D%0A\n+fmt.Println(j)%0A%09%7D\n %0A%7D%0A\n",
             "lines": "16"
+        },
+        {
+            "label": "2026-04-19_22-15-23",
+            "content": "@@ -30,68 +30,104 @@\n unc \n-findNextAlive(vivos %5B%5Dint, start int) int %7B%0A%09n := len(vivos)\n+main() %7B%0A%09var N, E int%0A%09fmt.Scan(&N, &E)%0A%0A%09vivos := make(%5B%5Dint, N)%0A%09espada := E - 1%0A%09tvivos := N\n %0A%09fo\n@@ -137,17 +137,16 @@\n  := \n-1\n+0\n ; i %3C\n-= n\n+ N\n ; i+\n@@ -155,133 +155,47 @@\n %7B%0A%09%09\n-idx := (start + i) %25 n%0A%09%09if \n vivos%5Bi\n-dx\n %5D \n-!\n = \n-0 %7B%0A%09%09%09return idx%0A%09%09%7D%0A%09%7D%0A%09return -1%0A%7D%0Afunc printVivos(vivos %5B%5Dint, swordIdx int)\n+i + 1%0A%09%7D%0A%09for tvivos %3E 0\n  %7B%0A\n+%09\n %09fmt\n@@ -207,16 +207,17 @@\n t(%22%5B %22)%0A\n+%09\n %09for i :\n@@ -229,26 +229,17 @@\n i %3C \n-len(vivos)\n+N\n ; i++ %7B%0A\n %09%09if\n@@ -234,16 +234,17 @@\n ; i++ %7B%0A\n+%09\n %09%09if viv\n@@ -263,16 +263,17 @@\n %0A%09%09%09\n+%09\n if i == \n swor\n@@ -272,19 +272,18 @@\n  == \n-swordIdx\n+espada\n  %7B%0A\n+%09\n %09%09%09%09\n@@ -298,25 +298,19 @@\n tf(%22\n-%3E\n %25d\n+%3E\n  %22, \n-vivos%5Bi%5D\n+i\n )%0A\n+%09\n %09%09%09%7D\n@@ -317,24 +317,25 @@\n  else %7B%0A%09%09%09%09\n+%09\n fmt.Printf(%22\n@@ -344,30 +344,27 @@\n  %22, \n-vivos%5Bi%5D\n+i\n )%0A%09%09%09\n+%09\n %7D%0A\n+%09\n %09%09%7D%0A\n+%09\n %09%7D%0A\n+%09\n %09fmt\n@@ -381,120 +381,41 @@\n %5D%22)%0A\n-%7D%0Afunc main() %7B%0A%09var n, e int%0A%09_, err := fmt.Scan(&n, &e)%0A%09if err != nil %7B%0A%09%09return%0A\n+%09%09if tvivos == 1 %7B%0A%09%09%09break%0A%09\n %09%7D%0A%09\n-vivos := make(%5B%5Dint, n)%0A\n %09for\n@@ -427,17 +427,17 @@\n  0; i %3C \n-n\n+N\n ; i++ %7B%0A\n@@ -430,32 +430,36 @@\n  i %3C N; i++ %7B%0A%09%09\n+%09if \n vivos%5Bi%5D = i + 1\n@@ -456,279 +456,108 @@\n i%5D =\n- i + 1%0A%09%7D%0A%0A%09swordIdx := e - 1%0A%09vivosRestantes := n%0A%09printVivos(vivos, swordIdx)%0A%0A%09for vivosRestantes %3E 1 %7B%0A%09%09victimIdx := findNextAlive(vivos, swordIdx)%0A%09%09vivos%5BvictimIdx%5D = 0%0A%09%09vivosRestantes--%0A%09%09swordIdx = findNextAlive(vivos, victimIdx)%0A%09%09printVivos(vivos, swordIdx)\n+= 0 %7B%0A%09%09%09%09continue%0A%09%09%09%7D%0A%09%09%09if i == espada %7B%0A%09%09%09%09if i == N-1 %7B%0A%0A%09%09%09%09%7D%0A%09%09%09%09vivos%5Bi+1%5D = 0%0A%09%09%09%7D%0A%09%09%7D%0A\n %0A%09%7D%0A\n+%0A\n %7D%0A\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-19_22-20-31",
+            "content": "@@ -356,11 +356,11 @@\n tf(%22\n+%3E\n %25d\n-%3E\n  %22, \n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-04-19_22-20-58",
+            "content": "@@ -26,20 +26,29 @@\n %22%0A%0Afunc \n-mata\n+findNextAlive\n (vivos %5B\n@@ -57,123 +57,148 @@\n nt, \n-mo\n+sta\n rt\n-o\n  int) \n-%5B%5D\n int %7B%0A%09\n-for i := morto; i %3C len(vivos)-1; i++ %7B%0A%09%09vivos%5Bi%5D = vivos%5Bi+1%5D%0A%09%7D%0A%09return vivos%5B:len(vivos)\n+n := len(vivos)%0A%09for i := 1; i %3C= n; i++ %7B%0A%09%09idx := (start + i) %25 n%0A%09%09if vivos%5Bidx%5D != 0 %7B%0A%09%09%09return idx%0A%09%09%7D%0A%09%7D%0A%09return \n -1\n-%5D\n %0A%7D%0Af\n@@ -225,22 +225,24 @@\n  %5B%5Dint, \n-espada\n+swordIdx\n  int) %7B%0A\n@@ -302,22 +302,47 @@\n %09if \n-i == espada\n+vivos%5Bi%5D != 0 %7B%0A%09%09%09if i == swordIdx\n  %7B%0A\n+%09\n %09%09%09f\n@@ -356,11 +356,11 @@\n tf(%22\n-%3E\n %25d\n+%3E\n  %22, \n@@ -371,16 +371,17 @@\n s%5Bi%5D)%0A%09%09\n+%09\n %7D else %7B\n@@ -381,16 +381,17 @@\n  else %7B%0A\n+%09\n %09%09%09fmt.P\n@@ -413,16 +413,21 @@\n vos%5Bi%5D)%0A\n+%09%09%09%7D%0A\n %09%09%7D%0A%09%7D%0A%09\n@@ -443,17 +443,18 @@\n ln(%22%5D%22)%0A\n- \n+%7D%0A\n func mai\n@@ -474,19 +474,16 @@\n  e int%0A%09\n-if \n _, err :\n@@ -500,17 +500,20 @@\n (&n, &e)\n-;\n+%0A%09if\n  err != \n@@ -530,17 +530,16 @@\n turn%0A%09%7D%0A\n-%0A\n %09vivos :\n@@ -605,22 +605,24 @@\n  1%0A%09%7D%0A%0A%09\n-espada\n+swordIdx\n  := e - \n@@ -623,16 +623,36 @@\n = e - 1%0A\n+%09vivosRestantes := n\n %0A%09printV\n@@ -666,22 +666,25 @@\n vos,\n-espada\n+ swordIdx\n )%0A%0A%09for \n len(\n@@ -679,26 +679,30 @@\n )%0A%0A%09for \n-len(\n vivos\n-)\n+Restantes\n  %3E 1 %7B%0A%09\n@@ -719,109 +719,125 @@\n  := \n-(swordIdx + 1) %25 len(vivos)%0A%0A%09%09vivos = matar(vivos, victimIdx)%0A%0A%09%09swordIdx = victimIdx %25 len(vivos)%0A%0A\n+findNextAlive(vivos, swordIdx)%0A%09%09vivos%5BvictimIdx%5D = 0%0A%09%09vivosRestantes--%0A%09%09swordIdx = findNextAlive(vivos, victimIdx)\n %0A%09%09p\n@@ -857,14 +857,16 @@\n os, \n-espada\n+swordIdx\n )%0A%09%7D\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-04-19_22-37-12",
+            "content": "@@ -375,18 +375,17 @@\n ln(%22%5D%22)%0A\n-%7D%0A\n+ \n func mai\n@@ -564,33 +564,32 @@\n rintVivos(vivos,\n- \n espada)%0A%0A%09for le\n@@ -719,16 +719,17 @@\n vivos)%0A%0A\n+%0A\n %09%09printV\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-19_22-37-30",
+            "content": "@@ -611,27 +611,30 @@\n %7B%0A%09%09\n-proxmort := (espada\n+victimIdx := (swordIdx\n  + 1\n@@ -663,24 +663,25 @@\n s = mata\n+r\n (vivos, \n proxmort\n@@ -676,38 +676,42 @@\n os, \n-proxmort)%0A%0A%09%09espada = proxmort\n+victimIdx)%0A%0A%09%09swordIdx = victimIdx\n  %25 l\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-19_22-48-45",
+            "content": "@@ -295,11 +295,11 @@\n tf(%22\n+%3E\n %25d\n-%3E\n  %22, \n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-19_22-49-05",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc mata(vivos []int, morto int) []int {\n\tfor i := morto; i < len(vivos)-1; i++ {\n\t\tvivos[i] = vivos[i+1]\n\t}\n\treturn vivos[:len(vivos)-1]\n}\nfunc printVivos(vivos []int, espada int) {\n\tfmt.Print(\"[ \")\n\tfor i := 0; i < len(vivos); i++ {\n\t\tif i == espada {\n\t\t\tfmt.Printf(\"%d> \", vivos[i])\n\t\t} else {\n\t\t\tfmt.Printf(\"%d \", vivos[i])\n\t\t}\n\t}\n\tfmt.Println(\"]\")\n}\nfunc main() {\n\tvar n, e int\n\tif _, err := fmt.Scan(&n, &e); err != nil {\n\t\treturn\n\t}\n\n\tvivos := make([]int, n)\n\tfor i := 0; i < n; i++ {\n\t\tvivos[i] = i + 1\n\t}\n\n\tespada := e - 1\n\n\tprintVivos(vivos, espada)\n\n\tfor len(vivos) > 1 {\n\t\tproxmort := (espada + 1) % len(vivos)\n\n\t\tvivos = mata(vivos, proxmort)\n\n\t\tespada = proxmort % len(vivos)\n\n\t\tprintVivos(vivos, espada)\n\t}\n}\n",
+            "lines": "46"
         }
     ]
 }

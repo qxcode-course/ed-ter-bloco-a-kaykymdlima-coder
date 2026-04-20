@@ -1,0 +1,49 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-19_17-43-56",
+            "content": "@@ -215,57 +215,8 @@\n e %7B%0A\n-%09%09%09if slice%5Bmeio+1%5D == value %7B%0A%09%09%09%09continue%0A%09%09%09%7D%0A\n %09%09%09r\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-19_17-45-50",
+            "content": "@@ -270,19 +270,20 @@\n %09return \n-ini\n+meio\n %0A%09%09%7D els\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-04-19_17-46-08",
+            "content": "@@ -202,10 +202,8 @@\n meio\n-+1\n %5D ==\n@@ -218,32 +218,8 @@\n %0A%09%09%09\n-ini = meio + 2%0A%09%09%7D else \n if s\n@@ -219,32 +219,34 @@\n %09%09%09if slice%5Bmeio\n++1\n %5D == value %7B%0A%09%09%09\n@@ -242,16 +242,34 @@\n value %7B%0A\n+%09%09%09%09continue%0A%09%09%09%7D%0A\n %09%09%09retur\n@@ -270,20 +270,19 @@\n %09return \n-meio\n+ini\n %0A%09%09%7D els\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-04-19_18-00-52",
+            "content": "@@ -190,32 +190,34 @@\n %0A%09%09if slice%5Bmeio\n++1\n %5D == value %7B%0A%09%09%09\n@@ -220,18 +220,32 @@\n %0A%09%09%09\n-for %7B%0A%09%09%09%09\n+ini = meio + 2%0A%09%09%7D else \n if s\n@@ -273,64 +273,19 @@\n %0A%09%09%09\n-%09%09ini = meio + 1%0A%09%09%09%09%09continue%0A%09%09%09%09%7D%0A%09%09%09%09return ini%0A%09%09%09%7D\n+return meio\n %0A%09%09%7D\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-19_18-09-44",
+            "content": "@@ -293,38 +293,10 @@\n %09%09%09%7D\n- else %7B%0A%09%09%09%09%09break%0A%09%09%09%09%7D%0A%09%09%09%7D\n %0A\n+%09\n %09%09%09r\n@@ -305,16 +305,21 @@\n urn ini%0A\n+%09%09%09%7D%0A\n %09%09%7D else\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-04-19_18-11-05",
+            "content": "@@ -222,19 +222,8 @@\n for \n-meio %3C fim \n %7B%0A%09%09\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-04-19_18-12-17",
+            "content": "@@ -266,20 +266,19 @@\n  %7B%0A%09%09%09%09%09\n-meio\n+ini\n  = meio \n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-04-19_18-13-02",
+            "content": "@@ -187,22 +187,8 @@\n / 2%0A\n-%09%09pos := meio%0A\n %09%09if\n@@ -222,35 +222,18 @@\n for \n-i := meio + 1; i %3C fim; i++\n+meio %3C fim\n  %7B%0A%09\n@@ -244,17 +244,20 @@\n f slice%5B\n-i\n+meio\n %5D == val\n@@ -270,15 +270,37 @@\n %09%09%09%09\n-pos = i\n+meio = meio + 1%0A%09%09%09%09%09continue\n %0A%09%09%09\n@@ -345,11 +345,11 @@\n urn \n-pos\n+ini\n %0A%09%09%7D\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-04-19_18-20-13",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc MagicSearch(slice []int, value int) int {\n\tini := 0\n\tfim := len(slice)\n\n\tfor ini < fim {\n\t\tmeio := (ini + fim) / 2\n\t\tpos := meio\n\t\tif slice[meio] == value {\n\t\t\tfor i := meio + 1; i < fim; i++ {\n\t\t\t\tif slice[i] == value {\n\t\t\t\t\tpos = i\n\t\t\t\t} else {\n\t\t\t\t\tbreak\n\t\t\t\t}\n\t\t\t}\n\t\t\treturn pos\n\t\t} else if slice[meio] < value {\n\t\t\tini = meio + 1\n\t\t} else if slice[meio] > value {\n\t\t\tfim = meio\n\t\t}\n\t}\n\treturn ini\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tparts := strings.Fields(scanner.Text())\n\tslice := make([]int, 0, 1)\n\tfor _, elem := range parts[1 : len(parts)-1] {\n\t\tvalue, _ := strconv.Atoi(elem)\n\t\tslice = append(slice, value)\n\t}\n\n\tscanner.Scan()\n\tvalue, _ := strconv.Atoi(scanner.Text())\n\tresult := MagicSearch(slice, value)\n\tfmt.Println(result)\n}\n",
+            "lines": "50"
+        }
+    ]
+}
