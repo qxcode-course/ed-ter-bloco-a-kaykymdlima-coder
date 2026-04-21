@@ -3,6 +3,8 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"os"
+	"strconv"
 	"strings"
 )
 
@@ -20,7 +22,12 @@ func NewVector(capacity int) *Vector {
 	}
 }
 
-
+func (v *Vector) Status() string {
+	return fmt.Sprintf("size: %v capacity: %v", v.size, v.capacity)
+}
+func (v *Vector) String() string {
+	return "[" + Join(v.data[0:v.size], ", ") + "]"
+}
 func Join(slice []int, sep string) string {
 	if len(slice) == 0 {
 		return ""
@@ -37,7 +44,7 @@ func main() {
 	var line, cmd string
 	scanner := bufio.NewScanner(os.Stdin)
 
-	// v := NewVector(0)
+	v := NewVector(0)
 	for {
 		fmt.Print("$")
 		if !scanner.Scan() {
@@ -55,17 +62,17 @@ func main() {
 		case "end":
 			return
 		case "init":
-			// value, _ := strconv.Atoi(parts[1])
-			// v = NewVector(value)
+			value, _ := strconv.Atoi(parts[1])
+			v = NewVector(value)
 		case "push":
 			// for _, part := range parts[1:] {
 			// 	value, _ := strconv.Atoi(part)
 			// 	v.PushBack(value)
 			// }
 		case "show":
-			// fmt.Println(v)
+			fmt.Println(v)
 		case "status":
-			// fmt.Println(v.Status())
+			fmt.Println(v.Status())
 		case "pop":
 			// err := v.PopBack()
 			// if err != nil {
@@ -114,7 +121,7 @@ func main() {
 			// if err != nil {
 			// 	fmt.Println(err)
 			// }
-			// 
+			//
 		case "reserve":
 			// newCapacity, _ := strconv.Atoi(parts[1])
 			// v.Reserve(newCapacity)
