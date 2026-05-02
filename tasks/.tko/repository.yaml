@@ -23,15 +23,15 @@ sources:
   tasks: null
 expanded:
 - ed@basic
-- ed@vector
-- ed@tree
-- ed@backtrack
-- ed@bfs
 - ed@list
+- ed@bfs
+- ed@backtrack
 - ed@rec
-- ed@linear
-- ed@map_set
+- ed@tree
+- ed@vector
 - ed@dfs
+- ed@map_set
+- ed@linear
 flags:
   inbox: inbox
   panel: graph
@@ -39,5 +39,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@vetbuild
-selected_index: 24
+selected: ed@multiset
+selected_index: 26
