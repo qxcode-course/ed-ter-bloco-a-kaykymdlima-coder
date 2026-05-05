@@ -16,6 +16,14 @@ type Iterator struct {
 	data  []int
 	index int
 }
+type ReverseIterator struct {
+	data  []int
+	index int
+}
+type CyclicIterator struct {
+	data  []int
+	index int
+}
 
 func NewMyList(values []int) *MyList {
 	return &MyList{data: values}
@@ -63,11 +71,11 @@ func main() {
 			}
 			fmt.Println("]")
 		case "reverse":
-			// fmt.Print("[ ")
-			// for it := mylist.ReverseIterator(); it.HasNext(); {
-			// 	fmt.Printf("%v ", it.Next())
-			// }
-			// fmt.Println("]")
+			fmt.Print("[ ")
+			for it := mylist.ReverseIterator(); it.HasNext(); {
+				fmt.Printf("%v ", it.Next())
+			}
+			fmt.Println("]")
 		case "cyclic":
 			// qtd, _ := strconv.Atoi(args[1])
 			// fmt.Print("[ ")
