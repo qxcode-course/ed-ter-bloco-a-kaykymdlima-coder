@@ -33,9 +33,15 @@ func (e *Editor) KeyLeft() {
 
 func (e *Editor) KeyEnter() {
 	nova := NewList[rune]()
+	for n := e.cursor; n != e.line.Value.End(); {
+		next := n.Next()
+		nova.Insert(nova.End(), n.Value)
+		e.line.Value.Erase(n)
+		n = next
+	}
 	e.lines.Insert(e.line.Next(), nova)
 	e.line = e.line.next
-
+	e.cursor = nova.Front()
 }
 
 func (e *Editor) KeyRight() {
@@ -51,20 +57,66 @@ func (e *Editor) KeyRight() {
 }
 
 func (e *Editor) KeyUp() {
-
+	if e.line == e.lines.Front() {
+		return
+	}
+	atual := e.line.Value.IndexOf(e.cursor)
+	e.line = e.line.Prev()
+	e.cursor = e.line.Value.Front()
+	for i := 0; i < atual && e.cursor != e.line.Value.End(); i++ {
+		e.cursor = e.cursor.Next()
+	}
 }
 
 func (e *Editor) KeyDown() {
+	if e.line == e.lines.Back() {
+		return
+	}
+	atual := e.line.Value.IndexOf(e.cursor)
+	e.line = e.line.Next()
+	e.cursor = e.line.Value.Front()
+	for i := 0; i < atual && e.cursor != e.line.Value.End(); i++ {
+		e.cursor = e.cursor.Next()
+	}
 }
 
-func (e *Editor) KeyBackspace(b rune) {
-	e.cursor = e.line.Value.Insert(e.cursor, b)
-	e.cursor = e.cursor.Next()
+func (e *Editor) KeyBackspace() {
+	if e.cursor != e.line.Value.Front() {
+		anterior := e.cursor.prev
+		e.line.Value.Erase(anterior)
+		return
+	}
+	if e.line == e.lines.Front() {
+		return
+	}
+	ant := e.line.Prev()
+	e.cursor = ant.Value.End()
+	for n := e.line.Value.Front(); n != e.line.Value.End(); {
+		next := n.Next()
+		ant.Value.Insert(ant.Value.End(), n.Value)
+		e.line.Value.Erase(n)
+		n = next
+	}
+	e.lines.Erase(e.line)
+	e.line = e.line.Prev()
 }
 
-func (e *Editor) KeyDelete(d rune) {
-	e.cursor = e.line.Value.Erase()
-
+func (e *Editor) KeyDelete() {
+	if e.cursor != e.line.Value.End() {
+		e.cursor = e.line.Value.Erase(e.cursor)
+	}
+	if e.line == e.lines.Back() {
+		return
+	}
+	prox := e.line.Next()
+	e.cursor = prox.Value.End()
+	for n := e.line.Value.Front(); n != e.line.Value.End(); {
+		next := n.Next()
+		prox.Value.Insert(prox.Value.End(), n.Value)
+		e.line.Value.Erase(n)
+		n = next
+	}
+	e.lines.Erase(e.line)
 }
 
 func main() {
