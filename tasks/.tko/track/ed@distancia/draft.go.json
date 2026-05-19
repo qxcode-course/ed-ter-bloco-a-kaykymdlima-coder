@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-18_22-29-41",
+            "content": "@@ -41,870 +41,35 @@\n     \n-var sequenciaori string%0A    var L int%0A    fmt.Scan(&sequencia, &L)%0A%0A    sequencia := %5B%5Dbyte(sequenciaori)%0A    solve(sequencia, L, 0)%0A    fmt.Println(string(seq))%0A%0A%7D%0Afunc solve(sequencia %5B%5Dbyte, ind int) bool%7B%0A    if ind == sequencia%7B%0A        return true%0A    %7D%0A        if sequencia%5Bindex%5D != '.' %7B%0A%09%09return resolver(sequencia, L, ind+1)%0A    %7D%0A    for d := byte('0'); d %3C= byte('0'+L); d++ %7B%0A        if ehVseq(seq, L, ind, dist) %7B%0A        sequencia%5Bind%5D = dist%0A            if solve(sequencia, L, ind, d)%7B%0A                return true%0A            %7D%0A        %7D%0A %0A    %7D%0A    sequencia%5Bind%5D = '.'%0A    return false%0Aq%0Afunc ehVseq(sequencia %5B%5Dbyte, L, index int, d byte) bool %7B%0A    for i := index - L; i %3C= index+L; i++ %7B%0A        if i %3E= 0 && i %3C len(seq) && i != index %7B%0A            if seq%5Bi%5D == d %7B%0A                return false%0A            %7D%0A        %7D%0A    %7D%0A    return true\n+fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-05-18_23-18-21",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -33,17 +33,20 @@\n ain() %7B%0A\n-%09\n+    \n var sequ\n@@ -61,17 +61,20 @@\n  string%0A\n-%09\n+    \n var L in\n@@ -75,17 +75,20 @@\n r L int%0A\n-%09\n+    \n fmt.Scan\n@@ -102,19 +102,19 @@\n ncia\n-ori\n , &L)%0A%0A\n-%09\n+    \n sequ\n@@ -143,17 +143,20 @@\n ciaori)%0A\n-%09\n+    \n solve(se\n@@ -170,17 +170,20 @@\n , L, 0)%0A\n-%09\n+    \n fmt.Prin\n@@ -196,22 +196,16 @@\n ring(seq\n-uencia\n ))%0A%0A%7D%0Afu\n@@ -222,35 +222,32 @@\n equencia %5B%5Dbyte,\n- L,\n  ind int) bool %7B\n@@ -244,20 +244,22 @@\n nt) bool\n- \n %7B%0A\n-%09\n+    \n if ind =\n@@ -260,20 +260,16 @@\n  ind == \n-len(\n sequenci\n@@ -269,22 +269,26 @@\n equencia\n-) %7B%0A%09%09\n+%7B%0A        \n return t\n@@ -291,20 +291,30 @@\n rn true%0A\n-%09%7D%0A%09\n+    %7D%0A        \n if seque\n@@ -321,16 +321,18 @@\n ncia%5Bind\n+ex\n %5D != '.'\n@@ -343,21 +343,24 @@\n %09return \n+re\n solve\n+r\n (sequenc\n@@ -377,17 +377,23 @@\n +1)%0A\n-%09%7D%0A%09\n+    %7D%0A    \n for \n-i\n+d\n  := \n@@ -403,17 +403,17 @@\n e('0'); \n-i\n+d\n  %3C= byte\n@@ -421,24 +421,30 @@\n '0'+L); \n-i\n+d\n ++ %7B%0A\n-%09%09\n+        \n if ehVse\n@@ -444,30 +444,24 @@\n f ehVseq(seq\n-uencia\n , L, ind, i)\n@@ -458,24 +458,32 @@\n L, ind, \n-i) %7B%0A%09%09%09\n+dist) %7B%0A        \n sequenci\n@@ -495,13 +495,25 @@\n %5D = \n-i%0A%09%09%09\n+dist%0A            \n if s\n@@ -540,43 +540,76 @@\n nd, \n-i) %7B%0A%09%09%09%09return true%0A%09%09%09%7D%0A%09%09%7D%0A%0A%09%7D%0A%09\n+d)%7B%0A                return true%0A            %7D%0A        %7D%0A %0A    %7D%0A    \n sequ\n@@ -625,17 +625,20 @@\n %5D = '.'%0A\n-%09\n+    \n return f\n@@ -642,17 +642,17 @@\n n false%0A\n-%7D\n+q\n %0Afunc eh\n@@ -676,24 +676,26 @@\n byte, L, ind\n+ex\n  int, d byte\n@@ -703,17 +703,20 @@\n  bool %7B%0A\n-%09\n+    \n for i :=\n@@ -719,16 +719,18 @@\n i := ind\n+ex\n  - L; i \n@@ -735,16 +735,18 @@\n i %3C= ind\n+ex\n +L; i++ \n@@ -747,18 +747,24 @@\n ; i++ %7B%0A\n-%09%09\n+        \n if i %3E= \n@@ -779,22 +779,16 @@\n  len(seq\n-uencia\n ) && i !\n@@ -796,67 +796,105 @@\n  ind\n+ex\n  %7B%0A\n-%09%09%09if sequencia%5Bi%5D == d %7B%0A%09%09%09%09return false%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%09\n+            if seq%5Bi%5D == d %7B%0A                return false%0A            %7D%0A        %7D%0A    %7D%0A    \n retu\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-05-18_23-26-11",
+            "content": "@@ -487,18 +487,19 @@\n , L, ind\n-+1\n+, i\n ) %7B%0A%09%09%09%09\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-05-18_23-26-50",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar sequenciaori string\n\tvar L int\n\tfmt.Scan(&sequenciaori, &L)\n\n\tsequencia := []byte(sequenciaori)\n\tsolve(sequencia, L, 0)\n\tfmt.Println(string(sequencia))\n\n}\nfunc solve(sequencia []byte, L, ind int) bool {\n\tif ind == len(sequencia) {\n\t\treturn true\n\t}\n\tif sequencia[ind] != '.' {\n\t\treturn solve(sequencia, L, ind+1)\n\t}\n\tfor i := byte('0'); i <= byte('0'+L); i++ {\n\t\tif ehVseq(sequencia, L, ind, i) {\n\t\t\tsequencia[ind] = i\n\t\t\tif solve(sequencia, L, ind+1) {\n\t\t\t\treturn true\n\t\t\t}\n\t\t}\n\n\t}\n\tsequencia[ind] = '.'\n\treturn false\n}\nfunc ehVseq(sequencia []byte, L, ind int, d byte) bool {\n\tfor i := ind - L; i <= ind+L; i++ {\n\t\tif i >= 0 && i < len(sequencia) && i != ind {\n\t\t\tif sequencia[i] == d {\n\t\t\t\treturn false\n\t\t\t}\n\t\t}\n\t}\n\treturn true\n}\n",
+            "lines": "43"
+        }
+    ]
+}
