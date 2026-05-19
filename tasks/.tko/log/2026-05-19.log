@@ -1,0 +1,15 @@
+2026-05-19 08:24:54, MOVE, v:1, k:ed@ilhas, mode:DOWN
+2026-05-19 08:25:03, MOVE, v:1, k:ed@ilhas, mode:PICK
+2026-05-19 08:24:54, MOVE, v:1, k:ed@ilhas, mode:EDIT
+2026-05-19 08:24:54, MOVE, v:1, k:ed@ilhas, mode:EDIT
+2026-05-19 08:24:54, MOVE, v:1, k:ed@ilhas, mode:EDIT
+2026-05-19 08:38:39, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:0, size:37
+2026-05-19 08:38:35, MOVE, v:1, k:ed@ilhas, mode:EDIT
+2026-05-19 08:42:56, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:0, size:43
+2026-05-19 08:43:24, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:0, size:44
+2026-05-19 08:43:31, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:0
+2026-05-19 08:43:32, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:0
+2026-05-19 08:45:56, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:100, size:52
+2026-05-19 08:45:59, MOVE, v:1, k:ed@ilhas, mode:BACK
+2026-05-19 08:45:54, MOVE, v:1, k:ed@ilhas, mode:EDIT
+2026-05-19 08:47:18, SELF, v:1, k:ed@ilhas, self:1, rate:100, study:30, concept:1, code:1, refactor:1

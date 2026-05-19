@@ -19,16 +19,16 @@ sources:
   writeable: false
   quests: null
 expanded:
+- ed@list
 - ed@tree
 - ed@map_set
-- ed@linear
 - ed@bfs
-- ed@list
-- ed@vector
 - ed@backtrack
+- ed@linear
+- ed@vector
+- ed@basic
 - ed@rec
 - ed@dfs
-- ed@basic
 flags:
   inbox: inbox
   panel: graph
@@ -36,5 +36,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@distancia
-selected_index: 26
+selected: ed@wordsearch
+selected_index: 24
