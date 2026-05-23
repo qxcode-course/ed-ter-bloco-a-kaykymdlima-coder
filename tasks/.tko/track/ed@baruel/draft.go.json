@@ -152,7 +152,12 @@
         },
         {
             "label": "2026-03-21_14-28-46",
-            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar talb, tfig int\n\tfmt.Scan(&talb, &tfig)\n\talbum := make([]int, talb+1)\n\trepet := make([]int, tfig)\n\tvar fig int\n\tfigant := -1\n\tqrepet := 0\n\n\tfor i := 0; i < tfig; i++ {\n\t\tfmt.Scan(&fig)\n\t\talbum[fig] = 1\n\t\tif fig == figant {\n\t\t\trepet[qrepet] = fig\n\t\t\tqrepet++\n\t\t}\n\t\tfigant = fig\n\t}\n\n\tif qrepet == 0 {\n\t\tfmt.Println(\"N\")\n\t} else {\n\t\tfor i := 0; i < qrepet; i++ {\n\t\t\tfmt.Printf(\"%d\", repet[i])\n\t\t\tif i < qrepet-1 {\n\t\t\t\tfmt.Print(\" \")\n\t\t\t}\n\t\t}\n\t\tfmt.Println(\"\")\n\t}\n\tfalta := 0\n\tpri := 0\n\tfor i := 1; i <= talb; i++ {\n\t\tif album[i] == 0 {\n\t\t\tif pri == 1 {\n\t\t\t\tfmt.Print(\" \")\n\t\t\t}\n\t\t\tfmt.Print(i)\n\t\t\tfalta = 1\n\t\t\tpri = 1\n\t\t}\n\t}\n\n\tif falta == 0 {\n\t\tfmt.Println(\"N\")\n\t} else {\n\t\tfmt.Println()\n\t}\n}\n",
+            "content": "@@ -181,26 +181,8 @@\n = 0%0A\n-%09//pega figurinhas\n %0A%09fo\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-05-23_20-12-23",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar talb, tfig int\n\tfmt.Scan(&talb, &tfig)\n\talbum := make([]int, talb+1)\n\trepet := make([]int, tfig)\n\tvar fig int\n\tfigant := -1\n\tqrepet := 0\n\t//pega figurinhas\n\tfor i := 0; i < tfig; i++ {\n\t\tfmt.Scan(&fig)\n\t\talbum[fig] = 1\n\t\tif fig == figant {\n\t\t\trepet[qrepet] = fig\n\t\t\tqrepet++\n\t\t}\n\t\tfigant = fig\n\t}\n\n\tif qrepet == 0 {\n\t\tfmt.Println(\"N\")\n\t} else {\n\t\tfor i := 0; i < qrepet; i++ {\n\t\t\tfmt.Printf(\"%d\", repet[i])\n\t\t\tif i < qrepet-1 {\n\t\t\t\tfmt.Print(\" \")\n\t\t\t}\n\t\t}\n\t\tfmt.Println(\"\")\n\t}\n\tfalta := 0\n\tpri := 0\n\tfor i := 1; i <= talb; i++ {\n\t\tif album[i] == 0 {\n\t\t\tif pri == 1 {\n\t\t\t\tfmt.Print(\" \")\n\t\t\t}\n\t\t\tfmt.Print(i)\n\t\t\tfalta = 1\n\t\t\tpri = 1\n\t\t}\n\t}\n\n\tif falta == 0 {\n\t\tfmt.Println(\"N\")\n\t} else {\n\t\tfmt.Println()\n\t}\n}\n",
             "lines": "53"
         }
     ]

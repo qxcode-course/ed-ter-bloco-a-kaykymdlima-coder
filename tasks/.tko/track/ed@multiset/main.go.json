@@ -1,0 +1,114 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-23_18-19-34",
+            "content": "@@ -42,19 +42,8 @@\n os%22%0A\n-%09%22strconv%22%0A\n %09%22st\n@@ -49,16 +49,16 @@\n trings%22%0A\n+\n )%0A%0Afunc \n@@ -275,477 +275,8 @@\n %0A%7D%0A%0A\n-type MultiSet struct %7B%0A%09data %5B%5Dint%0A%7D%0A%0Afunc NewMultiSet(valor int) *MultiSet %7B%0A%09return &MultiSet%7Bdata: %5B%5Dint%7B%7D%7D%0A%7D%0Afunc (k *MultiSet) Busca(valor int) int %7B%0A%09e := 0%0A%09d := len(k.data)%0A%0A%09for e %3C d %7B%0A%09%09m := (e + d) / 2%0A%09%09if k.data%5Bm%5D %3C valor %7B%0A%09%09%09e = m + 1%0A%09%09%7D else %7B%0A%09%09%09d = m%0A%09%09%7D%0A%09%7D%0A%09return e%0A%7D%0Afunc (k *MultiSet) insert(valor int) %7B%0A%09in := k.Busca(valor)%0A%09k.data = append(k.data, 0)%0A%09for i := len(k.data); i %3E in; i-- %7B%0A%09%09k.data%5Bi%5D = k.data%5Bi-1%5D%0A%09%7D%0A%09k.data%5Bin%5D = valor%0A%7D%0A%0A\n func\n@@ -347,16 +347,19 @@\n Stdin)%0A%09\n+// \n ms := Ne\n@@ -598,16 +598,19 @@\n it%22:%0A%09%09%09\n+// \n value, _\n@@ -638,16 +638,19 @@\n %5B1%5D)%0A%09%09%09\n+// \n ms = New\n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-05-23_18-59-39",
+            "content": "@@ -1,1540 +1,212 @@\n-package main%0A%0Aimport (%0A%09%22bufio%22%0A%09%22fmt%22%0A%09%22os%22%0A%09%22strconv%22%0A%09%22strings%22%0A)%0A%0Afunc Join(slice %5B%5Dint, sep string) string %7B%0A%09if len(slice) == 0 %7B%0A%09%09return %22%22%0A%09%7D%0A%09result := fmt.Sprintf(%22%25d%22, slice%5B0%5D)%0A%09for _, value := range slice%5B1:%5D %7B%0A%09%09result += sep + fmt.Sprintf(%22%25d%22, value)%0A%09%7D%0A%09return result%0A%7D%0A%0Atype MultiSet struct %7B%0A%09data %5B%5Dint%0A%7D%0A%0Afunc NewMultiSet(valor int) *MultiSet %7B%0A%09return &MultiSet%7Bdata: %5B%5Dint%7B%7D%7D%0A%7D%0Afunc (k *MultiSet) Busca(valor int) int %7B%0A%09e := 0%0A%09d := len(k.data)%0A%0A%09for e %3C d %7B%0A%09%09m := (e + d) / 2%0A%09%09if k.data%5Bm%5D %3C valor %7B%0A%09%09%09e = m + 1%0A%09%09%7D else %7B%0A%09%09%09d = m%0A%09%09%7D%0A%09%7D%0A%09return e%0A%7D%0Afunc (k *MultiSet) insert(valor int) %7B%0A%09in := k.Busca(valor)%0A%09k.data = append(k.data, 0)%0A%09for i := len(k.data) - 1; i %3E in; i-- %7B%0A%09%09k.data%5Bi%5D = k.data%5Bi-1%5D%0A%09%7D%0A%09k.data%5Bin%5D = valor%0A%7D%0A%0Afunc main() %7B%0A%09var line, cmd string%0A%09scanner := bufio.NewScanner(os.Stdin)%0A%09ms := NewMultiSet(0)%0A%0A%09for scanner.Scan() %7B%0A%09%09fmt.Print(%22$%22)%0A%09%09line = scanner.Text()%0A%09%09args := strings.Fields(line)%0A%09%09fmt.Println(line)%0A%09%09if len(args) == 0 %7B%0A%09%09%09continue%0A%09%09%7D%0A%09%09cmd = args%5B0%5D%0A%0A%09%09switch cmd %7B%0A%09%09case %22end%22:%0A%09%09%09return%0A%09%09case %22init%22:%0A%09%09%09value, _ := strconv.Atoi(args%5B1%5D)%0A%09%09%09ms = NewMultiSet(value)%0A%09%09case %22insert%22:%0A%09%09%09for _, part := range args%5B1:%5D %7B%0A%09%09%09%09value, _ := strconv.Atoi(part)%0A%09%09%09%09ms.insert(value)%0A%09%09%09%7D%0A%09%09case %22show%22:%0A%09%09case %22erase%22:%0A%09%09%09// value, _ := strconv.Atoi(args%5B1%5D)%0A%09%09case %22contains%22:%0A%09%09%09// value, _ := strconv.Atoi(args%5B1%5D)%0A%09%09case %22count%22:%0A%09%09%09// value, _ := strconv.Atoi(args%5B1%5D)%0A%09%09case %22unique%22:%0A%09%09case %22clear%22:%0A%09%09default:%0A%09%09%09fmt.Println(%22fail: comando invalido%22)%0A%09%09%7D%0A%09%7D%0A%7D\n+@@ -1156,16 +1156,19 @@%0A rt%2522:%250A%2509%2509%2509%0A+// %0A for _, p%0A@@ -1194,16 +1194,19 @@%0A :%255D %257B%250A%2509%2509%2509%0A+// %0A %2509value, %0A@@ -1236,29 +1236,11 @@%0A %250A%2509%2509%2509%0A-%2509ms.insert(value)%250A%2509%2509%2509%0A+// %0A %257D%250A%2509%2509\n %0A\n",
+            "lines": "13"
+        },
+        {
+            "label": "2026-05-23_19-01-03",
+            "content": "@@ -758,83 +758,8 @@\n r%0A%7D%0A\n-func (k *MultiSet) show() string %7B%0A%09return %22%5B%22 + Join(k.data, %22, %22) + %22%5D%22%0A%7D\n %0Afun\n@@ -1268,17 +1268,16 @@\n %22show%22:%0A\n-%0A\n %09%09case %22\n",
+            "lines": "91"
+        },
+        {
+            "label": "2026-05-23_19-04-00",
+            "content": "@@ -1347,20 +1347,8 @@\n w%22:%0A\n-%09%09%09ms.show()\n %0A%09%09c\n",
+            "lines": "94"
+        },
+        {
+            "label": "2026-05-23_19-04-37",
+            "content": "@@ -1346,28 +1346,16 @@\n ow%22:%0A%09%09%09\n-fmt.Println(\n ms.show(\n@@ -1355,17 +1355,16 @@\n s.show()\n-)\n %0A%09%09case \n",
+            "lines": "94"
+        },
+        {
+            "label": "2026-05-23_19-05-42",
+            "content": "@@ -834,233 +834,8 @@\n %22%0A%7D%0A\n-func (k *MultiSet) erase(valor int) bool %7B%0A%09in := k.Busca(valor)%0A%0A%09if k.data%5Bin%5D != valor %7B%0A%09%09return false%0A%09%7D%0A%09for i := in; i %3C len(k.data)-1; i++ %7B%0A%09%09k.data%5Bi%5D = k.data%5B+1%5D%0A%09%7D%0A%09k.data = k.data%5B:len(k.data)-1%5D%0A%09return true%0A%7D%0A\n func\n@@ -1384,24 +1384,27 @@\n %22erase%22:%0A%09%09%09\n+// \n value, _ := \n@@ -1429,67 +1429,8 @@\n 1%5D)%0A\n-%09%09%09if !ms.erase(value) %7B%0A%09%09%09%09fmt.Println(%22podnaoman%22)%0A%09%09%09%7D%0A\n %09%09ca\n",
+            "lines": "94"
+        },
+        {
+            "label": "2026-05-23_19-22-17",
+            "content": "@@ -1059,106 +1059,8 @@\n e%0A%7D%0A\n-func (k *MultiSet) contains(valor int) bool %7B%0A%09in := k.Busca(valor)%0A%09return k.data%5Bin%5D == valor%0A%7D%0A\n func\n@@ -1724,24 +1724,27 @@\n ntains%22:%0A%09%09%09\n+// \n value, _ := \n",
+            "lines": "109"
+        },
+        {
+            "label": "2026-05-23_19-28-36",
+            "content": "@@ -1864,43 +1864,8 @@\n 1%5D)%0A\n-%09%09%09fmt.Println(ms.contains(value))%0A\n %09%09ca\n",
+            "lines": "113"
+        },
+        {
+            "label": "2026-05-23_19-29-13",
+            "content": "@@ -1791,23 +1791,17 @@\n ln(%22\n-value not found\n+podnaoman\n %22)%0A%09\n",
+            "lines": "114"
+        },
+        {
+            "label": "2026-05-23_19-29-43",
+            "content": "@@ -1751,16 +1751,17 @@\n )%0A%09%09%09if \n+!\n ms.erase\n@@ -1773,21 +1773,8 @@\n e) %7B\n-%0A%0A%09%09%09%7D else %7B\n %0A%09%09%09\n",
+            "lines": "114"
+        },
+        {
+            "label": "2026-05-23_19-32-50",
+            "content": "@@ -903,29 +903,8 @@\n %0A%09if\n- in %3E= len(k.data) %7C%7C\n  k.d\n",
+            "lines": "116"
+        },
+        {
+            "label": "2026-05-23_19-34-45",
+            "content": "@@ -1021,17 +1021,16 @@\n  k.data%5B\n-i\n +1%5D%0A%09%7D%0A%09\n",
+            "lines": "116"
+        },
+        {
+            "label": "2026-05-23_19-36-03",
+            "content": "@@ -900,17 +900,37 @@\n r)%0A%0A%09if \n-=\n+in %3E= len(k.data) %7C%7C \n k.data%5Bi\n",
+            "lines": "116"
+        },
+        {
+            "label": "2026-05-23_19-36-13",
+            "content": "@@ -896,24 +896,25 @@\n valor)%0A%0A%09if \n+=\n k.data%5Bin%5D !\n",
+            "lines": "116"
+        },
+        {
+            "label": "2026-05-23_19-36-19",
+            "content": "@@ -1158,226 +1158,8 @@\n r%0A%7D%0A\n-func (k *MultiSet) count(valor int) int %7B%0A%09qnt := 0%0A%09in := k.Busca(valor)%0A%09if k.data%5Bvalor%5D != valor %7B%0A%09%09return 0%0A%09%7D%0A%09for i := in; i %3C len(k.data); i++ %7B%0A%09%09if k.data%5Bi%5D != valor %7B%0A%09%09%09break%0A%09%09%7D%0A%09%09qnt++%0A%09%7D%0A%09return qnt%0A%7D%0A\n func\n@@ -1929,24 +1929,27 @@\n %22count%22:%0A%09%09%09\n+// \n value, _ := \n@@ -1974,27 +1974,8 @@\n 1%5D)%0A\n-%09%09%09ms.count(value)%0A\n %09%09ca\n",
+            "lines": "116"
+        },
+        {
+            "label": "2026-05-23_19-42-34",
+            "content": "@@ -2184,36 +2184,24 @@\n args%5B1%5D)%0A%09%09%09\n-fmt.Println(\n ms.count(val\n@@ -2199,25 +2199,24 @@\n count(value)\n-)\n %0A%09%09case %22uni\n",
+            "lines": "131"
+        },
+        {
+            "label": "2026-05-23_19-43-08",
+            "content": "@@ -1228,16 +1228,59 @@\n (valor)%0A\n+%09if k.data%5Bvalor%5D != valor %7B%0A%09%09return 0%0A%09%7D%0A\n %09for i :\n",
+            "lines": "131"
+        },
+        {
+            "label": "2026-05-23_19-44-11",
+            "content": "@@ -1333,150 +1333,8 @@\n t%0A%7D%0A\n-func (k *MultiSet) unique() int %7B%0A%09qnt := 1%0A%09for i := 1; i %3C len(k.data); i++ %7B%0A%09%09if k.data%5Bi%5D != k.data%5Bi-1%5D %7B%0A%09%09%09qnt++%0A%09%09%7D%0A%09%7D%0A%09return qnt%0A%7D%0A\n func\n@@ -2195,36 +2195,8 @@\n e%22:%0A\n-%09%09%09fmt.Println(ms.unique())%0A\n %09%09ca\n",
+            "lines": "128"
+        },
+        {
+            "label": "2026-05-23_19-48-56",
+            "content": "@@ -1475,101 +1475,8 @@\n t%0A%7D%0A\n-func (k *MultiSet) clear() %7B%0A%09for i := 0; i %3C len(k.data)-1; i++ %7B%0A%09%09k.erase(k.data%5Bi%5D)%0A%09%7D%0A%7D%0A\n func\n@@ -2381,22 +2381,8 @@\n r%22:%0A\n-%09%09%09ms.clear()%0A\n %09%09de\n",
+            "lines": "138"
+        },
+        {
+            "label": "2026-05-23_19-55-19",
+            "content": "@@ -1504,16 +1504,28 @@\n ) %7B%0A%09for\n+ i := 0; i %3C\n  len(k.d\n@@ -1532,12 +1532,15 @@\n ata)\n- %3E 0\n+-1; i++\n  %7B%0A%09\n@@ -1555,17 +1555,17 @@\n (k.data%5B\n-0\n+i\n %5D)%0A%09%7D%0A%7D%0A\n",
+            "lines": "144"
+        },
+        {
+            "label": "2026-05-23_19-58-19",
+            "content": "@@ -1367,45 +1367,8 @@\n t %7B%0A\n-%09if len(k.data) == 0 %7B%0A%09%09return 0%0A%09%7D%0A\n %09qnt\n",
+            "lines": "144"
+        },
+        {
+            "label": "2026-05-23_19-59-02",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc Join(slice []int, sep string) string {\n\tif len(slice) == 0 {\n\t\treturn \"\"\n\t}\n\tresult := fmt.Sprintf(\"%d\", slice[0])\n\tfor _, value := range slice[1:] {\n\t\tresult += sep + fmt.Sprintf(\"%d\", value)\n\t}\n\treturn result\n}\n\ntype MultiSet struct {\n\tdata []int\n}\n\nfunc NewMultiSet(valor int) *MultiSet {\n\treturn &MultiSet{data: []int{}}\n}\nfunc (k *MultiSet) Busca(valor int) int {\n\te := 0\n\td := len(k.data)\n\n\tfor e < d {\n\t\tm := (e + d) / 2\n\t\tif k.data[m] < valor {\n\t\t\te = m + 1\n\t\t} else {\n\t\t\td = m\n\t\t}\n\t}\n\treturn e\n}\nfunc (k *MultiSet) insert(valor int) {\n\tin := k.Busca(valor)\n\tk.data = append(k.data, 0)\n\tfor i := len(k.data) - 1; i > in; i-- {\n\t\tk.data[i] = k.data[i-1]\n\t}\n\tk.data[in] = valor\n}\nfunc (k *MultiSet) show() string {\n\treturn \"[\" + Join(k.data, \", \") + \"]\"\n}\nfunc (k *MultiSet) erase(valor int) bool {\n\tin := k.Busca(valor)\n\n\tif k.data[in] != valor {\n\t\treturn false\n\t}\n\tfor i := in; i < len(k.data)-1; i++ {\n\t\tk.data[i] = k.data[i+1]\n\t}\n\tk.data = k.data[:len(k.data)-1]\n\treturn true\n}\nfunc (k *MultiSet) contains(valor int) bool {\n\tin := k.Busca(valor)\n\treturn k.data[in] == valor\n}\nfunc (k *MultiSet) count(valor int) int {\n\tqnt := 0\n\tin := k.Busca(valor)\n\tfor i := in; i < len(k.data); i++ {\n\t\tif k.data[i] != valor {\n\t\t\tbreak\n\t\t}\n\t\tqnt++\n\t}\n\treturn qnt\n}\nfunc (k *MultiSet) unique() int {\n\tif len(k.data) == 0 {\n\t\treturn 0\n\t}\n\tqnt := 1\n\tfor i := 1; i < len(k.data); i++ {\n\t\tif k.data[i] != k.data[i-1] {\n\t\t\tqnt++\n\t\t}\n\t}\n\treturn qnt\n}\nfunc (k *MultiSet) clear() {\n\tfor len(k.data) > 0 {\n\t\tk.erase(k.data[0])\n\t}\n}\nfunc main() {\n\tvar line, cmd string\n\tscanner := bufio.NewScanner(os.Stdin)\n\tms := NewMultiSet(0)\n\n\tfor scanner.Scan() {\n\t\tfmt.Print(\"$\")\n\t\tline = scanner.Text()\n\t\targs := strings.Fields(line)\n\t\tfmt.Println(line)\n\t\tif len(args) == 0 {\n\t\t\tcontinue\n\t\t}\n\t\tcmd = args[0]\n\n\t\tswitch cmd {\n\t\tcase \"end\":\n\t\t\treturn\n\t\tcase \"init\":\n\t\t\tvalue, _ := strconv.Atoi(args[1])\n\t\t\tms = NewMultiSet(value)\n\t\tcase \"insert\":\n\t\t\tfor _, part := range args[1:] {\n\t\t\t\tvalue, _ := strconv.Atoi(part)\n\t\t\t\tms.insert(value)\n\t\t\t}\n\t\tcase \"show\":\n\t\t\tfmt.Println(ms.show())\n\t\tcase \"erase\":\n\t\t\tvalue, _ := strconv.Atoi(args[1])\n\t\t\tif ms.erase(value) {\n\n\t\t\t} else {\n\t\t\t\tfmt.Println(\"value not found\")\n\t\t\t}\n\t\tcase \"contains\":\n\t\t\tvalue, _ := strconv.Atoi(args[1])\n\t\t\tfmt.Println(ms.contains(value))\n\t\tcase \"count\":\n\t\t\tvalue, _ := strconv.Atoi(args[1])\n\t\t\tfmt.Println(ms.count(value))\n\t\tcase \"unique\":\n\t\t\tfmt.Println(ms.unique())\n\t\tcase \"clear\":\n\t\t\tms.clear()\n\t\tdefault:\n\t\t\tfmt.Println(\"fail: comando invalido\")\n\t\t}\n\t}\n}\n",
+            "lines": "147"
+        }
+    ]
+}
