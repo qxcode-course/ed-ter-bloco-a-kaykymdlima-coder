@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-23_21-14-41",
+            "content": "@@ -183,19 +183,8 @@\n n)%0A%09\n-fmt.Println\n (esc\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-05-23_21-14-49",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc escada(n int) int {\n\tif n < 3 {\n\t\treturn 1\n\t} else if n == 3 {\n\t\treturn 2\n\t}\n\treturn escada(n-1) + escada(n-3)\n}\nfunc main() {\n\tvar n int\n\tfmt.Scan(&n)\n\tfmt.Println(escada(n))\n}\n",
+            "lines": "17"
+        }
+    ]
+}

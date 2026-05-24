@@ -73,3 +73,28 @@
 2026-05-23 20:12:22, MOVE, v:1, k:ed@baruel, mode:PICK
 2026-05-23 20:12:23, EXEC, v:1, k:ed@baruel, mode:FULL, rate:100, size:53
 2026-05-23 20:12:53, MOVE, v:1, k:ed@baruel, mode:BACK
+2026-05-23 20:20:04, MOVE, v:1, k:ed@distancia, mode:PICK
+2026-05-23 20:20:05, EXEC, v:1, k:ed@distancia, mode:FULL, rate:100
+2026-05-23 20:20:25, MOVE, v:1, k:ed@distancia, mode:BACK
+2026-05-23 20:20:49, SELF, v:1, k:ed@distancia, self:1, rate:100, study:70, concept:1, problem:1
+2026-05-23 20:21:16, SELF, v:1, k:ed@distancia, self:1, rate:100, study:70, concept:1, debug:1
+2026-05-23 20:21:27, SELF, v:1, k:ed@distancia, self:1, rate:100, study:70, concept:1
+2026-05-23 20:23:18, MOVE, v:1, k:ed@pedra, mode:PICK
+2026-05-23 20:23:20, EXEC, v:1, k:ed@pedra, mode:FULL, rate:100
+2026-05-23 21:03:25, EXEC, v:1, k:ed@pedra, mode:FULL, rate:100, size:76
+2026-05-23 21:03:28, MOVE, v:1, k:ed@pedra, mode:BACK
+2026-05-23 21:03:20, MOVE, v:1, k:ed@pedra, mode:EDIT
+2026-05-23 21:04:27, SELF, v:1, k:ed@pedra, self:1, rate:100, study:12
+2026-05-23 21:06:15, MOVE, v:1, k:ed@escada, mode:DOWN
+2026-05-23 21:06:20, MOVE, v:1, k:ed@escada, mode:PICK
+2026-05-23 21:06:15, MOVE, v:1, k:ed@escada, mode:EDIT
+2026-05-23 21:06:15, MOVE, v:1, k:ed@escada, mode:EDIT
+2026-05-23 21:06:15, MOVE, v:1, k:ed@escada, mode:EDIT
+2026-05-23 21:14:26, MOVE, v:1, k:ed@escada, mode:EDIT
+2026-05-23 21:14:41, EXEC, v:1, k:ed@escada, mode:FULL, rate:0, size:17
+2026-05-23 21:14:42, EXEC, v:1, k:ed@escada, mode:FULL, rate:0
+2026-05-23 21:14:44, EXEC, v:1, k:ed@escada, mode:FULL, rate:0
+2026-05-23 21:14:49, EXEC, v:1, k:ed@escada, mode:FULL, rate:100, size:17
+2026-05-23 21:15:05, MOVE, v:1, k:ed@escada, mode:BACK
+2026-05-23 21:15:34, SELF, v:1, k:ed@escada, self:1, rate:100, study:15, concept:1
+2026-05-23 21:17:12, MOVE, v:1, k:ed@manipulacao, mode:PICK
