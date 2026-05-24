@@ -1,0 +1,59 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-24_01-56-08",
+            "content": "@@ -10,301 +10,66 @@\n ain%0A\n-%0A\n import \n-(%0A%09%22bufio%22%0A%09%22os%22%0A)%0A%0Afunc main() %7B%0A%09scan := bufio.NewScanner(os.Stdin)%0A%09scan.Scan()%0A%09text := scan.Text()%0A%09e := %5B%5Drune%7B%7D%0A%09d := %5B%5Drune%7B%7D%0A%0A%09for _, cmd := range text %7B%0A%09%09switch cmd %7B%0A%09%09case 'R':%0A%09%09%09e = append(e, '%5Cn')%0A%09%09case 'B':%0A%09%09%09// if len(e) %3E 0 %7B%0A%09%09%09// %09e = e%5B:len(e)-1%5D%0A%09%09%09// %7D%0A%09%09%7D%0A%0A%09%7D\n+%22fmt%22%0Afunc main() %7B%0A    fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-05-24_02-12-31",
+            "content": "@@ -134,18 +134,16 @@\n rune%7B%7D%0A%09\n-//\n d := %5B%5Dr\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-05-24_02-12-45",
+            "content": "@@ -29,21 +29,14 @@\n io%22%0A\n-%09%22fmt%22%0A\n %09%22os%22%0A\n+\n )%0A%0Af\n@@ -134,16 +134,18 @@\n rune%7B%7D%0A%09\n+//\n d := %5B%5Dr\n@@ -304,142 +304,8 @@\n %09%7D%0A%0A\n-%09%7D%0A%09for _, cmd := range e %7B%0A%09%09fmt.Print(string(cmd))%0A%09%7D%0A%09fmt.Print(%22%7C%22)%0A%09for i := len(d) - 1; i %3E= 0; i-- %7B%0A%09%09fmt.Print(string(d%5Bi%5D))%0A\n %09%7D%0A%7D\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-05-24_02-16-46",
+            "content": "@@ -304,41 +304,8 @@\n / %7D%0A\n-%09%09default:%0A%09%09%09e = append(e, cmd)%0A\n %09%09%7D%0A\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-05-24_02-18-41",
+            "content": "@@ -479,21 +479,6 @@\n %0A%09%7D%0A\n-%09fmt.Println()%0A\n %7D%0A\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-05-24_02-19-20",
+            "content": "@@ -304,65 +304,8 @@\n / %7D%0A\n-%09%09case 'D':%0A%09%09%09if len(d) %3E 0 %7B%0A%09%09%09%09d = d%5B:len(d)-1%5D%0A%09%09%09%7D%0A\n %09%09de\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-05-24_02-21-29",
+            "content": "@@ -361,117 +361,8 @@\n %09%09%7D%0A\n-%09%09case '%3C':%0A%09%09%09if len(e) %3E 0 %7B%0A%09%09%09%09ultimo := e%5Blen(e)-1%5D%0A%09%09%09%09e = e%5B:len(e)-1%5D%0A%09%09%09%09d = append(d, ultimo)%0A%09%09%09%7D%0A\n %09%09de\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-05-24_02-26-52",
+            "content": "@@ -470,117 +470,8 @@\n %09%09%7D%0A\n-%09%09case '%3E':%0A%09%09%09if len(e) %3E 0 %7B%0A%09%09%09%09ultimo := d%5Blen(d)-1%5D%0A%09%09%09%09d = d%5B:len(d)-1%5D%0A%09%09%09%09e = append(e, ultimo)%0A%09%09%09%7D%0A\n %09%09de\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-05-24_02-32-13",
+            "content": "@@ -480,33 +480,33 @@\n  '%3E':%0A%09%09%09if len(\n-d\n+e\n ) %3E 0 %7B%0A%09%09%09%09ulti\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-05-24_02-34-14",
+            "content": "@@ -245,24 +245,27 @@\n ase 'B':%0A%09%09%09\n+// \n if len(e) %3E \n@@ -267,24 +267,27 @@\n e) %3E 0 %7B%0A%09%09%09\n+// \n %09e = e%5B:len(\n@@ -287,32 +287,35 @@\n e%5B:len(e)-1%5D%0A%09%09%09\n+// \n %7D%0A%09%09case 'D':%0A%09%09\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-05-24_02-34-33",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\nfunc main() {\n\tscan := bufio.NewScanner(os.Stdin)\n\tscan.Scan()\n\ttext := scan.Text()\n\te := []rune{}\n\td := []rune{}\n\n\tfor _, cmd := range text {\n\t\tswitch cmd {\n\t\tcase 'R':\n\t\t\te = append(e, '\\n')\n\t\tcase 'B':\n\t\t\tif len(e) > 0 {\n\t\t\t\te = e[:len(e)-1]\n\t\t\t}\n\t\tcase 'D':\n\t\t\tif len(d) > 0 {\n\t\t\t\td = d[:len(d)-1]\n\t\t\t}\n\t\tcase '<':\n\t\t\tif len(e) > 0 {\n\t\t\t\tultimo := e[len(e)-1]\n\t\t\t\te = e[:len(e)-1]\n\t\t\t\td = append(d, ultimo)\n\t\t\t}\n\t\tcase '>':\n\t\t\tif len(d) > 0 {\n\t\t\t\tultimo := d[len(d)-1]\n\t\t\t\td = d[:len(d)-1]\n\t\t\t\te = append(e, ultimo)\n\t\t\t}\n\t\tdefault:\n\t\t\te = append(e, cmd)\n\t\t}\n\n\t}\n\tfor _, cmd := range e {\n\t\tfmt.Print(string(cmd))\n\t}\n\tfmt.Print(\"|\")\n\tfor i := len(d) - 1; i >= 0; i-- {\n\t\tfmt.Print(string(d[i]))\n\t}\n\tfmt.Println()\n}\n",
+            "lines": "53"
+        }
+    ]
+}
