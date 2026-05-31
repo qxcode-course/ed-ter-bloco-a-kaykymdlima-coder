@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-31_15-30-04",
+            "content": "@@ -138,20 +138,8 @@\n ) %7B%0A\n-%09//instancia\n %0A%09sc\n@@ -198,41 +198,8 @@\n %5D()%0A\n-%09//pega os times e coloca na fila\n %0A%09fo\n@@ -268,71 +268,59 @@\n %0A%09%7D%0A\n-%09//para cada elemento da fila%0A%09for q.Size() %3E 1 %7B%0A%09%09//para%0A%09%09//\n+%0A%09for q.Size() %3E 1 %7B%0A%09%09if !sc.Scan() %7B%0A%09%09%09break%0A%09%09%7D\n %0A%09%09l\n@@ -340,30 +340,8 @@\n t()%0A\n-%09%09//separa as entrada%0A\n %09%09ar\n@@ -371,24 +371,8 @@\n ne)%0A\n-%09%09//fim do loop%0A\n %09%09if\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-05-31_15-36-24",
+            "content": "@@ -372,39 +372,8 @@\n ara%0A\n-%09%09if !sc.Scan() %7B%0A%09%09%09break%0A%09%09%7D%0A\n %09%09//\n@@ -462,16 +462,52 @@\n do loop%0A\n+%09%09if len(args) %3C 2 %7B%0A%09%09%09continue%0A%09%09%7D\n %0A%09%09golx,\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-05-31_15-36-38",
+            "content": "@@ -485,43 +485,20 @@\n %09%09//\n-pega a entrada a  esqueda e direita\n+fim do loop%0A\n %0A%09%09g\n@@ -568,43 +568,8 @@\n 1%5D)%0A\n-%09%09//remove os times a serem usados%0A\n %09%09ti\n@@ -614,45 +614,8 @@\n e()%0A\n-%09%09//retorna pra fila o time vencedor%0A\n %09%09if\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-05-31_15-39-57",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc (q *Queue[T]) Size() int {\n\treturn q.items.Len()\n}\n\nfunc main() {\n\t//instancia\n\tsc := bufio.NewScanner(os.Stdin)\n\tq := NewQueue[string]()\n\t//pega os times e coloca na fila\n\tfor time := 'A'; time <= 'P'; time++ {\n\t\tq.Enqueue(string(time))\n\t}\n\t//para cada elemento da fila\n\tfor q.Size() > 1 {\n\t\t//para\n\t\tif !sc.Scan() {\n\t\t\tbreak\n\t\t}\n\t\t//\n\t\tline := sc.Text()\n\t\t//separa as entrada\n\t\targs := strings.Fields(line)\n\t\t//pega a entrada a  esqueda e direita\n\t\tgolx, _ := strconv.Atoi(args[0])\n\t\tgoly, _ := strconv.Atoi(args[1])\n\t\t//remove os times a serem usados\n\t\ttimex := q.Dequeue()\n\t\ttimey := q.Dequeue()\n\t\t//retorna pra fila o time vencedor\n\t\tif golx > goly {\n\t\t\tq.Enqueue(timex)\n\t\t} else {\n\t\t\tq.Enqueue(timey)\n\t\t}\n\t}\n\tfmt.Println(q.Dequeue())\n}\n",
+            "lines": "47"
+        }
+    ]
+}

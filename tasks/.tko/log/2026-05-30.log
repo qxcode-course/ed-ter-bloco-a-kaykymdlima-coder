@@ -1,0 +1,10 @@
+2026-05-30 22:35:05, MOVE, v:1, k:ed@bufferring, mode:PICK
+2026-05-30 22:35:06, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:0, size:110
+2026-05-30 22:35:10, MOVE, v:1, k:ed@bufferring, mode:BACK
+2026-05-30 22:35:47, MOVE, v:1, k:ed@fila_enc, mode:DOWN
+2026-05-30 22:35:47, MOVE, v:1, k:ed@fila_enc, mode:PICK
+2026-05-30 22:35:46, MOVE, v:1, k:ed@fila_enc, mode:EDIT
+2026-05-30 22:35:46, MOVE, v:1, k:ed@fila_enc, mode:EDIT
+2026-05-30 22:35:47, MOVE, v:1, k:ed@fila_enc, mode:EDIT
+2026-05-30 22:38:11, MOVE, v:1, k:ed@fila_enc, mode:BACK
+2026-05-30 22:38:23, MOVE, v:1, k:ed@fila_enc, mode:PICK
