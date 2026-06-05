@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-05_19-54-44",
+            "content": "@@ -25,568 +25,8 @@\n t%22%0A%0A\n-func permutacao(p string) %5B%5Dstring %7B%0A%09letras := %5B%5Drune(p)%0A%0A%09var resu %5B%5Dstring%0A%09lidas := make(%5B%5Dbool, len(letras))%0A%09var atual %5B%5Drune%0A%0A%09backtrack(letras, lidas, atual, &resu)%0A%0A%09return resu%0A%7D%0A%0Afunc backtrack(letras %5B%5Drune, lidas %5B%5Dbool, atual %5B%5Drune, resu *%5B%5Dstring) %7B%0A%09if len(atual) == len(letras) %7B%0A%09%09*resu = append(*resu, string(atual))%0A%09%09return%0A%09%7D%0A%0A%09for i, _ := range letras %7B%0A%09%09if lidas%5Bi%5D %7B%0A%09%09%09continue%0A%09%09%7D%0A%09%09lidas%5Bi%5D = true%0A%09%09atual = append(atual, letras%5Bi%5D)%0A%09%09backtrack(letras, lidas, atual, resu)%0A%09%09lidas%5Bi%5D = false%0A%09%09atual = atual%5B:len(atual)-1%5D%0A%09%7D%0A%0A%7D%0A%0A\n func\n",
+            "lines": "11"
+        },
+        {
+            "label": "2026-06-05_20-09-27",
+            "content": "@@ -619,30 +619,8 @@\n ing%0A\n-%09fmt.Scanln(&entrada)%0A\n %09per\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-06-05_20-11-20",
+            "content": "@@ -25,209 +25,8 @@\n t%22%0A%0A\n-func ordem(letras %5B%5Drune) %7B%0A%09l := len(letras)%0A%09for i := 0; i %3C l-1; i++ %7B%0A%09%09for j := 0; j %3C l-i-1; j++ %7B%0A%09%09%09if letras%5Bj%5D %3E letras%5Bi%5D %7B%0A%09%09%09%09letras%5Bj%5D, letras%5Bj+1%5D = letras%5Bj+1%5D, letras%5Bj%5D%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%7D%0A\n func\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-06-05_20-43-36",
+            "content": "@@ -284,22 +284,8 @@\n (p)%0A\n-%09ordem(letras)\n %0A%09va\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-06-05_20-45-06",
+            "content": "@@ -151,19 +151,17 @@\n  letras%5B\n-j+1\n+i\n %5D %7B%0A%09%09%09%09\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-06-05_20-47-55",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc ordem(letras []rune) {\n\tl := len(letras)\n\tfor i := 0; i < l-1; i++ {\n\t\tfor j := 0; j < l-i-1; j++ {\n\t\t\tif letras[j] > letras[j+1] {\n\t\t\t\tletras[j], letras[j+1] = letras[j+1], letras[j]\n\t\t\t}\n\t\t}\n\t}\n}\nfunc permutacao(p string) []string {\n\tletras := []rune(p)\n\tordem(letras)\n\tvar resu []string\n\tlidas := make([]bool, len(letras))\n\tvar atual []rune\n\n\tbacktrack(letras, lidas, atual, &resu)\n\n\treturn resu\n}\n\nfunc backtrack(letras []rune, lidas []bool, atual []rune, resu *[]string) {\n\tif len(atual) == len(letras) {\n\t\t*resu = append(*resu, string(atual))\n\t\treturn\n\t}\n\n\tfor i, _ := range letras {\n\t\tif lidas[i] {\n\t\t\tcontinue\n\t\t}\n\t\tlidas[i] = true\n\t\tatual = append(atual, letras[i])\n\t\tbacktrack(letras, lidas, atual, resu)\n\t\tlidas[i] = false\n\t\tatual = atual[:len(atual)-1]\n\t}\n\n}\n\nfunc main() {\n\tvar entrada string\n\tfmt.Scanln(&entrada)\n\tpermutacoes := permutacao(entrada)\n\tfor _, saida := range permutacoes {\n\t\tfmt.Println(saida)\n\t}\n}\n",
+            "lines": "53"
+        }
+    ]
+}
