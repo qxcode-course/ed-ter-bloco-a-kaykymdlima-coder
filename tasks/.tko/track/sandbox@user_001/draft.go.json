@@ -12,8 +12,13 @@
         },
         {
             "label": "2026-03-11_11-13-50",
-            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\n\tfor cacetinhos := 0; cacetinhos < 3; cacetinhos++ {\n\t\tfmt.Print(\"cacetinhos:\")\n\t\tfmt.Println(cacetinhos)\n\t}\n}\n",
+            "content": "@@ -6,16 +6,17 @@\n ge main%0A\n+%0A\n import %22\n@@ -20,16 +20,17 @@\n t %22fmt%22%0A\n+%0A\n func mai\n@@ -39,39 +39,116 @@\n ) %7B%0A\n-    fmt.Println(%22Hello, World!%22)\n+%0A%09for cacetinhos := 0; cacetinhos %3C 3; cacetinhos++ %7B%0A%09%09fmt.Print(%22cacetinhos:%22)%0A%09%09fmt.Println(cacetinhos)%0A%09%7D\n %0A%7D%0A\n",
             "lines": "11"
+        },
+        {
+            "label": "2026-06-02_10-45-13",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    fmt.Println(\"Hello, World!\")\n}\n",
+            "lines": "5"
         }
     ]
 }

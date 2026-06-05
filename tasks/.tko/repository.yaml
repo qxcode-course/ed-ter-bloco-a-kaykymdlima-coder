@@ -19,17 +19,18 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@backtrack
-- ed@bfs
-- ed@linear
-- ed@rec
-- ed@basic
-- ed@map_set
-- ed@tree
-- ed@vector
-- eval1@eval1
 - ed@dfs
+- ed@backtrack
 - ed@list
+- ed@basic
+- eval1@eval1
+- ed@bfs
+- ed@rec
+- ed@linear
+- ed@tree
+- ed@map_set
+- sandbox@sandbox
+- ed@vector
 flags:
   inbox: all
   panel: skills
@@ -37,5 +38,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@pilha
-selected_index: 69
+selected: ed@permutacoes
+selected_index: 36
