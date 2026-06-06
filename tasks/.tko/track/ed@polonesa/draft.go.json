@@ -1,0 +1,49 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-06_15-44-23",
+            "content": "@@ -432,245 +432,12 @@\n ilha\n- = append(pilha, ch)%0A%09%09%7D else %7B%0A%09%09%09saida = append(saida, ch)%0A%09%09%09saida = append(saida, ' ')%0A%09%09%7D%0A%09%7D%0A%09for len(pilha) %3E 0 %7B%0A%09%09top := pilha%5Blen(pilha)-1%5D%0A%09%09pilha = pilha%5B:len(pilha)-1%5D%0A%09%09saida = append(saida, top)%0A%09%09saida = append(saida, ' ')\n+%0A%09%09%7D\n %0A%09%7D%0A\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-06-06_15-47-37",
+            "content": "@@ -673,75 +673,8 @@\n %0A%09%7D%0A\n-%09if saida%5Blen(saida)-1%5D == ' ' %7B%0A%09%09saida = saida%5B:len(saida)-1%5D%0A%09%7D%0A\n %7D%0Afu\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-06-06_15-49-30",
+            "content": "@@ -742,218 +742,8 @@\n %7D%0A%7D%0A\n-func priori(operador rune) int %7B%0A%09if operador == '+' %7C%7C operador == '-' %7B%0A%09%09return 1%0A%09%7D else if operador == '*' %7C%7C operador == '/' %7B%0A%09%09return 2%0A%09%7D else if operador == '%5E' %7B%0A%09%09return 3%0A%09%7D else %7B%0A%09%09return 0%0A%09%7D%0A%7D%0A\n func\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-06-06_15-53-21",
+            "content": "@@ -924,17 +924,25 @@\n urn 3%0A%09%7D\n-%0A\n+ else %7B%0A%09\n %09return \n@@ -943,16 +943,19 @@\n eturn 0%0A\n+%09%7D%0A\n %7D%0Afunc m\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-06-06_15-54-42",
+            "content": "@@ -740,30 +740,8 @@\n %0A%09%7D%0A\n-%09return string(saida)%0A\n %7D%0Afu\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-06-06_15-58-49",
+            "content": "@@ -1005,17 +1005,16 @@\n .Scanln(\n-&\n entrada)\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-06-06_16-00-06",
+            "content": "@@ -18,33 +18,13 @@\n ort \n-(%0A%09%22bufio%22%0A%09%22fmt%22%0A%09%22os%22%0A)\n+%22fmt%22\n %0A%0Afu\n@@ -978,61 +978,47 @@\n  %7B%0A%09\n-sc := bufio.NewScanner(os.Stdin)%0A%09entrada := sc.Text(\n+var entrada string%0A%09fmt.Scanln(&entrada\n )%0A%09r\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-06-06_16-02-03",
+            "content": "@@ -1031,19 +1031,8 @@\n in)%0A\n-%09sc.Scan()%0A\n %09ent\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-06-06_16-02-34",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\nfunc polonesa(ent string) string {\n\tvar saida []rune\n\tvar pilha []rune\n\tfor _, ch := range ent {\n\t\tif ch == ' ' {\n\t\t\tcontinue\n\t\t}\n\t\tif ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '^' {\n\t\t\tfor len(pilha) > 0 && priori(pilha[len(pilha)-1]) >= priori(ch) {\n\t\t\t\ttop := pilha[len(pilha)-1]\n\t\t\t\tpilha = pilha[:len(pilha)-1]\n\t\t\t\tsaida = append(saida, top)\n\t\t\t\tsaida = append(saida, ' ')\n\t\t\t}\n\t\t\tpilha = append(pilha, ch)\n\t\t} else {\n\t\t\tsaida = append(saida, ch)\n\t\t\tsaida = append(saida, ' ')\n\t\t}\n\t}\n\tfor len(pilha) > 0 {\n\t\ttop := pilha[len(pilha)-1]\n\t\tpilha = pilha[:len(pilha)-1]\n\t\tsaida = append(saida, top)\n\t\tsaida = append(saida, ' ')\n\t}\n\tif saida[len(saida)-1] == ' ' {\n\t\tsaida = saida[:len(saida)-1]\n\t}\n\treturn string(saida)\n}\nfunc priori(operador rune) int {\n\tif operador == '+' || operador == '-' {\n\t\treturn 1\n\t} else if operador == '*' || operador == '/' {\n\t\treturn 2\n\t} else if operador == '^' {\n\t\treturn 3\n\t}\n\treturn 0\n}\nfunc main() {\n\tsc := bufio.NewScanner(os.Stdin)\n\tsc.Scan()\n\tentrada := sc.Text()\n\tresu := polonesa(entrada)\n\tfmt.Println(resu)\n}\n",
+            "lines": "56"
+        }
+    ]
+}

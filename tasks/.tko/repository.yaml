@@ -19,18 +19,18 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@vector
 - sandbox@sandbox
-- ed@map_set
-- ed@list
-- ed@rec
-- ed@basic
+- ed@dfs
 - ed@linear
+- ed@basic
+- eval1@eval1
+- ed@rec
+- ed@list
+- ed@backtrack
+- ed@map_set
+- ed@vector
 - ed@bfs
 - ed@tree
-- ed@backtrack
-- eval1@eval1
-- ed@dfs
 flags:
   inbox: all
   panel: skills
@@ -38,5 +38,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@n_rainhas
-selected_index: 78
+selected: ed@polonesa
+selected_index: 70
