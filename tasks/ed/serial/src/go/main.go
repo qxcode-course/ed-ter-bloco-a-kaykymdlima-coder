@@ -20,13 +20,10 @@ type Node struct {
 func create(parts *[]string) *Node {
 	// Consuma os elementos da lista sempre do início.
 	//Você pode obter o primeiro elemento com 'elem := (*parts)[0]'
-	if len(*parts) == 0 {
-		return nil
-	}
 	ch := (*parts)[0]
 	*parts = (*parts)[1:]
 
-	if ch == "#" || ch == "" {
+	if ch == "#" {
 		return nil
 	}
 	var valor int
