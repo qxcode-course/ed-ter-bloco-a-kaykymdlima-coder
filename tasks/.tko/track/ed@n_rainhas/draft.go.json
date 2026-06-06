@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-05_21-19-30",
+            "content": "@@ -25,437 +25,8 @@\n t%22%0A%0A\n-func backtrack(lin, n int, col, diap, dias %5B%5Dbool, resu *int) %7B%0A%09if lin == n %7B%0A%09%09*resu++%0A%09%09return%0A%09%7D%0A%0A%09for colu := 0; colu %3C n; colu++ %7B%0A%09%09idiap := lin - colu + (n - 1)%0A%09%09idias := lin + colu%0A%09%09if col%5Bcolu%5D %7C%7C diap%5Bidiap%5D %7C%7C dias%5Bidias%5D %7B%0A%09%09%09continue%0A%09%09%7D%0A%09%09col%5Bcolu%5D = true%0A%09%09diap%5Bidiap%5D = true%0A%09%09dias%5Bidias%5D = true%0A%0A%09%09backtrack(lin+1, n, col, diap, dias, resu)%0A%0A%09%09col%5Bcolu%5D = false%0A%09%09diap%5Bidiap%5D = true%0A%09%09dias%5Bidias%5D = true%0A%09%7D%0A%7D%0A\n func\n@@ -35,16 +35,16 @@\n ain() %7B%0A\n+\n %09var n i\n@@ -170,16 +170,16 @@\n u := 0%0A%0A\n-\n %09backtra\n@@ -218,16 +218,17 @@\n nalsec, \n+*\n &resu)%0A%09\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-06-05_21-33-30",
+            "content": "@@ -415,28 +415,27 @@\n ap%5Bidiap%5D = \n-fals\n+tru\n e%0A%09%09dias%5Bidi\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-06-05_21-33-47",
+            "content": "@@ -441,20 +441,19 @@\n dias%5D = \n-fals\n+tru\n e%0A%09%7D%0A%7D%0Af\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-06-05_21-33-55",
+            "content": "@@ -489,17 +489,16 @@\n .Scanln(\n-&\n n)%0A%0A%09col\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-06-05_21-37-03",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc backtrack(lin, n int, col, diap, dias []bool, resu *int) {\n\tif lin == n {\n\t\t*resu++\n\t\treturn\n\t}\n\n\tfor colu := 0; colu < n; colu++ {\n\t\tidiap := lin - colu + (n - 1)\n\t\tidias := lin + colu\n\t\tif col[colu] || diap[idiap] || dias[idias] {\n\t\t\tcontinue\n\t\t}\n\t\tcol[colu] = true\n\t\tdiap[idiap] = true\n\t\tdias[idias] = true\n\n\t\tbacktrack(lin+1, n, col, diap, dias, resu)\n\n\t\tcol[colu] = false\n\t\tdiap[idiap] = false\n\t\tdias[idias] = false\n\t}\n}\nfunc main() {\n\tvar n int\n\tfmt.Scanln(&n)\n\n\tcol := make([]bool, n)\n\tdiagonalpri := make([]bool, 2*n-1)\n\tdiagonalsec := make([]bool, 2*n-1)\n\tresu := 0\n\n\tbacktrack(0, n, col, diagonalpri, diagonalsec, &resu)\n\tfmt.Println(resu)\n}\n",
+            "lines": "39"
+        }
+    ]
+}
