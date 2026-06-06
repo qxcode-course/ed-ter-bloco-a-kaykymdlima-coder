@@ -38,5 +38,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@polonesa
-selected_index: 70
+selected: ed@serial
+selected_index: 80
