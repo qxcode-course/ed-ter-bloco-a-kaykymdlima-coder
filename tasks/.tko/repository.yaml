@@ -19,24 +19,24 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@map_set
-- ed@list
 - ed@rec
-- sandbox@sandbox
-- ed@backtrack
 - ed@basic
-- eval1@eval1
 - ed@linear
-- ed@bfs
 - ed@tree
-- ed@dfs
 - ed@vector
+- ed@bfs
+- ed@backtrack
+- eval1@eval1
+- ed@dfs
+- sandbox@sandbox
+- ed@list
+- ed@map_set
 flags:
   inbox: all
-  panel: skills
+  panel: graph
   show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@tree
-selected_index: 79
+selected: ed@altura
+selected_index: 85
