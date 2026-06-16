@@ -19,24 +19,28 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@rec
-- ed@basic
-- ed@linear
-- ed@tree
 - ed@vector
-- ed@bfs
-- ed@backtrack
-- eval1@eval1
-- ed@dfs
-- sandbox@sandbox
 - ed@list
+- ed@bfs
+- sandbox@sandbox
+- ed@linear
+- ed@backtrack
+- ed@rec
 - ed@map_set
+- ed@dfs
+- eval1@eval1
+- ed@tree
+- ed@basic
 flags:
   inbox: all
   panel: graph
-  show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
+audit:
+  enabled: true
+  interval_seconds: null
+audit_enabled: true
+audit_interval_seconds: null
 lang: go
-selected: ed@altura
-selected_index: 85
+selected: ed@permutacoes
+selected_index: 76
