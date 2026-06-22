@@ -19,28 +19,26 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@vector
-- ed@list
-- ed@bfs
-- sandbox@sandbox
 - ed@linear
 - ed@backtrack
-- ed@rec
-- ed@map_set
-- ed@dfs
-- eval1@eval1
+- sandbox@sandbox
+- ed@list
 - ed@tree
 - ed@basic
+- ed@bfs
+- ed@map_set
+- ed@rec
+- ed@dfs
+- ed@vector
+- eval1@eval1
 flags:
   inbox: all
-  panel: graph
+  panel: skills
   task_graph_mode: executions
   show_time: 'true'
 audit:
   enabled: true
   interval_seconds: null
-audit_enabled: true
-audit_interval_seconds: null
 lang: go
-selected: ed@permutacoes
-selected_index: 76
+selected: ed@compare
+selected_index: 86

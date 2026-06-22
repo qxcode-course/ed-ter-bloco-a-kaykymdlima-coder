@@ -1,0 +1,54 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-22_15-40-35",
+            "content": "@@ -195,26 +195,16 @@\n rn 0%0A%09%7D%0A\n-%09return 0%0A\n %7D%0A%0A// --\n",
+            "lines": "84"
+        },
+        {
+            "label": "2026-06-22_15-40-49",
+            "content": "@@ -199,92 +199,8 @@\n %0A%09%7D%0A\n-%09if a == nil && b != nil %7B%0A%09%09return -1%0A%09%7D%0A%09if a != nil && b == nil %7B%0A%09%09return 0%0A%09%7D%0A%0A\n %09ret\n",
+            "lines": "85"
+        },
+        {
+            "label": "2026-06-22_15-42-38",
+            "content": "@@ -273,17 +273,17 @@\n %09return \n-1\n+0\n %0A%09%7D%0A%0A%09re\n",
+            "lines": "92"
+        },
+        {
+            "label": "2026-06-22_15-42-46",
+            "content": "@@ -204,24 +204,27 @@\n if a\n-.Value %3C b.Value\n+ == nil && b != nil\n  %7B%0A%09\n@@ -246,24 +246,27 @@\n if a\n-.Value %3E b.Value\n+ != nil && b == nil\n  %7B%0A%09\n",
+            "lines": "92"
+        },
+        {
+            "label": "2026-06-22_15-45-11",
+            "content": "@@ -276,106 +276,18 @@\n %0A%09%7D%0A\n-%09//checaarv := compare(a.Left, b.Left)%7B%0A%09//%09return checaarv%0A%09//%7D%0A%09return compare(a.Right, b.Right)\n+%0A%09return 0\n %0A%7D%0A%0A\n",
+            "lines": "92"
+        },
+        {
+            "label": "2026-06-22_15-48-49",
+            "content": "@@ -273,16 +273,18 @@\n n 1%0A%09%7D%0A%09\n+//\n checaarv\n@@ -313,16 +313,18 @@\n Left)%7B%0A%09\n+//\n %09return \n@@ -333,16 +333,18 @@\n ecaarv%0A%09\n+//\n %7D%0A%09retur\n",
+            "lines": "94"
+        },
+        {
+            "label": "2026-06-22_15-48-56",
+            "content": "@@ -312,27 +312,8 @@\n eft)\n-%0A%09if checaarv != 0 \n %7B%0A%09%09\n",
+            "lines": "94"
+        },
+        {
+            "label": "2026-06-22_15-49-42",
+            "content": "@@ -354,91 +354,8 @@\n %0A%09%7D%0A\n-%09if a == nil && b != nil %7B%0A%09%09return -1%0A%09%7D%0A%09if a != nil && b == nil %7B%0A%09%09return 1%0A%09%7D%0A\n %09ret\n",
+            "lines": "95"
+        },
+        {
+            "label": "2026-06-22_15-53-25",
+            "content": "@@ -199,91 +199,8 @@\n %0A%09%7D%0A\n-%09if a == nil && b != nil %7B%0A%09%09return -1%0A%09%7D%0A%09if a != nil && b == nil %7B%0A%09%09return 1%0A%09%7D%0A\n %09if \n@@ -350,16 +350,98 @@\n aarv%0A%09%7D%0A\n+%09if a == nil && b != nil %7B%0A%09%09return -1%0A%09%7D%0A%09if a != nil && b == nil %7B%0A%09%09return 1%0A%09%7D\n %0A%09return\n",
+            "lines": "101"
+        },
+        {
+            "label": "2026-06-22_15-55-33",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype Node struct {\n\tValue int\n\tLeft  *Node\n\tRight *Node\n}\n\nfunc compare(a, b *Node) int {\n\tif a == nil && b == nil {\n\t\treturn 0\n\t}\n\tif a == nil && b != nil {\n\t\treturn -1\n\t}\n\tif a != nil && b == nil {\n\t\treturn 1\n\t}\n\tif a.Value < b.Value {\n\t\treturn -1\n\t}\n\tif a.Value > b.Value {\n\t\treturn 1\n\t}\n\tchecaarv := compare(a.Left, b.Left)\n\tif checaarv != 0 {\n\t\treturn checaarv\n\t}\n\n\treturn compare(a.Right, b.Right)\n}\n\n// ----------------------------------------------------------------------\nfunc BShow(node *Node, history string) {\n\tif node != nil && (node.Left != nil || node.Right != nil) {\n\t\tBShow(node.Left, history+\"l\")\n\t}\n\tfor i := 0; i < len(history)-1; i++ {\n\t\tif history[i] != history[i+1] {\n\t\t\tfmt.Print(\"\u2502   \")\n\t\t} else {\n\t\t\tfmt.Print(\"    \")\n\t\t}\n\t}\n\tif history != \"\" {\n\t\tif history[len(history)-1] == 'l' {\n\t\t\tfmt.Print(\"\u256d\u2500\u2500\u2500\")\n\t\t} else {\n\t\t\tfmt.Print(\"\u2570\u2500\u2500\u2500\")\n\t\t}\n\t}\n\tif node == nil {\n\t\tfmt.Println(\"#\")\n\t\treturn\n\t}\n\tfmt.Println(node.Value)\n\tif node.Left != nil || node.Right != nil {\n\t\tBShow(node.Right, history+\"r\")\n\t}\n}\n\nfunc create(parts *[]string) *Node {\n\telem := (*parts)[0]\n\t*parts = (*parts)[1:]\n\tif elem == \"#\" {\n\t\treturn nil\n\t}\n\tvalue, _ := strconv.Atoi(elem)\n\tnode := &Node{Value: value}\n\tnode.Left = create(parts)\n\tnode.Right = create(parts)\n\treturn node\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tparts := strings.Split(scanner.Text(), \" \")\n\ta := create(&parts)\n\tBShow(a, \"\")\n\tscanner.Scan()\n\tparts = strings.Split(scanner.Text(), \" \")\n\tb := create(&parts)\n\tBShow(b, \"\")\n\tresult := compare(a, b)\n\tif result == 0 {\n\t\tfmt.Println(\"iguais\")\n\t} else if result < 0 {\n\t\tfmt.Println(\"menor\")\n\t} else {\n\t\tfmt.Println(\"maior\")\n\t}\n}\n",
+            "lines": "102"
+        }
+    ]
+}
