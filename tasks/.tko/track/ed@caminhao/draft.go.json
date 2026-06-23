@@ -1,0 +1,39 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-23_18-28-48",
+            "content": "@@ -187,20 +187,55 @@\n t)%0A%09%7D%0A%0A%09\n-gaso\n+st := 0%0A%09gasoat := 0%0A%09gasoto := 0%0A%09dist\n to := 0%0A\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-06-23_18-28-59",
+            "content": "@@ -191,47 +191,12 @@\n %7D%0A%0A%09\n-st := 0%0A%09gasoat := 0%0A%09gasoto := 0%0A%09dist\n+gaso\n to :\n@@ -248,31 +248,8 @@\n aso%0A\n-%09%09distto += bs%5Bi%5D.dist%0A\n %09%7D%0A%7D\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-06-23_18-30-07",
+            "content": "@@ -309,161 +309,6 @@\n %0A%09%7D%0A\n-%0A    for i := 0; 0 %3C n; 0++%7B%0A        gasoat += bs%5Bi%5D.gaso - bs%5Bi%5D.dist%0A        if gasoat %3C 0 %7B%0A            st = i + 1%0A            gasoat = 0%0A        %7D%0A    \n %7D%0A\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-06-23_18-36-06",
+            "content": "@@ -306,17 +306,20 @@\n ist%0A%09%7D%0A%0A\n-%09\n+    \n for i :=\n@@ -332,21 +332,26 @@\n %3C n; 0++\n- \n %7B%0A\n-%09%09\n+        \n gasoat +\n@@ -376,18 +376,24 @@\n i%5D.dist%0A\n-%09%09\n+        \n if gasoa\n@@ -404,41 +404,66 @@\n 0 %7B%0A\n-%09%09%09st = i + 1%0A%09%09%09gasoat = 0%0A%09%09%7D%0A%09%7D%0A\n+            st = i + 1%0A            gasoat = 0%0A        %7D%0A    \n %7D%0A\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-06-23_18-36-20",
+            "content": "@@ -184,16 +184,26 @@\n dist)%0A%09%7D\n+%0A%0A%09st := 0\n %0A%09gasoat\n@@ -305,16 +305,17 @@\n dist%0A%09%7D%0A\n+%0A\n %09for i :\n@@ -323,16 +323,16 @@\n  0; \n-i\n+0\n  %3C n; \n-i\n+0\n ++ %7B\n@@ -392,17 +392,16 @@\n %7B%0A%09%09%09st \n-:\n = i + 1%0A\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-06-23_18-37-45",
+            "content": "@@ -299,20 +299,8 @@\n %0A%09%7D%0A\n-%09var st int%0A\n %09for\n@@ -381,16 +381,17 @@\n %7B%0A%09%09%09st \n+:\n = i + 1%0A\n@@ -415,23 +415,6 @@\n %0A%09%7D%0A\n-%09fmt.Println(st)%0A\n %7D%0A\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-06-23_18-38-32",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\ntype b struct {\n\tgaso int\n\tdist int\n}\n\nfunc main() {\n\tvar n int\n\tfmt.Scan(&n)\n\tbs := make([]b, n)\n\tfor i := range bs {\n\t\tfmt.Scan(&bs[i].gaso, &bs[i].dist)\n\t}\n\tgasoat := 0\n\tgasoto := 0\n\tdistto := 0\n\n\tfor i := range bs {\n\t\tgasoto += bs[i].gaso\n\t\tdistto += bs[i].dist\n\t}\n\tvar st int\n\tfor i := 0; i < n; i++ {\n\t\tgasoat += bs[i].gaso - bs[i].dist\n\t\tif gasoat < 0 {\n\t\t\tst = i + 1\n\t\t\tgasoat = 0\n\t\t}\n\t}\n\tfmt.Println(st)\n}\n",
+            "lines": "36"
+        }
+    ]
+}

@@ -30,3 +30,4 @@
 2026-06-22 15:55:33, EXEC, v:1, k:ed@compare, mode:FULL, rate:100, size:102
 2026-06-22 15:55:41, MOVE, v:1, k:ed@compare, mode:BACK
 2026-06-22 15:56:18, SELF, v:1, k:ed@compare, self:1, rate:100, study:25, concept:1
+2026-06-22 15:55:31, MOVE, v:1, k:ed@compare, mode:EDIT
