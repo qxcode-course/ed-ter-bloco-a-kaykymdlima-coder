@@ -19,18 +19,18 @@ sources:
   writeable: false
   quests: null
 expanded:
-- sandbox@sandbox
 - ed@rec
 - ed@bfs
-- ed@map_set
-- ed@backtrack
-- ed@tree
-- ed@list
-- ed@basic
 - ed@vector
-- eval1@eval1
-- ed@linear
+- ed@backtrack
 - ed@dfs
+- eval1@eval1
+- ed@map_set
+- ed@list
+- sandbox@sandbox
+- ed@tree
+- ed@linear
+- ed@basic
 flags:
   inbox: all
   panel: graph
@@ -40,5 +40,5 @@ audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@caminhao
-selected_index: 69
+selected: ed@arvore-path
+selected_index: 87

@@ -1,0 +1,41 @@
+2026-06-24 21:19:06, MOVE, v:1, k:ed@prin_list2, mode:DOWN
+2026-06-24 21:19:07, MOVE, v:1, k:ed@prin_list2, mode:PICK
+2026-06-24 21:19:09, EXEC, v:1, k:ed@prin_list2, mode:FULL, rate:0, size:46
+2026-06-24 21:19:06, MOVE, v:1, k:ed@prin_list2, mode:EDIT
+2026-06-24 21:19:06, MOVE, v:1, k:ed@prin_list2, mode:EDIT
+2026-06-24 21:21:57, MOVE, v:1, k:ed@prin_list2, mode:BACK
+2026-06-24 21:21:59, MOVE, v:1, k:ed@prin_list2, mode:PICK
+2026-06-24 21:23:22, MOVE, v:1, k:ed@prin_list2, mode:BACK
+2026-06-24 21:24:01, MOVE, v:1, k:ed@princesa, mode:PICK
+2026-06-24 21:24:29, MOVE, v:1, k:ed@princesa, mode:BACK
+2026-06-24 21:24:42, MOVE, v:1, k:ed@prin_list1, mode:DOWN
+2026-06-24 21:24:44, MOVE, v:1, k:ed@prin_list1, mode:PICK
+2026-06-24 21:25:20, MOVE, v:1, k:ed@prin_list1, mode:BACK
+2026-06-24 21:24:42, MOVE, v:1, k:ed@prin_list1, mode:EDIT
+2026-06-24 21:24:42, MOVE, v:1, k:ed@prin_list1, mode:EDIT
+2026-06-24 21:24:42, MOVE, v:1, k:ed@prin_list1, mode:EDIT
+2026-06-24 21:26:20, MOVE, v:1, k:ed@arvore-path, mode:DOWN
+2026-06-24 21:26:21, MOVE, v:1, k:ed@arvore-path, mode:PICK
+2026-06-24 21:30:25, EXEC, v:1, k:ed@arvore-path, mode:FULL, size:84, fail:COMP
+2026-06-24 21:30:27, EXEC, v:1, k:ed@arvore-path, mode:FULL, fail:COMP
+2026-06-24 21:30:46, EXEC, v:1, k:ed@arvore-path, mode:FULL, rate:12, size:85
+2026-06-24 21:26:20, MOVE, v:1, k:ed@arvore-path, mode:EDIT
+2026-06-24 21:30:43, MOVE, v:1, k:ed@arvore-path, mode:EDIT
+2026-06-24 21:32:59, EXEC, v:1, k:ed@arvore-path, mode:FULL, rate:12, size:90
+2026-06-24 21:33:12, EXEC, v:1, k:ed@arvore-path, mode:FULL, rate:12, size:90
+2026-06-24 21:33:30, EXEC, v:1, k:ed@arvore-path, mode:FULL, rate:12, size:90
+2026-06-24 21:33:58, EXEC, v:1, k:ed@arvore-path, mode:FULL, rate:25, size:92
+2026-06-24 21:35:34, EXEC, v:1, k:ed@arvore-path, mode:FULL, rate:50, size:97
+2026-06-24 21:35:50, MOVE, v:1, k:ed@arvore-path, mode:EDIT
+2026-06-24 21:36:40, EXEC, v:1, k:ed@arvore-path, mode:FULL, rate:50
+2026-06-24 21:36:53, EXEC, v:1, k:ed@arvore-path, mode:FULL, rate:87, size:97
+2026-06-24 21:37:17, EXEC, v:1, k:ed@arvore-path, mode:FULL, rate:50, size:97
+2026-06-24 21:37:52, MOVE, v:1, k:ed@arvore-path, mode:PICK
+2026-06-24 21:37:54, EXEC, v:1, k:ed@arvore-path, mode:FULL, rate:50
+2026-06-24 21:43:30, EXEC, v:1, k:ed@arvore-path, mode:FULL, rate:25, size:106
+2026-06-24 21:43:43, EXEC, v:1, k:ed@arvore-path, mode:FULL, rate:25, size:106
+2026-06-24 21:44:49, EXEC, v:1, k:ed@arvore-path, mode:FULL, rate:25, size:105
+2026-06-24 21:45:55, EXEC, v:1, k:ed@arvore-path, mode:FULL, rate:50, size:106
+2026-06-24 21:46:34, EXEC, v:1, k:ed@arvore-path, mode:FULL, rate:100, size:106
+2026-06-24 21:46:37, MOVE, v:1, k:ed@arvore-path, mode:BACK
+2026-06-24 21:47:20, SELF, v:1, k:ed@arvore-path, self:1, rate:100, study:20, concept:1, debug:1
