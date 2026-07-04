@@ -10,9 +10,28 @@ import (
 
 // Não modifique a assinatura da função floodFill
 func floodFill(image [][]int, sr int, sc int, color int) [][]int {
-	//
-	_ := image
-	return 0
+	od := image[sr][sc]
+	if od == color {
+		return image
+	}
+	rs := len(image)
+	cs := len(image[0])
+
+	var busca func(r, c int)
+	busca = func(r, c int) {
+		if r < 0 || r >= rs || c < 0 || c >= cs || image[r][c] != od {
+			return
+		}
+		image[r][c] = color
+		busca(r+1, c)
+		busca(r-1, c)
+		busca(r, c+1)
+		busca(r, c-1)
+	}
+
+	busca(sr, sc)
+
+	return image
 }
 
 // Não modifique a função main

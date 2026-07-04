@@ -40,5 +40,5 @@ audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@cercado
-selected_index: 94
+selected: ed@pintura
+selected_index: 95
