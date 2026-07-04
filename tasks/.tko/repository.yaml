@@ -19,26 +19,26 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@rec
-- ed@bfs
-- ed@vector
-- ed@backtrack
 - ed@dfs
+- ed@list
+- ed@tree
+- sandbox@sandbox
+- ed@basic
+- ed@backtrack
+- ed@rec
+- ed@vector
+- ed@bfs
+- ed@linear
 - eval1@eval1
 - ed@map_set
-- ed@list
-- sandbox@sandbox
-- ed@tree
-- ed@linear
-- ed@basic
 flags:
   inbox: all
-  panel: graph
+  panel: skills
   task_graph_mode: executions
   show_time: 'true'
 audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@arvore-path
-selected_index: 87
+selected: ed@dfs
+selected_index: 91

@@ -39,3 +39,4 @@
 2026-06-24 21:46:34, EXEC, v:1, k:ed@arvore-path, mode:FULL, rate:100, size:106
 2026-06-24 21:46:37, MOVE, v:1, k:ed@arvore-path, mode:BACK
 2026-06-24 21:47:20, SELF, v:1, k:ed@arvore-path, self:1, rate:100, study:20, concept:1, debug:1
+2026-06-24 21:46:31, MOVE, v:1, k:ed@arvore-path, mode:EDIT
