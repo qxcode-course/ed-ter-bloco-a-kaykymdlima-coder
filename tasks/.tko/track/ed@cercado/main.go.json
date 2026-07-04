@@ -1,0 +1,49 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-04_10-02-52",
+            "content": "@@ -118,132 +118,17 @@\n  %7B%0A%09\n-rs := len(board)%0A%09cs := len(board%5B0%5D)%0A%09visto := make(%5B%5D%5B%5Dbool, rs)%0A%09for i := range visto %7B%0A%09%09visto%5Bi%5D = make(%5B%5Dbool, cs)%0A%09%7D%0A\n+_ = board\n %0A%7D%0A%0A\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-07-04_10-11-53",
+            "content": "@@ -241,148 +241,8 @@\n )%0A%09%7D\n-%0A%09var busca func(r, c int)%0A%09busca = func(r, c int) %7B%0A%09%09visto%5Br%5D%5Bc%5D = true%0A%09%09busca(r+1, c)%0A%09%09busca(r-1, c)%0A%09%09busca(r, c+1)%0A%09%09busca(r, c-1)%0A%09%7D\n %0A%0A%7D%0A\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-07-04_10-16-24",
+            "content": "@@ -294,35 +294,8 @@\n ) %7B%0A\n-%09%09if r %3C 0 %7B%0A%09%09%09return%0A%09%09%7D%0A\n %09%09vi\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-07-04_10-16-46",
+            "content": "@@ -305,19 +305,8 @@\n %3C 0 \n-%7C%7C r %3E= rs \n %7B%0A%09%09\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-07-04_10-17-07",
+            "content": "@@ -316,28 +316,8 @@\n  rs \n-%7C%7C c %3C 0 %7C%7C c %3E= cs \n %7B%0A%09%09\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-07-04_10-17-33",
+            "content": "@@ -335,30 +335,8 @@\n = cs\n- %7C%7C board%5Br%5D%5Bc%5D == 'X'\n  %7B%0A%09\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-07-04_10-18-25",
+            "content": "@@ -357,23 +357,8 @@\n  'X'\n- %7C%7C visto%5Br%5D%5Bc%5D\n  %7B%0A%09\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-07-04_10-19-01",
+            "content": "@@ -476,201 +476,8 @@\n )%0A%09%7D\n-%0A%09for c := 0; c %3C cs; c++ %7B%0A%09%09busca(0, c)%0A%09%09busca(rs-1, c)%0A%09%7D%0A%09for r := 0; r %3C rs; r++ %7B%0A%09%09for c := 0; c %3C cs; c++ %7B%0A%09%09%09if board%5Br%5D%5Bc%5D == 'O' && !visto%5Br%5D%5Bc%5D %7B%0A%09%09%09%09board%5Br%5D%5Bc%5D = 'X'%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D\n %0A%0A%7D%0A\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-07-04_10-40-57",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\n// N\u00c3O ALTERE A ASSINATURA DA FUN\u00c7\u00c3O solve\nfunc solve(board [][]byte) {\n\trs := len(board)\n\tcs := len(board[0])\n\tvisto := make([][]bool, rs)\n\tfor i := range visto {\n\t\tvisto[i] = make([]bool, cs)\n\t}\n\tvar busca func(r, c int)\n\tbusca = func(r, c int) {\n\t\tif r < 0 || r >= rs || c < 0 || c >= cs || board[r][c] == 'X' || visto[r][c] {\n\t\t\treturn\n\t\t}\n\t\tvisto[r][c] = true\n\t\tbusca(r+1, c)\n\t\tbusca(r-1, c)\n\t\tbusca(r, c+1)\n\t\tbusca(r, c-1)\n\t}\n\tfor c := 0; c < cs; c++ {\n\t\tbusca(0, c)\n\t\tbusca(rs-1, c)\n\t}\n\tfor r := 0; r < rs; r++ {\n\t\tfor c := 0; c < cs; c++ {\n\t\t\tif board[r][c] == 'O' && !visto[r][c] {\n\t\t\t\tboard[r][c] = 'X'\n\t\t\t}\n\t\t}\n\t}\n\n}\n\n// N\u00c3O ALTERE A MAIN\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tvar nrows, ncols int\n\tfmt.Sscanf(scanner.Text(), \"%d %d\", &nrows, &ncols)\n\tboard := make([][]byte, nrows)\n\tfor i := 0; i < nrows; i++ {\n\t\tscanner.Scan()\n\t\tboard[i] = []byte(scanner.Text())\n\t}\n\tsolve(board)\n\tfor _, row := range board {\n\t\tfmt.Println(string(row))\n\t}\n}\n",
+            "lines": "57"
+        }
+    ]
+}
