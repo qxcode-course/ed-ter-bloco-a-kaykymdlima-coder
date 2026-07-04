@@ -1,0 +1,44 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-04_12-46-26",
+            "content": "@@ -168,24 +168,8 @@\n ema%0A\n-const inf = 1e9%0A\n func\n@@ -206,235 +206,31 @@\n  %7B%0A%09\n-m, n := len(grid), len(grid%5B0%5D)%0A%09dir := %5B%5D%5B%5Dint%7B%0A%09%09%7B1,0%7D,%0A%09%09%7B-1,0%7D,%0A%09%09%7B0,1%7D,%0A%09%09%7B0,-1%7D%7D%0A%09%0A%09ftemp := make(make%5B%5D%5B%5Dint, m)%0A%09for i := range ftime %7B%0A%09%09ftime%5Bi%5D = make(%5B%5Dint, n)%0A%09%09for j := range ftemp%5Bi%5D %7B%0A%09%09%09ftemp%5Bi%5D%5Bj%5D = inf%0A%09%09%7D%0A%09%7D\n+//%0A%09_ := grid%0A%09return 0\n %0A%7D%0A%0A\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-07-04_12-55-32",
+            "content": "@@ -180,17 +180,16 @@\n f = 1e9%0A\n-%0A\n func num\n@@ -272,17 +272,16 @@\n t%7B%0A%09%09%7B1,\n- \n 0%7D,%0A%09%09%7B-\n@@ -282,17 +282,16 @@\n ,%0A%09%09%7B-1,\n- \n 0%7D,%0A%09%09%7B0\n@@ -291,17 +291,16 @@\n %7D,%0A%09%09%7B0,\n- \n 1%7D,%0A%09%09%7B0\n@@ -304,14 +304,14 @@\n %09%7B0,\n- \n -1%7D%7D%0A\n+%09\n %0A%09ft\n@@ -318,24 +318,28 @@\n emp := make(\n+make\n %5B%5D%5B%5Dint, m)%0A\n@@ -360,21 +360,21 @@\n e ft\n-emp\n+ime\n  %7B%0A%09%09ft\n-emp\n+ime\n %5Bi%5D \n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-07-04_12-56-06",
+            "content": "@@ -450,196 +450,8 @@\n %0A%09%7D%0A\n-%09type pair struct %7B%0A%09%09x, y int%0A%09%7D%0A%09var q %5B%5Dpair%0A%0A%09for i := 0; i %3C m; i++ %7B%0A%09%09for j := 0; j %3C n; j++ %7B%0A%09%09%09if grid%5Bi%5D%5Bj%5D == 1 %7B%0A%09%09%09%09ftemp%5Bi%5D%5Bj%5D = 0%0A%09%09%09%09q = append(q, pair%7Bi, j%7D)%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A\n %7D%0A%0A/\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-07-04_13-01-21",
+            "content": "@@ -634,17 +634,16 @@\n %0A%09%09%7D%0A%09%7D%0A\n-%0A\n %7D%0A%0A// N%C3%A3\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-07-04_13-08-44",
+            "content": "@@ -639,132 +639,8 @@\n %09%7D%0A%0A\n-%09for len(q) %3E 0 %7B%0A%09%09curren := q%5B0%5D%0A%09%09q = q%5B1:%5D%0A%09%09for _, d := range dir %7B%0A%09%09%09ner, nec := curren.x+d%5B0%5D, curren.y+d%5B1%5D%0A%09%09%7D%0A%09%7D%0A\n %7D%0A%0A/\n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-07-04_13-11-41",
+            "content": "@@ -756,176 +756,8 @@\n %5B1%5D%0A\n-%09%09%09if ner %3E= 0 && ner %3C m && nec %3E= 0 && nec %3C n && grid%5Bner%5D%5Bnec%5D == 0 %7B%0A%09%09%09%09if ftemp%5Bner%5D%5Bnec%5D = ftemp%5Bcurren.x%5D%5Bcurren.y%5D + 1%0A%09%09%09%09q = append(q, pair%7Bner, nec%7D)%0A%09%09%09%7D%0A\n %09%09%7D%0A\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-07-04_13-14-25",
+            "content": "@@ -218,16 +218,725 @@\n ) int %7B%0A\n+%09m, n := len(grid), len(grid%5B0%5D)%0A%09dir := %5B%5D%5B%5Dint%7B%0A%09%09%7B1, 0%7D,%0A%09%09%7B-1, 0%7D,%0A%09%09%7B0, 1%7D,%0A%09%09%7B0, -1%7D%7D%0A%0A%09ftemp := make(%5B%5D%5B%5Dint, m)%0A%09for i := range ftemp %7B%0A%09%09ftemp%5Bi%5D = make(%5B%5Dint, n)%0A%09%09for j := range ftemp%5Bi%5D %7B%0A%09%09%09ftemp%5Bi%5D%5Bj%5D = inf%0A%09%09%7D%0A%09%7D%0A%09type pair struct %7B%0A%09%09x, y int%0A%09%7D%0A%09var q %5B%5Dpair%0A%0A%09for i := 0; i %3C m; i++ %7B%0A%09%09for j := 0; j %3C n; j++ %7B%0A%09%09%09if grid%5Bi%5D%5Bj%5D == 1 %7B%0A%09%09%09%09ftemp%5Bi%5D%5Bj%5D = 0%0A%09%09%09%09q = append(q, pair%7Bi, j%7D)%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%0A%09for len(q) %3E 0 %7B%0A%09%09curren := q%5B0%5D%0A%09%09q = q%5B1:%5D%0A%09%09for _, d := range dir %7B%0A%09%09%09ner, nec := curren.x+d%5B0%5D, curren.y+d%5B1%5D%0A%09%09%09if ner %3E= 0 && ner %3C m && nec %3E= 0 && nec %3C n && grid%5Bner%5D%5Bnec%5D == 0 %7B%0A%09%09%09%09if ftemp%5Bner%5D%5Bnec%5D = ftemp%5Bcurren.x%5D%5Bcurren.y%5D + 1%0A%09%09%09%09q = append(q, pair%7Bner, nec%7D)%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A\n %7D%0A%0A// N%C3%A3\n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-07-04_13-31-20",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\n// N\u00e3o modifique a assinatura da fun\u00e7\u00e3o numIslands\n// Ela \u00e9 a fun\u00e7\u00e3o que ser\u00e1 chamada no LeetCode para resolver o problema\nconst inf = 1e9\n\nfunc numIslands(grid [][]byte) int {\n}\n\n// N\u00e3o modifique a fun\u00e7\u00e3o main\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tline := scanner.Text()\n\tvar nl, nc int\n\tfmt.Sscanf(line, \"%d %d\", &nl, &nc)\n\tgrid := make([][]byte, nl)\n\tfor i := 0; i < nl; i++ {\n\t\tscanner.Scan()\n\t\tgrid[i] = []byte(scanner.Text())\n\t}\n\tresult := numIslands(grid)\n\tfmt.Println(result)\n}\n",
+            "lines": "30"
+        }
+    ]
+}
