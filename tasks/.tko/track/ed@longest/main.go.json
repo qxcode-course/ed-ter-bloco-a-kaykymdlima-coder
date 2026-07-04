@@ -2,8 +2,33 @@
     "patches": [
         {
             "label": "2026-07-04_11-05-17",
-            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc longestIncreasingPath(matrix [][]int) int {\n\t//\n\t_ := matrix\n\treturn 0\n}\n\n// N\u00e3o modifique a fun\u00e7\u00e3o main\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tif !scanner.Scan() {\n\t\treturn\n\t}\n\tparts := strings.Fields(scanner.Text())\n\tif len(parts) < 2 {\n\t\treturn\n\t}\n\tnl, _ := strconv.Atoi(parts[0])\n\tnc, _ := strconv.Atoi(parts[1])\n\n\tmatrix := make([][]int, nl)\n\tfor i := 0; i < nl; i++ {\n\t\tif !scanner.Scan() {\n\t\t\treturn\n\t\t}\n\t\ttokens := strings.Fields(scanner.Text())\n\t\trow := make([]int, nc)\n\t\tfor j := 0; j < nc && j < len(tokens); j++ {\n\t\t\tv, _ := strconv.Atoi(tokens[j])\n\t\t\trow[j] = v\n\t\t}\n\t\tmatrix[i] = row\n\t}\n\n\tfmt.Println(longestIncreasingPath(matrix))\n}\n",
+            "content": "@@ -117,393 +117,33 @@\n  %7B%0A%09\n-rs := len(matrix)%0A%09cs := len(matrix%5B0%5D)%0A%09me := make(%5B%5D%5B%5Dint, rs)%0A%09for i := range me %7B%0A%09%09me%5Bi%5D = make(%5B%5Dint, cs)%0A%09%7D%0A%0A%09pat := %5B%5D%5B%5Dint%7B%0A%09%09%7B1, 0%7D,%0A%09%09%7B-1, 0%7D,%0A%09%09%7B0, 1%7D,%0A%09%09%7B0, -1%7D%7D%0A%0A%09var busca func(r, c int) int%0A%09busca = func(r, c int) int %7B%0A%09%09if me%5Br%5D%5Bc%5D != 0 %7B%0A%09%09%09return me%5Br%5D%5Bc%5D%0A%09%09%7D%0A%09%09maxpat := 1%0A%09%09for _, d := range pat %7B%0A%09%09%09ner, nec := r+d%5B0%5D, c+d%5B1%5D%0A%09%09%09if ner %3E= 0 %0A%09%09%7D%0A%09%7D%0A%09return long\n+//%0A%09_ := matrix%0A%09return 0\n %0A%7D%0A%0A\n",
             "lines": "46"
+        },
+        {
+            "label": "2026-07-04_11-20-40",
+            "content": "@@ -482,165 +482,8 @@\n = 0 \n-&& ner %3C rs && nec %3E= 0 && nec %3C cs && matrix%5Bner%5D%5Bnec%5D %3E matrix%5Br%5D%5Br%5D %7B%0A%09%09%09%09path := 1 + busca(ner, nec)%0A%09%09%09%09if path %3E maxpat %7B%0A%09%09%09%09%09maxpat = path%0A%09%09%09%09%7D%0A%09%09%09%7D\n %0A%09%09%7D\n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-07-04_11-23-20",
+            "content": "@@ -645,56 +645,9 @@\n %09%7D%0A%09\n-%09me%5Br%5D%5Bc%5D = maxpat%0A%09%09return maxpat%0A%09%7D%0A%09long := 0\n+%7D\n %0A%09re\n",
+            "lines": "73"
+        },
+        {
+            "label": "2026-07-04_11-24-28",
+            "content": "@@ -694,134 +694,8 @@\n = 0%0A\n-%09for r := 0; r %3C rs; r++ %7B%0A%09%09for c := 0; c %3C cs; c++ %7B%0A%09%09%09patl := busca(r, c)%0A%09%09%09if patl %3E long %7B%0A%09%09%09%09long = patl%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A\n %09ret\n",
+            "lines": "76"
+        },
+        {
+            "label": "2026-07-04_11-28-47",
+            "content": "@@ -546,17 +546,17 @@\n trix%5Br%5D%5B\n-c\n+r\n %5D %7B%0A%09%09%09%09\n",
+            "lines": "84"
+        },
+        {
+            "label": "2026-07-04_11-33-42",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc longestIncreasingPath(matrix [][]int) int {\n\trs := len(matrix)\n\tcs := len(matrix[0])\n\tme := make([][]int, rs)\n\tfor i := range me {\n\t\tme[i] = make([]int, cs)\n\t}\n\n\tpat := [][]int{\n\t\t{1, 0},\n\t\t{-1, 0},\n\t\t{0, 1},\n\t\t{0, -1}}\n\n\tvar busca func(r, c int) int\n\tbusca = func(r, c int) int {\n\t\tif me[r][c] != 0 {\n\t\t\treturn me[r][c]\n\t\t}\n\t\tmaxpat := 1\n\t\tfor _, d := range pat {\n\t\t\tner, nec := r+d[0], c+d[1]\n\t\t\tif ner >= 0 && ner < rs && nec >= 0 && nec < cs && matrix[ner][nec] > matrix[r][c] {\n\t\t\t\tpath := 1 + busca(ner, nec)\n\t\t\t\tif path > maxpat {\n\t\t\t\t\tmaxpat = path\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tme[r][c] = maxpat\n\t\treturn maxpat\n\t}\n\tlong := 0\n\tfor r := 0; r < rs; r++ {\n\t\tfor c := 0; c < cs; c++ {\n\t\t\tpatl := busca(r, c)\n\t\t\tif patl > long {\n\t\t\t\tlong = patl\n\t\t\t}\n\t\t}\n\t}\n\treturn long\n}\n\n// N\u00e3o modifique a fun\u00e7\u00e3o main\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tif !scanner.Scan() {\n\t\treturn\n\t}\n\tparts := strings.Fields(scanner.Text())\n\tif len(parts) < 2 {\n\t\treturn\n\t}\n\tnl, _ := strconv.Atoi(parts[0])\n\tnc, _ := strconv.Atoi(parts[1])\n\n\tmatrix := make([][]int, nl)\n\tfor i := 0; i < nl; i++ {\n\t\tif !scanner.Scan() {\n\t\t\treturn\n\t\t}\n\t\ttokens := strings.Fields(scanner.Text())\n\t\trow := make([]int, nc)\n\t\tfor j := 0; j < nc && j < len(tokens); j++ {\n\t\t\tv, _ := strconv.Atoi(tokens[j])\n\t\t\trow[j] = v\n\t\t}\n\t\tmatrix[i] = row\n\t}\n\n\tfmt.Println(longestIncreasingPath(matrix))\n}\n",
+            "lines": "84"
         }
     ]
 }

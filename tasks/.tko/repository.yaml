@@ -40,5 +40,5 @@ audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@pintura
-selected_index: 95
+selected: ed@longest
+selected_index: 96
