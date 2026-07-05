@@ -19,17 +19,17 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@rec
 - ed@list
 - ed@vector
-- ed@dfs
-- ed@tree
-- sandbox@sandbox
-- ed@map_set
-- ed@backtrack
-- ed@linear
-- ed@basic
 - ed@bfs
+- ed@tree
+- ed@dfs
+- ed@backtrack
+- ed@map_set
+- ed@basic
+- ed@linear
+- ed@rec
+- sandbox@sandbox
 flags:
   inbox: all
   panel: skills
@@ -39,5 +39,5 @@ audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@lista_d3
-selected_index: 57
+selected: ed@detonate
+selected_index: 101

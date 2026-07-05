@@ -8,37 +8,134 @@ import (
 
 // Não modifique a assinatura da função numIslands
 // Ela é a função que será chamada no LeetCode para resolver o problema
-const inf = 1_000_000_000_000
-const high = 1_000_000_000
-
 func numIslands(grid [][]byte) int {
-	if len(grid) == 0 {
+	const INF = 1_000_000_000_000
+	const HIGH = 1_000_000_000
+
+	m := len(grid)
+	if m == 0 {
 		return 0
 	}
-	nl := len(grid)
-	nc := len(grid[0])
-	count := 0
+	n := len(grid[0])
 
-	var busca func(i, j int)
-	busca = func(i, j int) {
-		if i < 0 || i >= nl || j < 0 || j >= nc || grid[i][j] == '0' {
-			return
+	fire := make([][]int, m)
+	for i := range fire {
+		fire[i] = make([]int, n)
+		for j := range fire[i] {
+			fire[i][j] = -1
 		}
-		grid[i][j] = '0'
-		busca(i+1, j)
-		busca(i-1, j)
-		busca(i, j+1)
-		busca(i, j-1)
 	}
-	for i := 0; i < nl; i++ {
-		for j := 0; j < nc; j++ {
-			if grid[i][j] == '1' {
-				count++
-				busca(i, j)
+	type pair struct{ r, c int }
+
+	var queue []pair
+	for i := 0; i < m; i++ {
+		for j := 0; j < n; j++ {
+			if grid[i][j] == 1 {
+				fire[i][j] = 0
+				queue = append(queue, pair{r: i, c: j})
 			}
 		}
 	}
-	return count
+	dirs := []pair{{-1, 0}, {1, 0}, {0, -1}, {0, 1}}
+
+	for 0 < len(queue) {
+		atual := queue[0]
+		queue = queue[1:]
+
+		for _, d := range dirs {
+			nr, nc := r+d[0], c+d[1]
+			if nr < 0 || nr >= m || nc < 0 || nc >= n {
+				continue
+			}
+			if grid[nr][nc] == 2 {
+				continue
+			}
+			if fire[nr][nc] > fire[r][c]+1 {
+				fire[nr][nc] = fire[r][c] + 1
+				queue = append(queue, [2]int{nr, nc})
+			}
+		}
+	}
+	possible := func(t int) bool {
+		if fire[0][0] <= t {
+			return false
+		}
+
+		visited := make([][]bool, m)
+		for i := range visited {
+			visited[i] = make([]bool, n)
+		}
+
+		type node struct {
+			r, c, time int
+		}
+
+		q := []node{{0, 0, t}}
+		visited[0][0] = true
+		head := 0
+
+		for head < len(q) {
+			cur := q[head]
+			head++
+
+			if cur.r == m-1 && cur.c == n-1 {
+				return true
+			}
+
+			for _, d := range dirs {
+				nr, nc := cur.r+d[0], cur.c+d[1]
+
+				if nr < 0 || nr >= m || nc < 0 || nc >= n {
+					continue
+				}
+				if grid[nr][nc] == 2 {
+					continue
+				}
+				if visited[nr][nc] {
+					continue
+				}
+
+				nxt := cur.time + 1
+				if nr == m-1 && nc == n-1 {
+					if fire[nr][nc] < nxt {
+						continue
+					}
+				} else {
+					if fire[nr][nc] <= nxt {
+						continue
+					}
+				}
+
+				visited[nr][nc] = true
+				q = append(q, node{nr, nc, nxt})
+			}
+		}
+
+		return false
+	}
+
+	if !possible(0) {
+		return -1
+	}
+
+	high := HIGH
+	if fire[0][0] < INF {
+		high = fire[0][0] - 1
+	}
+	if possible(high) {
+		return high
+	}
+
+	low := 0
+	for low < high {
+		mid := (low + high + 1) / 2
+		if possible(mid) {
+			low = mid
+		} else {
+			high = mid - 1
+		}
+	}
+	return low
 }
 
 // Não modifique a função main
