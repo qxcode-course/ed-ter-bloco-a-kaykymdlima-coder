@@ -131,3 +131,7 @@
 2026-07-04 22:11:30, MOVE, v:1, k:ed@lista_d2, mode:EDIT
 2026-07-04 23:01:24, MOVE, v:1, k:ed@lista_d2, mode:EDIT
 2026-07-04 23:06:21, MOVE, v:1, k:ed@lista_d2, mode:EDIT
+2026-07-04 23:53:36, MOVE, v:1, k:ed@lista_d2, mode:PICK
+2026-07-04 23:53:38, EXEC, v:1, k:ed@lista_d2, mode:FULL, size:129, fail:COMP
+2026-07-04 23:56:43, EXEC, v:1, k:ed@lista_d2, mode:FULL, rate:0, size:131
+2026-07-04 23:56:36, MOVE, v:1, k:ed@lista_d2, mode:EDIT

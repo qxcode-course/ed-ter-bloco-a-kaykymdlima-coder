@@ -16,6 +16,9 @@ type Node struct {
 }
 
 func (n *Node) Next() *Node {
+	if n.next == n.root {
+		return nil
+	}
 	return n.next
 }
 
@@ -43,7 +46,13 @@ func (ll *LList) String() string {
 			sb.WriteString(", ")
 		}
 	}
+	sb.WriteString("]")
+	return sb.String()
 }
+func (ll *LList) PushFront(value int) {
+
+}
+
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	ll := NewLList()

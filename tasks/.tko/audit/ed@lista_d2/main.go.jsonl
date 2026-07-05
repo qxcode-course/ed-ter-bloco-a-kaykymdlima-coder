@@ -5,3 +5,5 @@
 {"ts":1783217259,"hash":"4813ae1c26187d292db623d1a64ad72b15aa609ba04f8a4f860c02737a04d4e5","mode":"diff","ops":[{"tag":"insert","a1":35,"a2":35,"text":"\tfor node := ll.Front(); node != nil; node = node.Next() {\n\n\t}\n"}]}
 {"ts":1783217333,"hash":"9721891e8ad31b973cb65de32b4211cc0d2b84b2cf2abbcb02ab062a85e4cd0b","mode":"diff","ops":[{"tag":"insert","a1":31,"a2":31,"text":"}\nfunc (ll *LList) Front() *Node {\n\treturn ll.root.next\n"}]}
 {"ts":1783217445,"hash":"87a665ab9a2f676a6f1a28952c7a6199c849e9b0c1351695dd8875c8da38b181","mode":"diff","ops":[{"tag":"insert","a1":6,"a2":6,"text":"\t\"strconv\"\n"},{"tag":"replace","a1":39,"a2":40,"text":"\t\tsb.WriteString(strconv.Itoa(node.Value))\n\t\tif node.Next() != nil {\n\t\t\tsb.WriteString(\", \")\n\t\t}\n"}]}
+{"ts":1783220196,"hash":"18b6fc60d15b2455214a76875e5cda1617d0b8ecffe5bdea59ac75c70360af1c","mode":"diff","ops":[{"tag":"insert","a1":45,"a2":45,"text":"\tsb.WriteString(\"]\")\n\treturn sb.String()\n"}]}
+{"ts":1783220778,"hash":"8663e73e79390b956ef3b8b41874ed8edbca9492e71856c95c4559657eb6c39d","mode":"diff","ops":[{"tag":"insert","a1":18,"a2":18,"text":"\tif n.next == n.root {\n\t\treturn nil\n\t}\n"}]}
