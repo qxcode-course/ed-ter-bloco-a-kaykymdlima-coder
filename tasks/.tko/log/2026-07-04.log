@@ -124,3 +124,10 @@
 2026-07-04 22:08:43, EXEC, v:1, k:ed@lista_d1, mode:FULL, rate:100, size:138
 2026-07-04 22:08:47, MOVE, v:1, k:ed@lista_d1, mode:BACK
 2026-07-04 22:09:04, SELF, v:1, k:ed@lista_d1, self:1, rate:100, study:20, concept:1
+2026-07-04 22:11:30, MOVE, v:1, k:ed@lista_d2, mode:DOWN
+2026-07-04 22:11:31, MOVE, v:1, k:ed@lista_d2, mode:PICK
+2026-07-04 22:08:41, MOVE, v:1, k:ed@lista_d1, mode:EDIT
+2026-07-04 22:11:30, MOVE, v:1, k:ed@lista_d2, mode:EDIT
+2026-07-04 22:11:30, MOVE, v:1, k:ed@lista_d2, mode:EDIT
+2026-07-04 23:01:24, MOVE, v:1, k:ed@lista_d2, mode:EDIT
+2026-07-04 23:06:21, MOVE, v:1, k:ed@lista_d2, mode:EDIT
