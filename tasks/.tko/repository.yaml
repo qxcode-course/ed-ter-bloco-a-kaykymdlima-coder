@@ -32,12 +32,12 @@ expanded:
 - ed@linear
 flags:
   inbox: all
-  panel: graph
+  panel: skills
   task_graph_mode: executions
   show_time: 'true'
 audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@lista_d2
-selected_index: 53
+selected: ed@lista_d4
+selected_index: 56
