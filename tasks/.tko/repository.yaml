@@ -19,18 +19,17 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@list
 - ed@linear
-- ed@tree
-- ed@vector
-- eval1@eval1
-- ed@backtrack
-- ed@bfs
-- ed@map_set
-- ed@basic
 - ed@dfs
+- ed@list
+- ed@basic
+- ed@vector
+- ed@tree
+- ed@map_set
 - ed@rec
 - sandbox@sandbox
+- ed@backtrack
+- ed@bfs
 flags:
   inbox: all
   panel: skills
@@ -40,5 +39,5 @@ audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@longest
-selected_index: 96
+selected: ed@lista_d1
+selected_index: 52
