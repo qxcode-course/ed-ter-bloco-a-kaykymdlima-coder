@@ -19,20 +19,20 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@bfs
-- sandbox@sandbox
-- ed@linear
 - ed@vector
-- ed@basic
 - ed@map_set
-- ed@backtrack
-- ed@rec
+- ed@bfs
 - ed@dfs
 - ed@tree
+- sandbox@sandbox
+- ed@rec
+- ed@backtrack
+- ed@basic
 - ed@list
+- ed@linear
 flags:
   inbox: all
-  panel: skills
+  panel: graph
   task_graph_mode: executions
   show_time: 'true'
 audit:
