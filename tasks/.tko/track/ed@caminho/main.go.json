@@ -1,0 +1,49 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-05_22-55-16",
+            "content": "@@ -637,30 +637,8 @@\n os)%0A\n-%09visited%5BsPos%5D = true%0A\n %7D%0A%0Af\n",
+            "lines": "78"
+        },
+        {
+            "label": "2026-07-05_22-56-09",
+            "content": "@@ -659,98 +659,8 @@\n rue%0A\n-%09for !queue.IsEmpty() %7B%0A%09%09atual, _ := queue.Dequeue()%0A%09%09if atual == epos%7B%0A%09%09%09break%0A%09%09%7D%0A%09%7D%0A\n %7D%0A%0Af\n",
+            "lines": "79"
+        },
+        {
+            "label": "2026-07-05_22-57-36",
+            "content": "@@ -746,114 +746,8 @@\n %09%09%7D%0A\n-%09%09for match(grid, n, ' ') && !visited%5Bn%5D %7B%0A%09%09%09visited%5Bn%5D = true%0A%09%09%09par%5Bn%5D = atual%0A%09%09%09queue.Enqueue(n)%0A%09%09%7D%0A\n %09%7D%0A%7D\n",
+            "lines": "85"
+        },
+        {
+            "label": "2026-07-05_22-59-47",
+            "content": "@@ -123,17 +123,17 @@\n s%7B%0A%09%09%7Bp.\n-l\n+1\n  - 1, p.\n",
+            "lines": "90"
+        },
+        {
+            "label": "2026-07-05_23-00-58",
+            "content": "@@ -525,16 +525,17 @@\n %09queue :\n+ \n = make(m\n",
+            "lines": "90"
+        },
+        {
+            "label": "2026-07-05_23-01-24",
+            "content": "@@ -29,33 +29,15 @@\n io%22%0A\n-%09%22container/list%22%0A\n %09%22fmt%22%0A\n+\n %09%22os\n@@ -165,19 +165,17 @@\n p.l, p.c\n- - \n+-\n 1%7D,%0A%09%09%7Bp\n@@ -567,17 +567,17 @@\n e(start%5B\n-P\n+p\n os%5D)%0A%09vi\n@@ -609,17 +609,17 @@\n l)%0A%09par \n-:\n+ \n = make(m\n@@ -625,16 +625,18 @@\n map%5BPos%5D\n+p=\n Pos)%0A%09vi\n@@ -726,17 +726,16 @@\n  == epos\n- \n %7B%0A%09%09%09bre\n@@ -872,405 +872,8 @@\n ()%0A%0A\n-type Queue%5BT any%5D struct %7B%0A%09queue *list.List%0A%7D%0A%0Afunc NewQueue%5BT any%5D() *Queue%5BT%5D %7B%0A%09return &Queue%5BT%5D%7B%0A%09%09queue: list.New(),%0A%09%7D%0A%7D%0A%0Afunc (q *Queue%5BT%5D) Enqueue(value T) %7B%0A%09q.queue.PushBack(value)%0A%7D%0A%0Afunc (q *Queue%5BT%5D) Dequeue() (T, bool) %7B%0A%09element := q.queue.Front()%0A%09if element == nil %7B%0A%09%09var zero T%0A%09%09return zero, false%0A%09%7D%0A%09q.queue.Remove(element)%0A%09value := element.Value.(T)%0A%09return value, true%0A%7D%0A\n func\n",
+            "lines": "90"
+        },
+        {
+            "label": "2026-07-05_23-04-59",
+            "content": "@@ -25,16 +25,34 @@\n %22bufio%22%0A\n+%09%22container/list%22%0A\n %09%22fmt%22%0A%09\n@@ -586,19 +586,21 @@\n ue(start\n+%5B\n Pos\n+%5D\n )%0A%09visit\n@@ -660,20 +660,16 @@\n isited%5Bs\n-tart\n Pos%5D = t\n@@ -741,19 +741,17 @@\n ual == e\n-ndP\n+p\n os %7B%0A%09%09%09\n@@ -770,46 +770,8 @@\n for \n-_, n := range atual.getNeig() %7B%0A%09%09%09if \n matc\n@@ -806,17 +806,16 @@\n n%5D %7B%0A%09%09%09\n-%09\n visited%5B\n@@ -824,17 +824,16 @@\n  = true%0A\n-%09\n %09%09%09par%5Bn\n@@ -845,17 +845,16 @@\n tual%0A%09%09%09\n-%09\n queue.En\n@@ -866,18 +866,12 @@\n (n)%0A\n-%09\n %09%09%7D%0A\n-%09%09%7D%0A%0A\n %09%7D%0A%7D\n@@ -886,16 +886,146 @@\n oltar()%0A\n+%0Atype Queue%5BT any%5D struct %7B%0A%09queue *list.List%0A%7D%0A%0Afunc NewQueue%5BT any%5D() *Queue%5BT%5D %7B%0A%09return &Queue%5BT%5D%7B%0A%09%09queue: list.New(),%0A%09%7D%0A%7D%0A%0A\n func (q \n@@ -1081,16 +1081,17 @@\n alue)%0A%7D%0A\n+%0A\n func (q \n",
+            "lines": "115"
+        },
+        {
+            "label": "2026-07-05_23-12-01",
+            "content": "@@ -31,438 +31,20 @@\n %22%0A%09%22\n-container/list%22%0A%09%22fmt%22%0A%09%22os%22%0A)%0A%0Atype NQueue%5BT any%5D struct %7B%0A%09queue *list.List%0A%7D%0A%0Afunc NNewQueue%5BT any%5D() *Queue%5BT%5D %7B%0A%09return &Queue%5BT%5D%7B%0A%09%09queue: list.New(),%0A%09%7D%0A%7D%0Afunc (q *Queue%5BT%5D) NEnqueue(value T) %7B%0A%09q.queue.PushBack(value)%0A%7D%0Afunc (q *Queue%5BT%5D) NDequeue() (T, bool) %7B%0A%09element := q.queue.Front()%0A%09if element == nil %7B%0A%09%09var zero T%0A%09%09return zero, false%0A%09%7D%0A%09q.queue.Remove(element)%0A%09value := element.Value.(T)%0A%09return value, true%0A%7D\n+fmt%22%0A%09%22os%22%0A)\n %0A%0Aty\n@@ -533,23 +533,25 @@\n  := \n-NNewQueue\n+make(map\n %5BPos%5D\n-(\n+bool\n )%0A%09q\n@@ -555,17 +555,16 @@\n %0A%09queue.\n-N\n Enqueue(\n@@ -700,17 +700,16 @@\n = queue.\n-N\n Dequeue(\n@@ -902,178 +902,296 @@\n %09%09%7D%0A\n+%0A\n %09%7D%0A\n-%09if visited%5BendPos%5D %7B%0A%09%09atual := endPos%0A%09%09for atual != startPos %7B%0A%09%09%09grid%5Batual.l%5D%5Batual.c%5D = '.'%0A%09%09%09atual = par%5Batual%5D%0A%09%09%7D%0A%09%09grid%5BstartPos.l%5D%5BstartPos.c%5D = '.'%0A%09%7D\n+%7D%0A%0Afunc voltar()%0Afunc (q *Queue%5BT%5D) Enqueue(value T) %7B%0A%09q.queue.PushBack(value)%0A%7D%0Afunc (q *Queue%5BT%5D) Dequeue() (T, bool) %7B%0A%09element := q.queue.Front()%0A%09if element == nil %7B%0A%09%09var zero T%0A%09%09return zero, false%0A%09%7D%0A%09q.queue.Remove(element)%0A%09value := element.Value.(T)%0A%09return value, true\n %0A%7D%0A\n-%0A\n func\n",
+            "lines": "105"
+        },
+        {
+            "label": "2026-07-05_23-25-25",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"container/list\"\n\t\"fmt\"\n\t\"os\"\n)\n\ntype NQueue[T any] struct {\n\tqueue *list.List\n}\n\nfunc NNewQueue[T any]() *Queue[T] {\n\treturn &Queue[T]{\n\t\tqueue: list.New(),\n\t}\n}\nfunc (q *Queue[T]) NEnqueue(value T) {\n\tq.queue.PushBack(value)\n}\nfunc (q *Queue[T]) NDequeue() (T, bool) {\n\telement := q.queue.Front()\n\tif element == nil {\n\t\tvar zero T\n\t\treturn zero, false\n\t}\n\tq.queue.Remove(element)\n\tvalue := element.Value.(T)\n\treturn value, true\n}\n\ntype Pos struct {\n\tl, c int\n}\n\nfunc (p Pos) getNeig() []Pos {\n\treturn []Pos{\n\t\t{p.l - 1, p.c},\n\t\t{p.l + 1, p.c},\n\t\t{p.l, p.c - 1},\n\t\t{p.l, p.c + 1},\n\t}\n}\n\nfunc inside(grid [][]rune, pos Pos) bool {\n\tnrows := len(grid)\n\tncols := len(grid[0])\n\treturn pos.l >= 0 && pos.l < nrows && pos.c >= 0 && pos.c < ncols\n}\n\nfunc match(grid [][]rune, pos Pos, char rune) bool {\n\treturn inside(grid, pos) && grid[pos.l][pos.c] == char\n}\n\nfunc search(grid [][]rune, startPos Pos, endPos Pos) {\n\tqueue := NNewQueue[Pos]()\n\tqueue.NEnqueue(startPos)\n\tvisited := make(map[Pos]bool)\n\tpar := make(map[Pos]Pos)\n\tvisited[startPos] = true\n\tfor !queue.IsEmpty() {\n\t\tatual, _ := queue.NDequeue()\n\t\tif atual == endPos {\n\t\t\tbreak\n\t\t}\n\t\tfor _, n := range atual.getNeig() {\n\t\t\tif match(grid, n, ' ') && !visited[n] {\n\t\t\t\tvisited[n] = true\n\t\t\t\tpar[n] = atual\n\t\t\t\tqueue.Enqueue(n)\n\t\t\t}\n\t\t}\n\t}\n\tif visited[endPos] {\n\t\tatual := endPos\n\t\tfor atual != startPos {\n\t\t\tgrid[atual.l][atual.c] = '.'\n\t\t\tatual = par[atual]\n\t\t}\n\t\tgrid[startPos.l][startPos.c] = '.'\n\t}\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tvar nl, nc int\n\tscanner.Scan()\n\tline := scanner.Text()\n\tfmt.Sscanf(line, \"%d %d\", &nl, &nc)\n\tmat := make([][]rune, nl) // Inicializa a matriz de runes\n\n\t// Carregando matriz\n\tfor i := range nl {\n\t\tscanner.Scan()\n\t\tline := scanner.Text()\n\t\tmat[i] = []rune(line)\n\t}\n\n\tvar inicio, fim Pos\n\n\t// Procurando inicio e fim e colocando ' ' nas posi\u00e7\u00f5es iniciais\n\tfor l := range nl {\n\t\tfor c := range nc {\n\t\t\tif mat[l][c] == 'I' {\n\t\t\t\tmat[l][c] = ' '\n\t\t\t\tinicio = Pos{l, c}\n\t\t\t}\n\t\t\tif mat[l][c] == 'F' {\n\t\t\t\tmat[l][c] = ' '\n\t\t\t\tfim = Pos{l, c}\n\t\t\t}\n\t\t}\n\t}\n\n\tsearch(mat, inicio, fim)\n\n\tfor _, line := range mat {\n\t\tfmt.Println(string(line)) // Converte o slice de runes de volta para string para imprimir\n\t}\n}\n",
+            "lines": "122"
+        }
+    ]
+}

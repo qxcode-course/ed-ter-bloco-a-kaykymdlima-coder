@@ -2,16 +2,45 @@ package main
 
 import (
 	"bufio"
+	"container/list"
 	"fmt"
 	"os"
 )
+
+type NQueue[T any] struct {
+	queue *list.List
+}
+
+func NNewQueue[T any]() *Queue[T] {
+	return &Queue[T]{
+		queue: list.New(),
+	}
+}
+func (q *Queue[T]) NEnqueue(value T) {
+	q.queue.PushBack(value)
+}
+func (q *Queue[T]) NDequeue() (T, bool) {
+	element := q.queue.Front()
+	if element == nil {
+		var zero T
+		return zero, false
+	}
+	q.queue.Remove(element)
+	value := element.Value.(T)
+	return value, true
+}
 
 type Pos struct {
 	l, c int
 }
 
 func (p Pos) getNeig() []Pos {
-	return nil
+	return []Pos{
+		{p.l - 1, p.c},
+		{p.l + 1, p.c},
+		{p.l, p.c - 1},
+		{p.l, p.c + 1},
+	}
 }
 
 func inside(grid [][]rune, pos Pos) bool {
@@ -25,10 +54,33 @@ func match(grid [][]rune, pos Pos, char rune) bool {
 }
 
 func search(grid [][]rune, startPos Pos, endPos Pos) {
-	_, _, _ = grid, startPos, endPos
+	queue := NNewQueue[Pos]()
+	queue.NEnqueue(startPos)
+	visited := make(map[Pos]bool)
+	par := make(map[Pos]Pos)
+	visited[startPos] = true
+	for !queue.IsEmpty() {
+		atual, _ := queue.NDequeue()
+		if atual == endPos {
+			break
+		}
+		for _, n := range atual.getNeig() {
+			if match(grid, n, ' ') && !visited[n] {
+				visited[n] = true
+				par[n] = atual
+				queue.Enqueue(n)
+			}
+		}
+	}
+	if visited[endPos] {
+		atual := endPos
+		for atual != startPos {
+			grid[atual.l][atual.c] = '.'
+			atual = par[atual]
+		}
+		grid[startPos.l][startPos.c] = '.'
+	}
 }
-
-func voltar()
 
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
