@@ -1,0 +1,54 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-05_21-35-17",
+            "content": "@@ -29,15 +29,8 @@\n io%22%0A\n-%09%22fmt%22%0A\n %09%22os\n@@ -60,271 +60,8 @@\n %0A)%0A%0A\n-func nenlaranja(grid %5B%5D%5B%5Dint) int %7B%0A%09m := len(grid)%0A%09n := len(grid%5B0%5D)%0A%09type pair struct%7B x, y int %7D%0A%09var queue %5B%5Dpair%0A%09frescas := 0%0A%09for i := 0; i %3C m; i++ %7B%0A%09%09for j := 0; j %3C n; j++ %7B%0A%09%09%09if grid%5Bi%5D%5Bj%5D == 2 %7B%0A%09%09%09%09queue = append(queue, pair%7Bi, j%7D)%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%7D%0A%0A\n func\n@@ -453,37 +453,6 @@\n %0A%09%7D%0A\n-%09fmt.Println(nenlaranja(grid))%0A\n %7D%0A\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-07-05_21-46-49",
+            "content": "@@ -315,53 +315,8 @@\n j%7D)%0A\n-%09%09%09%7D else if grid%5Bi%5D%5Bj%5D == 1 %7B%0A%09%09%09%09frescas++%0A\n %09%09%09%7D\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-07-05_21-47-21",
+            "content": "@@ -372,69 +372,8 @@\n %0A%09%7D%0A\n-%09minu := 0%0A%09dirs := %5B%5Dpair%7B%7B-1, 0%7D, %7B1, 0%7D, %7B0, -1%7D, %7B0, 1%7D%7D%0A\n %7D%0A%0Af\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-07-05_21-56-24",
+            "content": "@@ -433,524 +433,8 @@\n 1%7D%7D%0A\n-    for len(queue) %3E 0 && frescas %3E 0 %7B%0A        minu++%0A        size := len(queue)%0A        for i :=0; i %3C size; i++ %7B%0A            atual := queue%5B0%5D%0A            queue = queue%5B1:%5D%0A            for _, d:= range dirs %7B%0A                nr, nc := atual.x + d.x, atual.y + d.y%0A                if nr %3E= 0 && nr %3C m && nc %3E= 0 && nc %3C 0 && grid%5Bnr%5D%5Bnc%5D == 1 %7B%0A                    grid%5Bnr%5D%5Bnc%5D = 2%0A                    frescas--%0A                    queue = append(queue, pair(nr, nc))%0A                %7D%0A            %7D%0A%0A%0A        %7D%0A\n %7D%0A%0Af\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-07-05_22-02-20",
+            "content": "@@ -429,17 +429,20 @@\n %7B0, 1%7D%7D%0A\n-%09\n+    \n for len(\n@@ -473,19 +473,31 @@\n 0 %7B%0A\n-%09%09minu++%0A%09%09\n+        minu++%0A        \n size\n@@ -515,18 +515,24 @@\n ue)%0A\n-%09%09\n+        \n for i :=\n  0; \n@@ -523,25 +523,24 @@\n     for i :=\n- \n 0; i %3C size;\n@@ -546,19 +546,28 @@\n ; i++ %7B%0A\n-%09%09%09\n+            \n atual :=\n@@ -576,19 +576,28 @@\n ueue%5B0%5D%0A\n-%09%09%09\n+            \n queue = \n@@ -610,19 +610,28 @@\n 1:%5D%0A\n-%09%09%09\n+            \n for _, d\n  := \n@@ -626,17 +626,16 @@\n for _, d\n- \n := range\n@@ -642,20 +642,32 @@\n  dirs %7B%0A\n-%09%09%09%09\n+                \n nr, nc :\n@@ -675,17 +675,19 @@\n  atual.x\n-+\n+ + \n d.x, atu\n@@ -694,17 +694,31 @@\n al.y\n-+\n+ + \n d.y%0A\n-%09%09%09%09\n+                \n if n\n@@ -782,135 +782,173 @@\n 1 %7B%0A\n-%09%09%09%09%09grid%5Bnr%5D%5Bnc%5D = 2%0A%09%09%09%09%09frescas--%0A%09%09%09%09%09queue = append(queue, pair(nr, nc))%0A%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%09if frescas %3E 0 %7B%0A%09%09return -1%0A%09\n+                    grid%5Bnr%5D%5Bnc%5D = 2%0A                    frescas--%0A                    queue = append(queue, pair(nr, nc))%0A                %7D%0A            %7D%0A%0A%0A        \n %7D%0A%7D%0A\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-07-05_22-03-14",
+            "content": "@@ -837,21 +837,8 @@\n %0A%09%7D%0A\n-%09return minu%0A\n %7D%0A%0Af\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-07-05_22-03-30",
+            "content": "@@ -776,16 +776,16 @@\n pair\n-%7B\n+(\n nr, nc\n-%7D\n+)\n )%0A%09%09\n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-07-05_22-04-10",
+            "content": "@@ -372,41 +372,8 @@\n %0A%09%7D%0A\n-%09if frescas == 0 %7B%0A%09%09return 0%0A%09%7D%0A\n %09min\n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-07-05_22-05-56",
+            "content": "@@ -712,17 +712,17 @@\n && nc %3C \n-n\n+0\n  && grid\n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-07-05_22-11-19",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc nenlaranja(grid [][]int) int {\n\tm := len(grid)\n\tn := len(grid[0])\n\ttype pair struct{ x, y int }\n\tvar queue []pair\n\tfrescas := 0\n\tfor i := 0; i < m; i++ {\n\t\tfor j := 0; j < n; j++ {\n\t\t\tif grid[i][j] == 2 {\n\t\t\t\tqueue = append(queue, pair{i, j})\n\t\t\t} else if grid[i][j] == 1 {\n\t\t\t\tfrescas++\n\t\t\t}\n\t\t}\n\t}\n\tif frescas == 0 {\n\t\treturn 0\n\t}\n\tminu := 0\n\tdirs := []pair{{-1, 0}, {1, 0}, {0, -1}, {0, 1}}\n\tfor len(queue) > 0 && frescas > 0 {\n\t\tminu++\n\t\tsize := len(queue)\n\t\tfor i := 0; i < size; i++ {\n\t\t\tatual := queue[0]\n\t\t\tqueue = queue[1:]\n\t\t\tfor _, d := range dirs {\n\t\t\t\tnr, nc := atual.x+d.x, atual.y+d.y\n\t\t\t\tif nr >= 0 && nr < m && nc >= 0 && nc < n && grid[nr][nc] == 1 {\n\t\t\t\t\tgrid[nr][nc] = 2\n\t\t\t\t\tfrescas--\n\t\t\t\t\tqueue = append(queue, pair{nr, nc})\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\tif frescas > 0 {\n\t\treturn -1\n\t}\n\treturn minu\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tparts := strings.Fields(scanner.Text())\n\tm, _ := strconv.Atoi(parts[0])\n\tn, _ := strconv.Atoi(parts[1])\n\tgrid := make([][]int, m)\n\tfor i := 0; i < m; i++ {\n\t\tscanner.Scan()\n\t\ttok := strings.Fields(scanner.Text())\n\t\trow := make([]int, n)\n\t\tfor j := 0; j < n; j++ {\n\t\t\trow[j], _ = strconv.Atoi(tok[j])\n\t\t}\n\t\tgrid[i] = row\n\t}\n\tfmt.Println(nenlaranja(grid))\n}\n",
+            "lines": "70"
+        }
+    ]
+}
